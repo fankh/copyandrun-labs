@@ -1,0 +1,48 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>가입과 로그인 연습</title>
+<style>
+  body { font: 15px sans-serif; max-width: 720px; margin: 24px auto; }
+  .row { margin: 10px 0; }
+  input, button { padding: 6px 10px; font-size: 15px; }
+  input { width: 150px; }
+  pre { background: #f4f4f4; padding: 10px; white-space: pre-wrap; word-break: break-all; }
+</style>
+<h2>가입과 로그인 연습</h2>
+<form id="f" class="row">
+  이름 <input id="name" value="alice">
+  비밀번호 <input id="pw" type="text" value="correct horse battery">
+  <button data-act="signup">가입</button>
+  <button data-act="login">로그인</button>
+</form>
+<div>마지막 응답</div>
+<pre id="out">-</pre>
+<div>서버에 저장된 값 (실습용 화면)</div>
+<pre id="stored">-</pre>
+<script>
+  async function refresh() {
+    const res = await fetch("/stored");
+    const data = await res.json();
+    document.getElementById("stored").textContent =
+      Object.entries(data).map(([k, v]) => k + "\n  " + v).join("\n") || "(없음)";
+  }
+
+  document.querySelectorAll("button[data-act]").forEach((b) => {
+    b.onclick = async (e) => {
+      e.preventDefault();
+      const act = b.dataset.act;
+      const res = await fetch("/" + act, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: document.getElementById("name").value,
+          password: document.getElementById("pw").value,
+        }),
+      });
+      document.getElementById("out").textContent =
+        act + " -> " + res.status + " " + await res.text();
+      await refresh();
+    };
+  });
+  refresh();
+</script>

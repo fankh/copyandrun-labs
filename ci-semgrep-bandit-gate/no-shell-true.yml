@@ -1,0 +1,8 @@
+rules:
+  - id: no-subprocess-shell-true
+    languages: [python]
+    severity: ERROR
+    message: >
+      subprocess 를 shell=True 로 호출하면 OS 커맨드 인젝션(CWE-78) 위험이 있습니다.
+      인자 리스트와 shell=False 를 사용하세요.
+    pattern: subprocess.$FUNC(..., shell=True, ...)

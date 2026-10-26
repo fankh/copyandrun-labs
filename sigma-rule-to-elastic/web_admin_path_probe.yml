@@ -1,0 +1,27 @@
+title: Admin Path Access Failed From Non Admin Network
+id: 5f0c2f7a-8a3e-4c1e-9d3b-0a1b2c3d4e01
+status: experimental
+description: Detects requests to common admin paths that the web server rejected or did not find, coming from outside the admin network.
+author: Copy and Run
+date: 2026-10-16
+logsource:
+  category: webserver
+detection:
+  selection_path:
+    cs-uri-stem|startswith:
+      - '/admin'
+      - '/wp-admin'
+      - '/phpmyadmin'
+  selection_status:
+    sc-status:
+      - 401
+      - 403
+      - 404
+  filter_admin_network:
+    c-ip|cidr: '10.0.0.0/24'
+  condition: selection_path and selection_status and not filter_admin_network
+falsepositives:
+  - Administrators connecting from a new network or VPN range
+  - Uptime monitors that request /admin on a schedule
+  - Behind a proxy or load balancer the client address may be the proxy address, so the admin network filter can exclude too much or too little
+level: medium

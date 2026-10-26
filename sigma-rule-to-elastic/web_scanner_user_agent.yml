@@ -1,0 +1,23 @@
+title: Known Scanner Name In User Agent
+id: 5f0c2f7a-8a3e-4c1e-9d3b-0a1b2c3d4e02
+status: experimental
+description: Detects User-Agent strings that contain the name of a well known web vulnerability scanner. The User-Agent is easy to forge, so treat this as a supporting signal and not as proof.
+author: Copy and Run
+date: 2026-10-16
+logsource:
+  category: webserver
+detection:
+  selection:
+    cs-user-agent|contains:
+      - 'sqlmap'
+      - 'nikto'
+      - 'masscan'
+      - 'dirbuster'
+      - 'Nmap Scripting Engine'
+  filter_scheduled_scan:
+    c-ip: '10.0.0.50'
+  condition: selection and not filter_scheduled_scan
+falsepositives:
+  - Authorized vulnerability scans from the security team (host 10.0.0.50 is excluded)
+  - Behind a proxy or load balancer the client address may be the proxy address, so the host exclusion can hide real scanners
+level: high

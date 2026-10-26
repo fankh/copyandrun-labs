@@ -1,0 +1,33 @@
+services:
+  opensearch:
+    image: opensearchproject/opensearch:2.19.0
+    environment:
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - OPENSEARCH_JAVA_OPTS=-Xms1g -Xmx1g
+      - DISABLE_INSTALL_DEMO_CONFIG=true
+      - DISABLE_SECURITY_PLUGIN=true # 실습 전용: 인증과 TLS를 끕니다
+      - http.compression=false # 브라우저로 직접 열어 볼 때 응답이 비는 것을 막습니다
+    ulimits:
+      memlock: { soft: -1, hard: -1 }
+      nofile: { soft: 65536, hard: 65536 }
+    ports: ["127.0.0.1:5430:9200"]
+    volumes: [opensearch-data:/usr/share/opensearch/data]
+  dashboards:
+    image: opensearchproject/opensearch-dashboards:2.19.0
+    environment:
+      - OPENSEARCH_HOSTS=["http://opensearch:9200"]
+      - DISABLE_SECURITY_DASHBOARDS_PLUGIN=true # 실습 전용: 로그인 화면을 끕니다
+    ports: ["127.0.0.1:5431:5601"]
+    depends_on: [opensearch]
+  ollama:
+    image: ollama/ollama:latest
+    ports: ["127.0.0.1:5432:11434"]
+    volumes: [ollama-data:/root/.ollama]
+  tools:
+    image: nicolaka/netshoot:latest
+    command: ["sleep", "infinity"]
+    volumes: ["./:/work"]
+volumes:
+  opensearch-data:
+  ollama-data:

@@ -1,0 +1,31 @@
+name: cr-t10
+
+services:
+  registry:
+    image: registry:2@sha256:a3d8aaa63ed8681a604f1dea0aa03f100d5895b6a58ace528858a7b332415373
+    container_name: cr-t10-registry
+    environment:
+      REGISTRY_HTTP_ADDR: 0.0.0.0:5390
+    ports:
+      - "127.0.0.1:5390:5390"
+    volumes:
+      - data:/var/lib/registry
+
+  ui:
+    image: joxit/docker-registry-ui@sha256:bb5956a6b378706f1c3a92c947d0a0c606e280460cd9e37c0198caf46399c839
+    container_name: cr-t10-ui
+    environment:
+      SINGLE_REGISTRY: "true"
+      REGISTRY_TITLE: Local Registry (lab)
+      NGINX_PROXY_PASS_URL: http://registry:5390
+      SHOW_CATALOG_NB_TAGS: "true"
+      SHOW_CONTENT_DIGEST: "true"
+      DELETE_IMAGES: "false"
+    ports:
+      - "127.0.0.1:5391:80"
+    depends_on:
+      - registry
+
+volumes:
+  data:
+    name: cr-t10-data

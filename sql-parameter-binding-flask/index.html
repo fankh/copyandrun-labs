@@ -1,0 +1,50 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>회원 검색 연습</title>
+<style>
+  body { font: 15px sans-serif; max-width: 720px; margin: 24px auto; }
+  .row { margin: 10px 0; }
+  input, select, button { padding: 6px 10px; font-size: 15px; }
+  input { width: 140px; }
+  pre { background: #f4f4f4; padding: 10px; white-space: pre-wrap; word-break: break-all; }
+</style>
+<h2>회원 검색 연습</h2>
+<form id="search" class="row">
+  이름 <input id="name" value="kim">
+  정렬
+  <select id="sort"><option>name</option><option>joined</option><option>nope</option></select>
+  <button>검색</button>
+</form>
+<form id="login" class="row">
+  아이디 <input id="username" value="kim">
+  비밀번호 <input id="password" value="pw-kim">
+  <button>로그인</button>
+</form>
+<pre id="out">결과가 여기에 표시됩니다.</pre>
+<script>
+  const out = document.getElementById("out");
+
+  async function show(label, res) {
+    let text = (await res.text()).replace(/<[^>]*>/g, " ").trim();
+    try { text = JSON.stringify(JSON.parse(text)); } catch (e) { /* JSON이 아니면 그대로 보여 줌 */ }
+    out.textContent = label + " -> " + res.status + "\n" + text;
+  }
+
+  document.getElementById("search").onsubmit = async (e) => {
+    e.preventDefault();
+    const q = new URLSearchParams({
+      name: document.getElementById("name").value,
+      sort: document.getElementById("sort").value,
+    });
+    await show("GET /members?" + q, await fetch("/members?" + q));
+  };
+
+  document.getElementById("login").onsubmit = async (e) => {
+    e.preventDefault();
+    const body = new URLSearchParams({
+      username: document.getElementById("username").value,
+      password: document.getElementById("password").value,
+    });
+    await show("POST /login", await fetch("/login", { method: "POST", body }));
+  };
+</script>

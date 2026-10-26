@@ -1,0 +1,11 @@
+storage: /verdaccio/storage
+auth:
+  htpasswd:
+    file: /verdaccio/storage/htpasswd
+    max_users: 10
+# uplinks를 두지 않아 외부 npm 레지스트리로는 어떤 요청도 나가지 않는다.
+packages:
+  '**':
+    access: $all
+    publish: $authenticated
+log: { type: stdout, format: pretty, level: warn }

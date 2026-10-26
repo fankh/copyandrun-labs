@@ -1,0 +1,16 @@
+name: inject-demo
+on: pull_request
+permissions: {}
+jobs:
+  before:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show PR title (직접 삽입)
+        run: echo "Testing PR ${{ github.event.pull_request.title }}"
+  after:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show PR title (env 로 전달)
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: echo "Testing PR $PR_TITLE"

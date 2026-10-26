@@ -1,0 +1,23 @@
+{
+  "description": "source.ip 로 source.geo(위치)와 source.as(ASN) 채우기",
+  "processors": [
+    {
+      "geoip": {
+        "field": "source.ip",
+        "target_field": "source.geo",
+        "ignore_missing": true,
+        "ignore_failure": true
+      }
+    },
+    {
+      "geoip": {
+        "field": "source.ip",
+        "target_field": "source.as",
+        "database_file": "GeoLite2-ASN.mmdb",
+        "properties": ["asn", "organization_name"],
+        "ignore_missing": true,
+        "ignore_failure": true
+      }
+    }
+  ]
+}

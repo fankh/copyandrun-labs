@@ -1,0 +1,25 @@
+title: Path Traversal Sequence With Response 200
+id: 5f0c2f7a-8a3e-4c1e-9d3b-0a1b2c3d4e03
+status: experimental
+description: Detects URLs that contain a parent directory sequence and received an HTTP 200 response. A 200 only means the server sent a response; whether the file content was actually returned must be checked separately, for example by the response size. Variants such as backslash sequences and double encoding are not covered.
+author: Copy and Run
+date: 2026-10-16
+logsource:
+  category: webserver
+detection:
+  selection_uri:
+    - cs-uri-stem|contains:
+        - '../'
+        - '..%2f'
+        - '%2e%2e%2f'
+    - cs-uri-query|contains:
+        - '../'
+        - '..%2f'
+        - '%2e%2e%2f'
+  selection_status:
+    sc-status: 200
+  condition: selection_uri and selection_status
+falsepositives:
+  - Applications that put relative paths in URLs on purpose
+  - Requests whose response is a normal page or an error page returned with status 200
+level: medium

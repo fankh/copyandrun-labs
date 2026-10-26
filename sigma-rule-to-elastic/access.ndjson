@@ -1,0 +1,28 @@
+{"index":{"_index":"web-access-sigma"}}
+{"@timestamp":"2026-10-16T09:00:01Z","source":{"ip":"10.0.0.21"},"http":{"request":{"method":"GET"},"response":{"status_code":200}},"url":{"path":"/index.html"},"user_agent":{"original":"Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}}
+{"index":{"_index":"web-access-sigma"}}
+{"@timestamp":"2026-10-16T09:00:05Z","source":{"ip":"10.0.0.22"},"http":{"request":{"method":"GET"},"response":{"status_code":200}},"url":{"path":"/products/list"},"user_agent":{"original":"Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0)"}}
+{"index":{"_index":"web-access-sigma"}}
+{"@timestamp":"2026-10-16T09:01:10Z","source":{"ip":"192.168.5.77"},"http":{"request":{"method":"GET"},"response":{"status_code":404}},"url":{"path":"/wp-admin/login.php"},"user_agent":{"original":"Mozilla/5.0 (X11; Linux x86_64)"}}
+{"index":{"_index":"web-access-sigma"}}
+{"@timestamp":"2026-10-16T09:01:12Z","source":{"ip":"192.168.5.77"},"http":{"request":{"method":"GET"},"response":{"status_code":403}},"url":{"path":"/admin/config"},"user_agent":{"original":"Mozilla/5.0 (X11; Linux x86_64)"}}
+{"index":{"_index":"web-access-sigma"}}
+{"@timestamp":"2026-10-16T09:01:15Z","source":{"ip":"192.168.5.77"},"http":{"request":{"method":"GET"},"response":{"status_code":404}},"url":{"path":"/phpmyadmin/index.php"},"user_agent":{"original":"Mozilla/5.0 (X11; Linux x86_64)"}}
+{"index":{"_index":"web-access-sigma"}}
+{"@timestamp":"2026-10-16T09:02:00Z","source":{"ip":"10.0.0.15"},"http":{"request":{"method":"GET"},"response":{"status_code":200}},"url":{"path":"/admin/dashboard"},"user_agent":{"original":"Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}}
+{"index":{"_index":"web-access-sigma"}}
+{"@timestamp":"2026-10-16T09:02:30Z","source":{"ip":"10.0.0.15"},"http":{"request":{"method":"GET"},"response":{"status_code":403}},"url":{"path":"/admin/audit-export"},"user_agent":{"original":"Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}}
+{"index":{"_index":"web-access-sigma"}}
+{"@timestamp":"2026-10-16T09:03:00Z","source":{"ip":"172.16.8.9"},"http":{"request":{"method":"GET"},"response":{"status_code":200}},"url":{"path":"/login"},"user_agent":{"original":"sqlmap/1.8.4#stable (https://sqlmap.org)"}}
+{"index":{"_index":"web-access-sigma"}}
+{"@timestamp":"2026-10-16T09:03:04Z","source":{"ip":"172.16.8.9"},"http":{"request":{"method":"POST"},"response":{"status_code":500}},"url":{"path":"/login"},"user_agent":{"original":"sqlmap/1.8.4#stable (https://sqlmap.org)"}}
+{"index":{"_index":"web-access-sigma"}}
+{"@timestamp":"2026-10-16T09:04:00Z","source":{"ip":"172.16.8.30"},"http":{"request":{"method":"GET"},"response":{"status_code":200}},"url":{"path":"/"},"user_agent":{"original":"Mozilla/5.00 (Nikto/2.5.0) (Evasions:None) (Test:Port Check)"}}
+{"index":{"_index":"web-access-sigma"}}
+{"@timestamp":"2026-10-16T09:05:00Z","source":{"ip":"10.0.0.50"},"http":{"request":{"method":"GET"},"response":{"status_code":200}},"url":{"path":"/"},"user_agent":{"original":"Mozilla/5.00 (Nikto/2.5.0) (Evasions:None) (Test:Port Check)"}}
+{"index":{"_index":"web-access-sigma"}}
+{"@timestamp":"2026-10-16T09:06:00Z","source":{"ip":"192.168.5.80"},"http":{"request":{"method":"GET"},"response":{"status_code":200}},"url":{"path":"/download","query":"file=../../etc/passwd"},"user_agent":{"original":"curl/8.5.0"}}
+{"index":{"_index":"web-access-sigma"}}
+{"@timestamp":"2026-10-16T09:06:20Z","source":{"ip":"192.168.5.80"},"http":{"request":{"method":"GET"},"response":{"status_code":404}},"url":{"path":"/download","query":"file=..%2f..%2fsecret.txt"},"user_agent":{"original":"curl/8.5.0"}}
+{"index":{"_index":"web-access-sigma"}}
+{"@timestamp":"2026-10-16T09:07:00Z","source":{"ip":"10.0.0.23"},"http":{"request":{"method":"GET"},"response":{"status_code":200}},"url":{"path":"/docs/guide.html"},"user_agent":{"original":"Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}}

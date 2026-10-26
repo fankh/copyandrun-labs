@@ -1,0 +1,17 @@
+pipeline {
+  agent any
+  stages {
+    stage('SAST') {
+      steps {
+        sh 'pip install --quiet bandit semgrep'
+        sh 'bandit -r app --severity-level high'
+        sh 'bash ci/semgrep.sh'
+      }
+      post {
+        always {
+          archiveArtifacts artifacts: 'semgrep.sarif', allowEmptyArchive: true
+        }
+      }
+    }
+  }
+}

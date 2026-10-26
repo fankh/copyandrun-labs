@@ -1,0 +1,8 @@
+# cr-zap baseline rules
+10010	FAIL	(Cookie No HttpOnly Flag)
+10020	FAIL	(Missing Anti-clickjacking Header)
+10021	FAIL	(X-Content-Type-Options Header Missing)
+10038	FAIL	(Content Security Policy (CSP) Header Not Set)
+10054	FAIL	(Cookie without SameSite Attribute)
+10049	IGNORE	(Storable and Cacheable Content)
+10112	IGNORE	(Session Management Response Identified)

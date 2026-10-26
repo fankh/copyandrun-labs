@@ -1,0 +1,1 @@
+{"query": "SELECT source.ip AS ip, COUNT(*) AS requests, COUNT(source.geo.country_iso_code) AS with_geo, COUNT(\"source.as.organization_name\") AS with_asn FROM \"access-demo\" GROUP BY source.ip ORDER BY requests DESC"}

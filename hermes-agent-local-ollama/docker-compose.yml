@@ -1,0 +1,23 @@
+services:
+  hermes:
+    build: .
+    image: cr-hermes:lab
+    container_name: cr-hermes-lab
+    tty: true
+    stdin_open: true
+    working_dir: /home/agent
+    volumes:
+      - hermes-data:/home/agent/.hermes
+      - hermes-practice:/home/agent/practice
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      HERMES_DASHBOARD_BASIC_AUTH_USERNAME: admin
+      HERMES_DASHBOARD_BASIC_AUTH_PASSWORD: lab-only-pass
+      HERMES_DASHBOARD_BASIC_AUTH_SECRET: lab-only-secret-0123456789abcdef
+    ports:
+      - "127.0.0.1:5500:9119"
+
+volumes:
+  hermes-data:
+  hermes-practice:

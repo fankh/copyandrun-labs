@@ -1,0 +1,17 @@
+{
+  "index_patterns": ["agent-audit*", "agent-alerts*"],
+  "template": {
+    "settings": { "number_of_shards": 1, "number_of_replicas": 0 },
+    "mappings": {
+      "dynamic_templates": [
+        { "strings_as_keyword": { "match_mapping_type": "string", "mapping": { "type": "keyword" } } }
+      ],
+      "properties": {
+        "@timestamp": { "type": "date" },
+        "seq": { "type": "integer" },
+        "duration_ms": { "type": "float" },
+        "args_summary": { "type": "text", "fields": { "keyword": { "type": "keyword", "ignore_above": 256 } } }
+      }
+    }
+  }
+}

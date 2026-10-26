@@ -1,0 +1,53 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>업로드 연습</title>
+<style>
+  body { font: 15px sans-serif; max-width: 640px; margin: 24px auto; }
+  label { display: block; margin: 8px 0 2px; }
+  input, textarea { width: 100%; box-sizing: border-box; padding: 6px; }
+  button { margin-top: 10px; padding: 6px 14px; }
+  pre { background: #f4f4f4; padding: 10px; white-space: pre-wrap; }
+</style>
+<h2>업로드 연습</h2>
+<form id="up">
+  <label>파일 이름 (요청에 담기는 값)</label>
+  <input id="name" value="a.txt">
+  <label>내용</label>
+  <textarea id="body" rows="2">hello</textarea>
+  <label>내용 크기 (KB, 비우면 위 내용을 그대로 보냄)</label>
+  <input id="kb" type="number">
+  <button>업로드</button>
+</form>
+<form id="dl">
+  <label>내려받을 id</label>
+  <input id="fid">
+  <button>내려받기 응답 확인</button>
+</form>
+<pre id="out">결과가 여기에 표시됩니다.</pre>
+<script>
+  const out = document.getElementById("out");
+
+  async function show(res) {
+    const text = await res.text();
+    const keep = ["content-disposition", "x-content-type-options"];
+    const heads = keep.filter(k => res.headers.get(k))
+      .map(k => k + ": " + res.headers.get(k)).join("\n");
+    out.textContent = "응답 코드: " + res.status + "\n" + (heads ? heads + "\n" : "") + "본문: " + text;
+    const m = text.match(/id=([0-9a-f]+)/);
+    if (m) document.getElementById("fid").value = m[1];
+  }
+
+  document.getElementById("up").onsubmit = async (e) => {
+    e.preventDefault();
+    const kb = Number(document.getElementById("kb").value);
+    const content = kb ? "a".repeat(kb * 1000) : document.getElementById("body").value;
+    const form = new FormData();
+    form.append("file", new File([content], document.getElementById("name").value));
+    await show(await fetch("/upload", { method: "POST", body: form }));
+  };
+
+  document.getElementById("dl").onsubmit = async (e) => {
+    e.preventDefault();
+    await show(await fetch("/files/" + document.getElementById("fid").value));
+  };
+</script>

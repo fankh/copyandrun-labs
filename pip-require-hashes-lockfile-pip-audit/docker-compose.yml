@@ -1,0 +1,13 @@
+services:
+  internal:
+    image: pypiserver/pypiserver:v2.4.2
+    container_name: cr-t4-internal
+    command: run -P . -a . -o --disable-fallback /data/packages
+    ports:
+      - "127.0.0.1:19801:8080"
+  public:
+    image: pypiserver/pypiserver:v2.4.2
+    container_name: cr-t4-public
+    command: run -P . -a . -o --disable-fallback /data/packages
+    ports:
+      - "127.0.0.1:19802:8080"

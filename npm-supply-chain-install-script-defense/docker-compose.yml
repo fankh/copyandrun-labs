@@ -1,0 +1,13 @@
+services:
+  verdaccio:
+    image: verdaccio/verdaccio:6
+    container_name: cr-t3-verdaccio
+    ports:
+      - "127.0.0.1:14873:4873"
+    volumes:
+      - ./verdaccio-config.yaml:/verdaccio/conf/config.yaml:ro
+      - cr-t3-verdaccio-storage:/verdaccio/storage
+
+volumes:
+  cr-t3-verdaccio-storage:
+    name: cr-t3-verdaccio-storage

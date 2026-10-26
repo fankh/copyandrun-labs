@@ -1,0 +1,37 @@
+name: cr-t11
+services:
+  opensearch:
+    image: opensearchproject/opensearch:3.2.0
+    container_name: cr-t11-opensearch
+    mem_limit: 1g
+    environment:
+      - discovery.type=single-node
+      - OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m
+      - DISABLE_INSTALL_DEMO_CONFIG=true
+      - DISABLE_SECURITY_PLUGIN=true # 실습 전용: 인증과 TLS를 끕니다
+      - http.compression=false # 브라우저로 직접 열어 볼 때 응답이 비는 것을 막습니다
+    ulimits:
+      nofile: { soft: 65536, hard: 65536 }
+    ports: ["127.0.0.1:5740:9200"]
+    volumes: [opensearch-data:/usr/share/opensearch/data]
+  dashboards:
+    image: opensearchproject/opensearch-dashboards:3.2.0
+    container_name: cr-t11-dashboards
+    mem_limit: 1g
+    environment:
+      - OPENSEARCH_HOSTS=["http://opensearch:9200"]
+      - DISABLE_SECURITY_DASHBOARDS_PLUGIN=true # 실습 전용: 로그인 화면을 끕니다
+    ports: ["127.0.0.1:5741:5601"]
+    depends_on: [opensearch]
+  proxy:
+    image: python:3.12-slim
+    container_name: cr-t11-proxy
+    command: sh -c "pip install -q flask==3.1.3 && python /app/app.py"
+    environment:
+      - AUDIT=${AUDIT:-1} # 0 이면 감사 기록 없이 도구만 실행합니다
+      - OS_URL=http://opensearch:9200
+    volumes: ["./app.py:/app/app.py:ro"]
+    ports: ["127.0.0.1:5742:8000"]
+    depends_on: [opensearch]
+volumes:
+  opensearch-data:

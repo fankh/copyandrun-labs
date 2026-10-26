@@ -1,0 +1,10 @@
+# .pre-commit-config.yaml 로 저장합니다. 스캐너는 저장소 루트의 tools 폴더에 둡니다.
+repos:
+  - repo: local
+    hooks:
+      - id: agent-config-scan
+        name: 에이전트 규칙 파일 숨은 지시 검사
+        entry: python tools/agent_config_scan.py
+        language: system
+        pass_filenames: true
+        files: (?i)(^|/)(agents\.md|claude\.md|gemini\.md|\.cursorrules|\.windsurfrules|\.clinerules|copilot-instructions\.md|[^/]+\.instructions\.md|\.cursor/rules/[^/]+\.mdc)$

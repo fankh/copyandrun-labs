@@ -1,0 +1,22 @@
+services:
+  elk:
+    build: .
+    image: elk-lab-vm
+    container_name: elk-lab-vm
+    hostname: elk-vm
+    # 127.0.0.1 에만 열어 내 PC 밖에서는 접근할 수 없게 합니다
+    ports:
+      - "127.0.0.1:9200:9200"     # Elasticsearch
+      - "127.0.0.1:5601:5601"     # Kibana
+      - "127.0.0.1:5044:5044"     # Logstash
+    volumes:
+      - ..:/labs                  # handson 폴더 전체를 서버의 /labs 로 연결
+    working_dir: /labs
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    stop_grace_period: 5s

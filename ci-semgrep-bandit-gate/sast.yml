@@ -1,0 +1,19 @@
+name: sast
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  sast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install scanners
+        run: pip install bandit semgrep
+      - name: Bandit (fail on HIGH)
+        run: bandit -r app --severity-level high
+      - name: Semgrep (OWASP + 커스텀 룰)
+        run: semgrep --config p/owasp-top-ten --config rules --error app

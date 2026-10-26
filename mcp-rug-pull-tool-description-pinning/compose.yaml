@@ -1,0 +1,16 @@
+services:
+  lab:
+    build: .
+    image: cr-t1-mcp:lab
+    container_name: cr-t1-mcp-lab
+    working_dir: /lab
+    volumes:
+      - ./:/lab
+    environment:
+      HOST: 0.0.0.0
+      DANGEROUSLY_BIND_ALL_INTERFACES: "true"
+      DANGEROUSLY_OMIT_AUTH: "true"
+      ALLOWED_ORIGINS: "http://127.0.0.1:6274,http://localhost:6274"
+    ports:
+      - "127.0.0.1:5611:5000"
+      - "127.0.0.1:6274:6274"

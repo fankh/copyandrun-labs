@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "analysis": {
+      "normalizer": {
+        "lowercase_norm": { "type": "custom", "filter": ["lowercase"] }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "@timestamp": { "type": "date" },
+      "source": { "properties": { "ip": { "type": "ip" } } },
+      "http": { "properties": {
+        "request": { "properties": { "method": { "type": "keyword" } } },
+        "response": { "properties": { "status_code": { "type": "long" } } } } },
+      "url": { "properties": {
+        "path": { "type": "keyword", "normalizer": "lowercase_norm" },
+        "query": { "type": "keyword", "normalizer": "lowercase_norm" } } },
+      "user_agent": { "properties": { "original": { "type": "keyword", "normalizer": "lowercase_norm" } } }
+    }
+  }
+}
