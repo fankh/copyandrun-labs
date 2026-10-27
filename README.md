@@ -23,6 +23,7 @@
 | [`hermes-agent-mcp-filesystem`](hermes-agent-mcp-filesystem/) | [Hermes Agent에 MCP filesystem 서버를 붙이고 접근 범위 제한하기](https://copyandrun.com/blog/hermes-agent-mcp-filesystem/) |
 | [`hermes-agent-skills-and-memory`](hermes-agent-skills-and-memory/) | [Hermes Agent의 스킬과 메모리, 저장되는 정보 확인하기](https://copyandrun.com/blog/hermes-agent-skills-and-memory/) |
 | [`idor-ownership-check-flask`](idor-ownership-check-flask/) | [Flask에서 소유자 검사로 IDOR 막기](https://copyandrun.com/blog/idor-ownership-check-flask/) |
+| [`keycloak-oidc-pkce-local-login`](keycloak-oidc-pkce-local-login/) | [Keycloak 로컬 구성과 OIDC PKCE 로그인: 코드 가로채기 방어 확인](https://copyandrun.com/blog/keycloak-oidc-pkce-local-login/) |
 | [`kibana-dashboard-geoip`](kibana-dashboard-geoip/) | [Kibana 대시보드와 GeoIP 지도로 접속 현황 보기](https://copyandrun.com/blog/kibana-dashboard-geoip/) |
 | [`kibana-install-connect`](kibana-install-connect/) | [Kibana 설치하고 Elasticsearch에 연결하기](https://copyandrun.com/blog/kibana-install-connect/) |
 | [`llm-agent-audit-log-opensearch`](llm-agent-audit-log-opensearch/) | [에이전트가 한 일을 추적하는 감사 로그: 호출마다 실행 주체와 도구를 남기기](https://copyandrun.com/blog/llm-agent-audit-log-opensearch/) |
@@ -34,6 +35,8 @@
 | [`npm-supply-chain-install-script-defense`](npm-supply-chain-install-script-defense/) | [npm 설치 때 실행되는 스크립트를 막고 락파일 바뀐 곳 찾기](https://copyandrun.com/blog/npm-supply-chain-install-script-defense/) |
 | [`opensearch-ollama-ai-siem`](opensearch-ollama-ai-siem/) | [Docker로 OpenSearch와 Ollama 띄워 비용 없는 AI-SIEM 만들기](https://copyandrun.com/blog/opensearch-ollama-ai-siem/) |
 | [`owasp-agentic-top10-mapped-to-hands-on`](owasp-agentic-top10-mapped-to-hands-on/) | [OWASP 에이전트 앱 Top 10을 내가 해 본 실습 결과에 대응시키기](https://copyandrun.com/blog/owasp-agentic-top10-mapped-to-hands-on/) |
+| [`passkey-webauthn-flask-virtual-authenticator`](passkey-webauthn-flask-virtual-authenticator/) | [패스키(WebAuthn)를 Flask에 붙이기: 가상 인증기로 등록과 로그인 확인](https://copyandrun.com/blog/passkey-webauthn-flask-virtual-authenticator/) |
+| [`pii-masking-logs-and-llm-prompts`](pii-masking-logs-and-llm-prompts/) | [로그와 LLM 프롬프트의 개인정보 마스킹: 주민번호·전화번호 패턴과 점검표](https://copyandrun.com/blog/pii-masking-logs-and-llm-prompts/) |
 | [`pip-require-hashes-lockfile-pip-audit`](pip-require-hashes-lockfile-pip-audit/) | [pip 의존성에 해시를 고정하고 취약점 점검하기](https://copyandrun.com/blog/pip-require-hashes-lockfile-pip-audit/) |
 | [`prompt-injection-embedding-detector`](prompt-injection-embedding-detector/) | [임베딩 유사도로 프롬프트 인젝션 문장을 걸러 보기](https://copyandrun.com/blog/prompt-injection-embedding-detector/) |
 | [`python-password-hash-and-secrets`](python-password-hash-and-secrets/) | [파이썬 비밀번호 해시와 하드코딩된 시크릿 정리하기](https://copyandrun.com/blog/python-password-hash-and-secrets/) |

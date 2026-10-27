@@ -1,0 +1,20 @@
+name: cr-keycloak
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.8.1
+    container_name: cr-keycloak
+    command: ["start-dev", "--import-realm"]
+    environment:
+      # 실습용 임시 값입니다. 실제 비밀번호가 아닙니다.
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: lab-admin-pass
+    ports:
+      - "127.0.0.1:5480:8080"
+    volumes:
+      - data:/opt/keycloak/data
+      - ./realm-lab.json:/opt/keycloak/data/import/realm-lab.json:ro
+
+volumes:
+  data:
+    name: cr-keycloak-data
