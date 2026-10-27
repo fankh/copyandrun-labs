@@ -1,7 +1,5 @@
 # Read-only Windows security baseline check. It changes nothing.
-# Usage: powershell -NoProfile -ExecutionPolicy Bypass -File .\Check-WindowsSecurity.ps1 [-Html report.html]
-param([string]$Html = "")
-
+# Usage: powershell -NoProfile -ExecutionPolicy Bypass -File .\Check-WindowsSecurity.ps1
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $results = New-Object System.Collections.Generic.List[object]
 
@@ -83,33 +81,3 @@ $results | Format-Table Item, Value, Status -AutoSize
 
 $count = $results | Group-Object Status | ForEach-Object { $_.Name + "=" + $_.Count }
 Write-Output ("Summary: " + ($count -join "  "))
-
-if ($Html -ne "") {
-    $os = (Get-CimInstance Win32_OperatingSystem).Caption
-    $rows = foreach ($r in $results) {
-        $cls = $r.Status.ToLower()
-        "<tr class='$cls'><td>$($r.Item)</td><td>$($r.Value)</td><td><b>$($r.Status)</b></td><td>$($r.Advice)</td></tr>"
-    }
-    $page = @"
-<!doctype html><meta charset="utf-8"><title>Windows security baseline</title>
-<style>
-body{font:15px Segoe UI,sans-serif;margin:24px;color:#222}
-h1{font-size:20px}
-table{border-collapse:collapse;width:100%}
-th,td{border:1px solid #ccc;padding:6px 10px;text-align:left}
-th{background:#f0f0f0}
-tr.pass td:nth-child(3){color:#0a7a2f}
-tr.warn td:nth-child(3){color:#b26a00}
-tr.fail td:nth-child(3){color:#c00}
-tr.fail{background:#fff0f0}
-tr.warn{background:#fff8e8}
-</style>
-<h1>Windows security baseline ($os)</h1>
-<p>$($count -join " / ")</p>
-<table><tr><th>Item</th><th>Value</th><th>Status</th><th>What to do</th></tr>
-$($rows -join "`n")
-</table>
-"@
-    Set-Content -Path $Html -Value $page -Encoding UTF8
-    Write-Output "Report written: $Html"
-}
