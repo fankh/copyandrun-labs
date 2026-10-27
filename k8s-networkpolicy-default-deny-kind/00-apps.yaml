@@ -1,0 +1,82 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: shop
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: outside
+---
+# web: 8080 포트로 응답하는 웹 파드
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web
+  namespace: shop
+  labels: {app: web}
+spec:
+  containers:
+    - name: web
+      image: busybox:1.37
+      command: ["sh", "-c", "mkdir -p /www && echo web-ok > /www/index.html && httpd -f -p 8080 -h /www"]
+---
+# db: 5432 포트로 응답하는 DB 흉내 파드 (실제 DB 대신 연결만 확인)
+apiVersion: v1
+kind: Pod
+metadata:
+  name: db
+  namespace: shop
+  labels: {app: db}
+spec:
+  containers:
+    - name: db
+      image: busybox:1.37
+      command: ["sh", "-c", "mkdir -p /www && echo db-ok > /www/index.html && httpd -f -p 5432 -h /www"]
+---
+# intruder: 같은 네임스페이스에 있지만 DB에 닿을 이유가 없는 파드
+apiVersion: v1
+kind: Pod
+metadata:
+  name: intruder
+  namespace: shop
+  labels: {app: intruder}
+spec:
+  containers:
+    - name: intruder
+      image: busybox:1.37
+      command: ["sh", "-c", "mkdir -p /www && echo intruder-ok > /www/index.html && httpd -f -p 8080 -h /www"]
+---
+# client: 다른 네임스페이스에서 웹을 부르는 파드
+apiVersion: v1
+kind: Pod
+metadata:
+  name: client
+  namespace: outside
+  labels: {app: client}
+spec:
+  containers:
+    - name: client
+      image: busybox:1.37
+      command: ["sleep", "86400"]
+---
+apiVersion: v1
+kind: Service
+metadata: {name: web, namespace: shop}
+spec:
+  selector: {app: web}
+  ports: [{port: 8080, targetPort: 8080}]
+---
+apiVersion: v1
+kind: Service
+metadata: {name: db, namespace: shop}
+spec:
+  selector: {app: db}
+  ports: [{port: 5432, targetPort: 5432}]
+---
+apiVersion: v1
+kind: Service
+metadata: {name: intruder, namespace: shop}
+spec:
+  selector: {app: intruder}
+  ports: [{port: 8080, targetPort: 8080}]

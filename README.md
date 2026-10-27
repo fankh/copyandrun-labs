@@ -23,6 +23,7 @@
 | [`hermes-agent-mcp-filesystem`](hermes-agent-mcp-filesystem/) | [Hermes Agent에 MCP filesystem 서버를 붙이고 접근 범위 제한하기](https://copyandrun.com/blog/hermes-agent-mcp-filesystem/) |
 | [`hermes-agent-skills-and-memory`](hermes-agent-skills-and-memory/) | [Hermes Agent의 스킬과 메모리, 저장되는 정보 확인하기](https://copyandrun.com/blog/hermes-agent-skills-and-memory/) |
 | [`idor-ownership-check-flask`](idor-ownership-check-flask/) | [Flask에서 소유자 검사로 IDOR 막기](https://copyandrun.com/blog/idor-ownership-check-flask/) |
+| [`k8s-networkpolicy-default-deny-kind`](k8s-networkpolicy-default-deny-kind/) | [Kubernetes NetworkPolicy 기본 거부: kind로 허용과 차단 확인](https://copyandrun.com/blog/k8s-networkpolicy-default-deny-kind/) |
 | [`keycloak-oidc-pkce-local-login`](keycloak-oidc-pkce-local-login/) | [Keycloak 로컬 구성과 OIDC PKCE 로그인: 코드 가로채기 방어 확인](https://copyandrun.com/blog/keycloak-oidc-pkce-local-login/) |
 | [`kibana-dashboard-geoip`](kibana-dashboard-geoip/) | [Kibana 대시보드와 GeoIP 지도로 접속 현황 보기](https://copyandrun.com/blog/kibana-dashboard-geoip/) |
 | [`kibana-install-connect`](kibana-install-connect/) | [Kibana 설치하고 Elasticsearch에 연결하기](https://copyandrun.com/blog/kibana-install-connect/) |
@@ -34,6 +35,7 @@
 | [`mcp-rug-pull-tool-description-pinning`](mcp-rug-pull-tool-description-pinning/) | [MCP 도구 설명이 승인 뒤에 바뀌는 rug pull 탐지하기](https://copyandrun.com/blog/mcp-rug-pull-tool-description-pinning/) |
 | [`npm-supply-chain-install-script-defense`](npm-supply-chain-install-script-defense/) | [npm 설치 때 실행되는 스크립트를 막고 락파일 바뀐 곳 찾기](https://copyandrun.com/blog/npm-supply-chain-install-script-defense/) |
 | [`opensearch-ollama-ai-siem`](opensearch-ollama-ai-siem/) | [Docker로 OpenSearch와 Ollama 띄워 비용 없는 AI-SIEM 만들기](https://copyandrun.com/blog/opensearch-ollama-ai-siem/) |
+| [`os-command-injection-flask-subprocess`](os-command-injection-flask-subprocess/) | [OS 명령어 인젝션: ping 기능으로 보는 shell=True의 위험과 수정](https://copyandrun.com/blog/os-command-injection-flask-subprocess/) |
 | [`owasp-agentic-top10-mapped-to-hands-on`](owasp-agentic-top10-mapped-to-hands-on/) | [OWASP 에이전트 앱 Top 10을 내가 해 본 실습 결과에 대응시키기](https://copyandrun.com/blog/owasp-agentic-top10-mapped-to-hands-on/) |
 | [`passkey-webauthn-flask-virtual-authenticator`](passkey-webauthn-flask-virtual-authenticator/) | [패스키(WebAuthn)를 Flask에 붙이기: 가상 인증기로 등록과 로그인 확인](https://copyandrun.com/blog/passkey-webauthn-flask-virtual-authenticator/) |
 | [`pii-masking-logs-and-llm-prompts`](pii-masking-logs-and-llm-prompts/) | [로그와 LLM 프롬프트의 개인정보 마스킹: 주민번호·전화번호 패턴과 점검표](https://copyandrun.com/blog/pii-masking-logs-and-llm-prompts/) |
@@ -45,7 +47,9 @@
 | [`siem-log-quality-checks`](siem-log-quality-checks/) | [SIEM에 들어온 로그가 믿을 만한지 점검하기: 유실, 중복, 시간 어긋남](https://copyandrun.com/blog/siem-log-quality-checks/) |
 | [`sigma-rule-to-elastic`](sigma-rule-to-elastic/) | [Sigma 룰을 작성하고 Elasticsearch 쿼리로 변환해 탐지하기](https://copyandrun.com/blog/sigma-rule-to-elastic/) |
 | [`sql-parameter-binding-flask`](sql-parameter-binding-flask/) | [Flask에서 SQL 쿼리를 파라미터 바인딩으로 고치기](https://copyandrun.com/blog/sql-parameter-binding-flask/) |
+| [`ssrf-url-fetch-allowlist-flask`](ssrf-url-fetch-allowlist-flask/) | [SSRF 막기: URL 미리보기 기능에서 내부 주소 접근 차단](https://copyandrun.com/blog/ssrf-url-fetch-allowlist-flask/) |
 | [`trivy-image-scan-gate`](trivy-image-scan-gate/) | [Trivy로 컨테이너 이미지 취약점을 스캔하고 빌드 게이트 만들기](https://copyandrun.com/blog/trivy-image-scan-gate/) |
+| [`xss-output-escaping-and-csp-flask`](xss-output-escaping-and-csp-flask/) | [XSS 막기: 출력 이스케이프와 CSP를 Flask에 적용하고 브라우저에서 확인](https://copyandrun.com/blog/xss-output-escaping-and-csp-flask/) |
 | [`zap-baseline-scan-own-app`](zap-baseline-scan-own-app/) | [OWASP ZAP baseline 스캔으로 내 앱을 점검하고 보고서 읽기](https://copyandrun.com/blog/zap-baseline-scan-own-app/) |
 
 라이선스는 MIT 입니다.

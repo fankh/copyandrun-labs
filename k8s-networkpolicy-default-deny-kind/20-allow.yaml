@@ -1,0 +1,69 @@
+# 1) 모든 파드가 클러스터 DNS 를 조회할 수 있게 합니다.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-dns-egress
+  namespace: shop
+spec:
+  podSelector: {}
+  policyTypes: [Egress]
+  egress:
+    - to:
+        - namespaceSelector:
+            matchLabels: {kubernetes.io/metadata.name: kube-system}
+          podSelector:
+            matchLabels: {k8s-app: kube-dns}
+      ports:
+        - {protocol: UDP, port: 53}
+        - {protocol: TCP, port: 53}
+---
+# 2) web: outside 네임스페이스에서 8080 으로 들어오는 연결만 받습니다.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: web-ingress-from-outside
+  namespace: shop
+spec:
+  podSelector:
+    matchLabels: {app: web}
+  policyTypes: [Ingress]
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels: {kubernetes.io/metadata.name: outside}
+      ports:
+        - {protocol: TCP, port: 8080}
+---
+# 3) web: DB 의 5432 로만 나갈 수 있습니다.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: web-egress-to-db
+  namespace: shop
+spec:
+  podSelector:
+    matchLabels: {app: web}
+  policyTypes: [Egress]
+  egress:
+    - to:
+        - podSelector:
+            matchLabels: {app: db}
+      ports:
+        - {protocol: TCP, port: 5432}
+---
+# 4) db: web 파드에서 5432 로 들어오는 연결만 받습니다.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: db-ingress-from-web
+  namespace: shop
+spec:
+  podSelector:
+    matchLabels: {app: db}
+  policyTypes: [Ingress]
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels: {app: web}
+      ports:
+        - {protocol: TCP, port: 5432}

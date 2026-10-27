@@ -1,0 +1,9 @@
+# shop 네임스페이스의 모든 파드: 들어오는 연결과 나가는 연결을 기본으로 막습니다.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny-all
+  namespace: shop
+spec:
+  podSelector: {}
+  policyTypes: [Ingress, Egress]
