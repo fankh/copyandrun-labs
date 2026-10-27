@@ -34,6 +34,7 @@
 | [`logstash-grok-nginx-ecs`](logstash-grok-nginx-ecs/) | [Logstash로 nginx 로그를 Grok으로 파싱하고 ECS로 정규화하기](https://copyandrun.com/blog/logstash-grok-nginx-ecs/) |
 | [`mcp-rug-pull-tool-description-pinning`](mcp-rug-pull-tool-description-pinning/) | [MCP 도구 설명이 승인 뒤에 바뀌는 rug pull 탐지하기](https://copyandrun.com/blog/mcp-rug-pull-tool-description-pinning/) |
 | [`npm-supply-chain-install-script-defense`](npm-supply-chain-install-script-defense/) | [npm 설치 때 실행되는 스크립트를 막고 락파일 바뀐 곳 찾기](https://copyandrun.com/blog/npm-supply-chain-install-script-defense/) |
+| [`open-webui-ollama-connect-fix`](open-webui-ollama-connect-fix/) | [Open WebUI를 Docker로 띄워 Ollama에 연결하고 모델이 안 보일 때 고치기](https://copyandrun.com/blog/open-webui-ollama-connect-fix/) |
 | [`opensearch-ollama-ai-siem`](opensearch-ollama-ai-siem/) | [Docker로 OpenSearch와 Ollama 띄워 비용 없는 AI-SIEM 만들기](https://copyandrun.com/blog/opensearch-ollama-ai-siem/) |
 | [`os-command-injection-flask-subprocess`](os-command-injection-flask-subprocess/) | [OS 명령어 인젝션: ping 기능으로 보는 shell=True의 위험과 수정](https://copyandrun.com/blog/os-command-injection-flask-subprocess/) |
 | [`owasp-agentic-top10-mapped-to-hands-on`](owasp-agentic-top10-mapped-to-hands-on/) | [OWASP 에이전트 앱 Top 10을 내가 해 본 실습 결과에 대응시키기](https://copyandrun.com/blog/owasp-agentic-top10-mapped-to-hands-on/) |
@@ -49,6 +50,7 @@
 | [`sql-parameter-binding-flask`](sql-parameter-binding-flask/) | [Flask에서 SQL 쿼리를 파라미터 바인딩으로 고치기](https://copyandrun.com/blog/sql-parameter-binding-flask/) |
 | [`ssrf-url-fetch-allowlist-flask`](ssrf-url-fetch-allowlist-flask/) | [SSRF 막기: URL 미리보기 기능에서 내부 주소 접근 차단](https://copyandrun.com/blog/ssrf-url-fetch-allowlist-flask/) |
 | [`trivy-image-scan-gate`](trivy-image-scan-gate/) | [Trivy로 컨테이너 이미지 취약점을 스캔하고 빌드 게이트 만들기](https://copyandrun.com/blog/trivy-image-scan-gate/) |
+| [`windows-security-baseline-harden-recheck`](windows-security-baseline-harden-recheck/) | [Windows 보안 설정을 PowerShell로 점검하고 고친 뒤 다시 확인하기](https://copyandrun.com/blog/windows-security-baseline-harden-recheck/) |
 | [`xss-output-escaping-and-csp-flask`](xss-output-escaping-and-csp-flask/) | [XSS 막기: 출력 이스케이프와 CSP를 Flask에 적용하고 브라우저에서 확인](https://copyandrun.com/blog/xss-output-escaping-and-csp-flask/) |
 | [`zap-baseline-scan-own-app`](zap-baseline-scan-own-app/) | [OWASP ZAP baseline 스캔으로 내 앱을 점검하고 보고서 읽기](https://copyandrun.com/blog/zap-baseline-scan-own-app/) |
 

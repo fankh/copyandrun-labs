@@ -1,0 +1,21 @@
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: cr-open-webui
+    ports:
+      - "127.0.0.1:5600:8080"
+    environment:
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      WEBUI_AUTH: "True"
+      ENABLE_SIGNUP: "True"
+      WEBUI_SECRET_KEY: lab-only-secret-change-me
+      ANONYMIZED_TELEMETRY: "False"
+      SCARF_NO_ANALYTICS: "true"
+      DO_NOT_TRACK: "true"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - open-webui-data:/app/backend/data
+
+volumes:
+  open-webui-data:
