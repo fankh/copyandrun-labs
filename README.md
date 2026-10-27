@@ -50,6 +50,7 @@
 | [`sql-parameter-binding-flask`](sql-parameter-binding-flask/) | [Flask에서 SQL 쿼리를 파라미터 바인딩으로 고치기](https://copyandrun.com/blog/sql-parameter-binding-flask/) |
 | [`ssrf-url-fetch-allowlist-flask`](ssrf-url-fetch-allowlist-flask/) | [SSRF 막기: URL 미리보기 기능에서 내부 주소 접근 차단](https://copyandrun.com/blog/ssrf-url-fetch-allowlist-flask/) |
 | [`trivy-image-scan-gate`](trivy-image-scan-gate/) | [Trivy로 컨테이너 이미지 취약점을 스캔하고 빌드 게이트 만들기](https://copyandrun.com/blog/trivy-image-scan-gate/) |
+| [`windows-event-4625-failed-logon-analysis-lab-vm`](windows-event-4625-failed-logon-analysis-lab-vm/) | [Windows 이벤트 4625 로그온 실패를 분석하고 계정 잠금 정책으로 대응하기](https://copyandrun.com/blog/windows-event-4625-failed-logon-analysis-lab-vm/) |
 | [`windows-security-baseline-harden-recheck`](windows-security-baseline-harden-recheck/) | [Windows 보안 설정을 PowerShell로 점검하고 고친 뒤 다시 확인하기](https://copyandrun.com/blog/windows-security-baseline-harden-recheck/) |
 | [`xss-output-escaping-and-csp-flask`](xss-output-escaping-and-csp-flask/) | [XSS 막기: 출력 이스케이프와 CSP를 Flask에 적용하고 브라우저에서 확인](https://copyandrun.com/blog/xss-output-escaping-and-csp-flask/) |
 | [`zap-baseline-scan-own-app`](zap-baseline-scan-own-app/) | [OWASP ZAP baseline 스캔으로 내 앱을 점검하고 보고서 읽기](https://copyandrun.com/blog/zap-baseline-scan-own-app/) |

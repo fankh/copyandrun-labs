@@ -1,0 +1,1 @@
+<ViewerConfig><QueryConfig><QueryParams><UserQuery /></QueryParams><QueryNode><Name>Failed logons 4625</Name><QueryList><Query Id="0" Path="Security"><Select Path="Security">*[System[(EventID=4625)]]</Select></Query></QueryList></QueryNode></QueryConfig></ViewerConfig>
