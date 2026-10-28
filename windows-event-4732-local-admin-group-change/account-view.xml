@@ -1,0 +1,1 @@
+﻿<ViewerConfig><QueryConfig><QueryParams><UserQuery /></QueryParams><QueryNode><Name>Account and group changes 4720 4732</Name><QueryList><Query Id="0" Path="Security"><Select Path="Security">*[System[(EventID=4720 or EventID=4732)]]</Select></Query></QueryList></QueryNode></QueryConfig></ViewerConfig>

@@ -50,7 +50,10 @@
 | [`sql-parameter-binding-flask`](sql-parameter-binding-flask/) | [Flask에서 SQL 쿼리를 파라미터 바인딩으로 고치기](https://copyandrun.com/blog/sql-parameter-binding-flask/) |
 | [`ssrf-url-fetch-allowlist-flask`](ssrf-url-fetch-allowlist-flask/) | [SSRF 막기: URL 미리보기 기능에서 내부 주소 접근 차단](https://copyandrun.com/blog/ssrf-url-fetch-allowlist-flask/) |
 | [`trivy-image-scan-gate`](trivy-image-scan-gate/) | [Trivy로 컨테이너 이미지 취약점을 스캔하고 빌드 게이트 만들기](https://copyandrun.com/blog/trivy-image-scan-gate/) |
+| [`windows-defender-eicar-detection-recheck`](windows-defender-eicar-detection-recheck/) | [Windows Defender 실시간 보호가 꺼져 있을 때 EICAR 시험 파일로 탐지 여부를 확인하고 다시 시험하기](https://copyandrun.com/blog/windows-defender-eicar-detection-recheck/) |
 | [`windows-event-4625-failed-logon-analysis-lab-vm`](windows-event-4625-failed-logon-analysis-lab-vm/) | [Windows 이벤트 4625 로그온 실패를 분석하고 계정 잠금 정책으로 대응하기](https://copyandrun.com/blog/windows-event-4625-failed-logon-analysis-lab-vm/) |
+| [`windows-event-4688-process-creation-audit`](windows-event-4688-process-creation-audit/) | [Windows 프로세스 만들기 감사와 명령줄 기록을 켜서 이벤트 4688로 실행 흔적 남기기](https://copyandrun.com/blog/windows-event-4688-process-creation-audit/) |
+| [`windows-event-4732-local-admin-group-change`](windows-event-4732-local-admin-group-change/) | [Windows 로컬 Administrators 그룹에 계정이 추가된 변경을 이벤트 4720과 4732로 남기고 조회하기](https://copyandrun.com/blog/windows-event-4732-local-admin-group-change/) |
 | [`windows-security-baseline-harden-recheck`](windows-security-baseline-harden-recheck/) | [Windows 보안 설정을 PowerShell로 점검하고 고친 뒤 다시 확인하기](https://copyandrun.com/blog/windows-security-baseline-harden-recheck/) |
 | [`xss-output-escaping-and-csp-flask`](xss-output-escaping-and-csp-flask/) | [XSS 막기: 출력 이스케이프와 CSP를 Flask에 적용하고 브라우저에서 확인](https://copyandrun.com/blog/xss-output-escaping-and-csp-flask/) |
 | [`zap-baseline-scan-own-app`](zap-baseline-scan-own-app/) | [OWASP ZAP baseline 스캔으로 내 앱을 점검하고 보고서 읽기](https://copyandrun.com/blog/zap-baseline-scan-own-app/) |
