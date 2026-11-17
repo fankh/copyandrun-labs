@@ -16,6 +16,7 @@
 | [`ai-hallucinated-package-name-check`](ai-hallucinated-package-name-check/) | [AI가 지어낸 패키지 이름 가려내기: 설치 전 PyPI 조회와 CI 게이트](https://copyandrun.com/blog/ai-hallucinated-package-name-check/) |
 | [`aide-file-integrity-baseline`](aide-file-integrity-baseline/) | [AIDE로 파일 무결성 기준선 만들고 변경 감지하기: 수정, 권한, 삭제, 추가와 기준선 바꿔치기](https://copyandrun.com/blog/aide-file-integrity-baseline/) |
 | [`apache-axis1-cve-2026-90436-check`](apache-axis1-cve-2026-90436-check/) | [CVE-2026-90436 점검: 서버에서 Apache Axis 1.x jar 찾기와 조치](https://copyandrun.com/blog/apache-axis1-cve-2026-90436-check/) |
+| [`apache-httpd-mod-http2-cve-2026-119618-check`](apache-httpd-mod-http2-cve-2026-119618-check/) | [CVE-2026-119618 점검: Apache 2.4.55~2.4.70의 HTTP/2 사용 여부 확인](https://copyandrun.com/blog/apache-httpd-mod-http2-cve-2026-119618-check/) |
 | [`api-bola-object-level-authz-test`](api-bola-object-level-authz-test/) | [API BOLA 점검: 로그인한 사용자가 남의 주문 번호로 조회되는지 직접 시험하기](https://copyandrun.com/blog/api-bola-object-level-authz-test/) |
 | [`api-excessive-data-exposure-response-filter`](api-excessive-data-exposure-response-filter/) | [API 과다 응답 걸러 내기: FastAPI response_model과 응답 필드 점검 게이트](https://copyandrun.com/blog/api-excessive-data-exposure-response-filter/) |
 | [`api-mass-assignment-pydantic-allowlist`](api-mass-assignment-pydantic-allowlist/) | [API 대량 할당 막기: FastAPI Pydantic extra=forbid](https://copyandrun.com/blog/api-mass-assignment-pydantic-allowlist/) |
@@ -105,6 +106,7 @@
 | [`openapi-schemathesis-api-fuzz-test`](openapi-schemathesis-api-fuzz-test/) | [OpenAPI 명세로 API 자동 시험: Schemathesis로 500 오류 찾기](https://copyandrun.com/blog/openapi-schemathesis-api-fuzz-test/) |
 | [`openldap-acl-anonymous-vs-bound`](openldap-acl-anonymous-vs-bound/) | [OpenLDAP ACL 점검하기: 익명과 로그인 사용자가 비밀번호 해시를 읽을 수 있는지 확인](https://copyandrun.com/blog/openldap-acl-anonymous-vs-bound/) |
 | [`opensearch-ollama-ai-siem`](opensearch-ollama-ai-siem/) | [Docker로 OpenSearch와 Ollama 띄워 비용 없는 AI-SIEM 만들기](https://copyandrun.com/blog/opensearch-ollama-ai-siem/) |
+| [`openssh-musl-password-bypass-cve-2026-123158-check`](openssh-musl-password-bypass-cve-2026-123158-check/) | [CVE-2026-123158 점검: Alpine sshd 비밀번호 인증 우회 조건 확인과 조치](https://copyandrun.com/blog/openssh-musl-password-bypass-cve-2026-123158-check/) |
 | [`os-command-injection-flask-subprocess`](os-command-injection-flask-subprocess/) | [OS 명령어 인젝션: ping 기능으로 보는 shell=True의 위험과 수정](https://copyandrun.com/blog/os-command-injection-flask-subprocess/) |
 | [`osv-scanner-lockfile-vulnerabilities`](osv-scanner-lockfile-vulnerabilities/) | [OSV-Scanner로 잠금 파일 점검하기: 34건을 읽고, 예외를 두고, 0건이 될 때까지 고치기](https://copyandrun.com/blog/osv-scanner-lockfile-vulnerabilities/) |
 | [`owasp-agentic-top10-mapped-to-hands-on`](owasp-agentic-top10-mapped-to-hands-on/) | [OWASP 에이전트 앱 Top 10을 내가 해 본 실습 결과에 대응시키기](https://copyandrun.com/blog/owasp-agentic-top10-mapped-to-hands-on/) |
