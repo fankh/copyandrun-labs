@@ -1,0 +1,15 @@
+# 받는 서버: 시험 네트워크에서 온 메일을 받아 서명을 검증한 뒤 사서함에 넣습니다.
+compatibility_level = 3.6
+myhostname = recv.example.internal
+myorigin = example.internal
+mydestination = example.internal
+inet_interfaces = all
+inet_protocols = ipv4
+mynetworks = 10.89.118.0/24
+maillog_file = /var/log/postfix.log
+smtpd_milters = inet:127.0.0.1:8891
+non_smtpd_milters = $smtpd_milters
+milter_default_action = tempfail
+smtpd_tls_security_level = none
+alias_maps =
+alias_database =

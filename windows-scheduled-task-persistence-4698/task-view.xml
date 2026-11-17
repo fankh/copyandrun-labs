@@ -1,0 +1,1 @@
+<ViewerConfig><QueryConfig><QueryParams><UserQuery /></QueryParams><QueryNode><Name>Scheduled task 4698 4699 4702</Name><QueryList><Query Id="0" Path="Security"><Select Path="Security">*[System[(EventID=4698 or EventID=4699 or EventID=4702)]] and *[EventData[Data[@Name='TaskName']='\cr-test hostname']]</Select></Query></QueryList></QueryNode></QueryConfig></ViewerConfig>

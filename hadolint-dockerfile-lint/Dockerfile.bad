@@ -1,0 +1,8 @@
+FROM python
+RUN apt-get update
+RUN apt-get install -y curl git
+RUN curl -sL https://example.com/install.sh | sh
+ADD app.py /app/
+RUN cd /app && pip install flask
+EXPOSE 22
+CMD python /app/app.py

@@ -1,4 +1,4 @@
-# Open WebUI를 Docker로 띄워 Ollama에 연결하고 모델이 안 보일 때 고치기
+# Open WebUI Ollama 연결: host.docker.internal:11434 고치기
 
 Docker로 Open WebUI를 띄워 호스트의 Ollama에 연결하고, 주소를 localhost로 잘못 넣어 모델 목록이 비는 상태를 만든 뒤 원인을 찾아 고칩니다. 환경 변수를 바로잡아도 저장된 설정이 우선해 되돌아오지 않는 동작도 직접 확인합니다.
 

@@ -1,0 +1,6 @@
+# AI 가 만들어 준 requirements.txt 라고 가정한 시험 입력입니다.
+requests==2.32.3
+flask>=3.0
+pyyaml
+pyaml
+flask-secure-login-helper-zz9

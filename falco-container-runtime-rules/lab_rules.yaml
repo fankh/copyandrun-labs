@@ -1,0 +1,22 @@
+# 내 PC 시험용 Falco 규칙. 이름 앞에 LAB 을 붙여 기본 규칙과 구분한다.
+# macro 와 condition 은 Falco 기본 규칙 파일(falco_rules.yaml)의 macro(spawned_process, container, open_write, open_read)를 쓴다.
+- rule: LAB shell started in container
+  desc: 컨테이너 안에서 sh 나 bash 가 새로 실행됨
+  condition: spawned_process and container and proc.name in (sh, bash)
+  output: "LAB 컨테이너 안에서 셸 실행 (container=%container.name cmd=%proc.cmdline)"
+  priority: WARNING
+  tags: [lab]
+
+- rule: LAB write under /etc in container
+  desc: 컨테이너 안에서 /etc 아래 파일을 쓰기로 엶
+  condition: open_write and container and fd.name startswith /etc/
+  output: "LAB /etc 아래 쓰기 (container=%container.name file=%fd.name proc=%proc.name)"
+  priority: WARNING
+  tags: [lab]
+
+- rule: LAB read /etc/shadow in container
+  desc: 컨테이너 안에서 /etc/shadow 를 읽기로 엶
+  condition: open_read and container and fd.name = /etc/shadow
+  output: "LAB /etc/shadow 읽기 (container=%container.name proc=%proc.name)"
+  priority: WARNING
+  tags: [lab]

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+  <!--
+    제외 이유: BadgeColor 의 Random 은 화면 배지 색을 고르는 용도이며 비밀값이나
+    토큰 생성에 쓰이지 않습니다. 검토일 2026-11-02, 검토자 기록은 이슈 번호로 남깁니다.
+    다른 클래스에 같은 패턴이 생기면 다시 걸리도록 클래스 하나와 패턴 하나만 지정합니다.
+  -->
+  <Match>
+    <Class name="lab.BadgeColor"/>
+    <Bug pattern="PREDICTABLE_RANDOM"/>
+  </Match>
+</FindBugsFilter>

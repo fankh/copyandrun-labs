@@ -1,0 +1,13 @@
+# 시험용 sshd 감옥: 60초 안에 3번 실패하면 40초 동안 차단한다.
+[DEFAULT]
+ignoreip =
+banaction = iptables-multiport
+
+[sshd]
+enabled  = true
+port     = ssh
+backend  = auto
+logpath  = /var/log/auth.log
+maxretry = 3
+findtime = 60
+bantime  = 40

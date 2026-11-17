@@ -1,0 +1,14 @@
+# 보내는 서버: 내부에서 sendmail 로 받은 메일에만 서명하고 받는 서버로 넘깁니다.
+compatibility_level = 3.6
+myhostname = send.example.internal
+myorigin = example.internal
+mydestination =
+inet_interfaces = loopback-only
+inet_protocols = ipv4
+mynetworks_style = host
+maillog_file = /var/log/postfix.log
+smtpd_milters = inet:127.0.0.1:8891
+non_smtpd_milters = $smtpd_milters
+milter_default_action = tempfail
+transport_maps = inline:{example.internal=smtp:[10.89.118.12]:25}
+smtp_tls_security_level = none

@@ -1,0 +1,6 @@
+FROM python:3.12-alpine
+RUN echo one
+RUN echo two
+WORKDIR /app
+COPY app.py /app/
+CMD python /app/app.py

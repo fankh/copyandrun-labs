@@ -1,0 +1,21 @@
+rules:
+  - id: login-hardcoded-secret-key
+    languages: [python]
+    severity: ERROR
+    message: Flask secret_key 가 코드에 문자열로 들어 있습니다. 환경 변수나 비밀 저장소에서 읽으십시오.
+    patterns:
+      - pattern-either:
+          - pattern: $APP.secret_key = "..."
+          - pattern: $APP.config["SECRET_KEY"] = "..."
+  - id: login-cookie-missing-flags
+    languages: [python]
+    severity: WARNING
+    message: set_cookie 에 secure, httponly, samesite 가 모두 지정되어 있지 않습니다.
+    patterns:
+      - pattern: $R.set_cookie(...)
+      - pattern-not: $R.set_cookie(..., secure=True, httponly=True, samesite=..., ...)
+  - id: login-plaintext-password-compare
+    languages: [python]
+    severity: WARNING
+    message: 비밀번호 열을 SQL 조건에 직접 비교하고 있습니다. 해시 열을 두고 검증 함수로 비교하십시오.
+    pattern-regex: password\s*=\s*['"]

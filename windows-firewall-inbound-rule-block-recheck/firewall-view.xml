@@ -1,0 +1,1 @@
+<ViewerConfig><QueryConfig><QueryParams><UserQuery /></QueryParams><QueryNode><Name>Firewall filtering 5152 5156 5157</Name><QueryList><Query Id="0" Path="Security"><Select Path="Security">*[System[(EventID=5152 or EventID=5156 or EventID=5157)]] and *[EventData[Data[@Name='DestAddress']='169.254.10.10']]</Select></Query></QueryList></QueryNode></QueryConfig></ViewerConfig>

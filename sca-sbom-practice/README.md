@@ -1,6 +1,6 @@
 # 취약한 의존성 스캔하고 CycloneDX SBOM 만들기
 
-취약한 버전이 고정된 requirements.txt 하나로 pip-audit 스캔, CycloneDX SBOM 생성, Trivy 교차 확인, 버전 상향 후 재검증까지 해 봅니다. 마지막에는 같은 흐름을 PR마다 돌리는 GitHub Actions 워크플로를 붙입니다.
+취약한 버전이 고정된 requirements.txt 하나로 pip-audit 스캔, CycloneDX SBOM 생성, Trivy 교차 확인, 버전 상향 후 재검증까지 해 봅니다. 마지막에는 같은 절차를 PR마다 돌리는 GitHub Actions 워크플로를 붙입니다.
 
 글: https://copyandrun.com/blog/sca-sbom-practice/
 

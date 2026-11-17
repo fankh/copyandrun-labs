@@ -1,0 +1,135 @@
+title: Encoded PowerShell Command Line
+id: 6c1a0b1e-0001-4a00-9000-000000000001
+status: experimental
+description: Practice rule. PowerShell started with an encoded command option.
+logsource: {category: process_creation, product: windows}
+detection:
+  selection:
+    Image|endswith: '\powershell.exe'
+    CommandLine|contains: ' -enc'
+  condition: selection
+level: medium
+tags:
+  - attack.execution
+  - attack.t1059.001
+---
+title: PowerShell Download Cradle Keywords
+id: 6c1a0b1e-0002-4a00-9000-000000000002
+status: experimental
+description: Practice rule. PowerShell command line contains download keywords.
+logsource: {category: process_creation, product: windows}
+detection:
+  selection:
+    Image|endswith: '\powershell.exe'
+    CommandLine|contains: 'DownloadString'
+  condition: selection
+level: medium
+tags:
+  - attack.execution
+  - attack.t1059.001
+---
+title: Command Shell Spawned by Office Application
+id: 6c1a0b1e-0003-4a00-9000-000000000003
+status: experimental
+description: Practice rule. cmd.exe started by a word processor process.
+logsource: {category: process_creation, product: windows}
+detection:
+  selection:
+    ParentImage|endswith: '\winword.exe'
+    Image|endswith: '\cmd.exe'
+  condition: selection
+level: medium
+tags:
+  - attack.execution
+  - attack.t1059.003
+---
+title: Scheduled Task Created With schtasks
+id: 6c1a0b1e-0004-4a00-9000-000000000004
+status: experimental
+description: Practice rule. A scheduled task is created from the command line.
+logsource: {category: process_creation, product: windows}
+detection:
+  selection:
+    Image|endswith: '\schtasks.exe'
+    CommandLine|contains: ' /create '
+  condition: selection
+level: low
+tags:
+  - attack.execution
+  - attack.persistence
+  - attack.privilege_escalation
+  - attack.t1053.005
+---
+title: Run Key Modified With reg.exe
+id: 6c1a0b1e-0005-4a00-9000-000000000005
+status: experimental
+description: Practice rule. A Run registry key is written through reg.exe.
+logsource: {category: process_creation, product: windows}
+detection:
+  selection:
+    Image|endswith: '\reg.exe'
+    CommandLine|contains: 'CurrentVersion\Run'
+  condition: selection
+level: medium
+tags:
+  - attack.persistence
+  - attack.t1547.001
+---
+title: LSASS Memory Dump With comsvcs
+id: 6c1a0b1e-0006-4a00-9000-000000000006
+status: experimental
+description: Practice rule. rundll32 calls MiniDump from comsvcs.dll.
+logsource: {category: process_creation, product: windows}
+detection:
+  selection:
+    CommandLine|contains|all:
+      - 'comsvcs'
+      - 'MiniDump'
+  condition: selection
+level: high
+tags:
+  - attack.credential_access
+  - attack.t1003.001
+---
+title: Shadow Copy Deleted With vssadmin
+id: 6c1a0b1e-0007-4a00-9000-000000000007
+status: experimental
+description: Practice rule. Volume shadow copies are deleted from the command line.
+logsource: {category: process_creation, product: windows}
+detection:
+  selection:
+    Image|endswith: '\vssadmin.exe'
+    CommandLine|contains: 'delete shadows'
+  condition: selection
+level: high
+tags:
+  - attack.impact
+  - attack.t1490
+---
+title: Event Log Cleared With wevtutil
+id: 6c1a0b1e-0008-4a00-9000-000000000008
+status: experimental
+description: Practice rule. Event logs are cleared. Old-style ATT&CK tags are kept on purpose.
+logsource: {category: process_creation, product: windows}
+detection:
+  selection:
+    Image|endswith: '\wevtutil.exe'
+    CommandLine|contains: ' cl '
+  condition: selection
+level: medium
+tags:
+  - attack.defense_evasion
+  - attack.t1070.001
+---
+title: Rule Without ATT&CK Tags
+id: 6c1a0b1e-0009-4a00-9000-000000000009
+status: experimental
+description: Practice rule. Has no attack.* tags, so it does not appear on the map.
+logsource: {category: process_creation, product: windows}
+detection:
+  selection:
+    Image|endswith: '\whoami.exe'
+  condition: selection
+level: informational
+tags:
+  - custom.internal

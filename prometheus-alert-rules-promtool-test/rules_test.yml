@@ -1,0 +1,60 @@
+rule_files:
+  - rules.yml
+evaluation_interval: 1m
+tests:
+  - name: 인스턴스가 죽으면 2분 뒤에 알림
+    interval: 1m
+    input_series:
+      - series: 'up{job="web", instance="a:80"}'
+        values: '1 1 0 0 0 0 0'
+    alert_rule_test:
+      - eval_time: 1m
+        alertname: InstanceDown
+        exp_alerts: []
+      - eval_time: 3m
+        alertname: InstanceDown
+        exp_alerts: []
+      - eval_time: 5m
+        alertname: InstanceDown
+        exp_alerts:
+          - exp_labels:
+              severity: critical
+              job: web
+              instance: "a:80"
+            exp_annotations:
+              summary: "a:80 가 2분 넘게 응답하지 않습니다"
+  - name: 살아 있으면 알림 없음
+    interval: 1m
+    input_series:
+      - series: 'up{job="web", instance="a:80"}'
+        values: '1 1 1 1 1 1 1'
+    alert_rule_test:
+      - eval_time: 5m
+        alertname: InstanceDown
+        exp_alerts: []
+  - name: 5xx 비율 9퍼센트는 5분 뒤 경고
+    interval: 1m
+    input_series:
+      - series: 'http_requests_total{code="200"}'
+        values: '0+100x15'
+      - series: 'http_requests_total{code="500"}'
+        values: '0+10x15'
+    alert_rule_test:
+      - eval_time: 12m
+        alertname: HighErrorRate
+        exp_alerts:
+          - exp_labels:
+              severity: warning
+            exp_annotations:
+              summary: "5xx 비율이 5%를 넘었습니다"
+  - name: 5xx 비율 1퍼센트 미만은 알림 없음
+    interval: 1m
+    input_series:
+      - series: 'http_requests_total{code="200"}'
+        values: '0+100x15'
+      - series: 'http_requests_total{code="500"}'
+        values: '0+1x15'
+    alert_rule_test:
+      - eval_time: 12m
+        alertname: HighErrorRate
+        exp_alerts: []

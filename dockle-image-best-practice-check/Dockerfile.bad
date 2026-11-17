@@ -1,0 +1,5 @@
+FROM python:3.12-alpine
+ENV DB_PASSWORD=hunter2 API_TOKEN=abc123
+COPY app.py /app/app.py
+RUN chmod 4755 /bin/busybox && echo "debug" > /tmp/.env
+CMD ["python", "/app/app.py"]

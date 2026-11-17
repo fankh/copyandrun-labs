@@ -1,0 +1,21 @@
+server:
+  disable: true
+positions:
+  filename: /tmp/positions.yaml
+clients:
+  - url: http://osk-lbc-loki-good:3100/loki/api/v1/push
+scrape_configs:
+  - job_name: nginx
+    static_configs:
+      - targets: [localhost]
+        labels:
+          job: nginx
+          container: osk-lbc-web
+          __path__: /var/log/nginx/access.log
+    pipeline_stages:
+      - replace:
+          expression: '([\w.+-]+@[\w-]+\.[\w.]+)'
+          replace: '****'
+      - replace:
+          expression: 'token=(\w+)'
+          replace: '****'

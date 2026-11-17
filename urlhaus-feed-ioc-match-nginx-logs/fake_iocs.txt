@@ -1,0 +1,5 @@
+# 시험용 가짜 IOC 목록입니다. example 계열 이름과 사설 IP만 씁니다.
+evil.example.net
+10.20.0.7
+hxxp://files.example.org/u/111/setup.exe
+cdn.example.com

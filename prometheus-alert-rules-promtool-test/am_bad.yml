@@ -1,0 +1,15 @@
+route:
+  receiver: team-default
+  group_by: [alertname]
+  routes:
+    - matchers: ['severity="critcal"']
+      receiver: pager
+    - matchers: ['severity="warning"']
+      receiver: team-chat
+receivers:
+  - name: team-default
+    webhook_configs: [{url: "http://127.0.0.1:9/default"}]
+  - name: pager
+    webhook_configs: [{url: "http://127.0.0.1:9/pager"}]
+  - name: team-chat
+    webhook_configs: [{url: "http://127.0.0.1:9/chat"}]

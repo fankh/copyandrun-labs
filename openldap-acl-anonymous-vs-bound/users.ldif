@@ -1,0 +1,28 @@
+dn: dc=lab,dc=test
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: lab
+dc: lab
+
+dn: ou=people,dc=lab,dc=test
+objectClass: organizationalUnit
+ou: people
+
+dn: uid=alice,ou=people,dc=lab,dc=test
+objectClass: inetOrgPerson
+uid: alice
+cn: Alice Kim
+sn: Kim
+mail: alice@lab.test
+description: alice original
+userPassword: @@ALICEPW@@
+
+dn: uid=bob,ou=people,dc=lab,dc=test
+objectClass: inetOrgPerson
+uid: bob
+cn: Bob Lee
+sn: Lee
+mail: bob@lab.test
+description: bob original
+userPassword: @@BOBPW@@

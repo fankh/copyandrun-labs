@@ -1,0 +1,22 @@
+<!-- Minimal lab config: it logs only activity that mentions "crlab", so the log stays small. -->
+<Sysmon schemaversion="4.90">
+  <HashAlgorithms>sha256</HashAlgorithms>
+  <EventFiltering>
+    <RuleGroup name="process" groupRelation="or">
+      <ProcessCreate onmatch="include">
+        <CommandLine condition="contains">crlab</CommandLine>
+        <Image condition="end with">whoami.exe</Image>
+      </ProcessCreate>
+    </RuleGroup>
+    <RuleGroup name="network" groupRelation="or">
+      <NetworkConnect onmatch="include">
+        <DestinationPort condition="is">8099</DestinationPort>
+      </NetworkConnect>
+    </RuleGroup>
+    <RuleGroup name="file" groupRelation="or">
+      <FileCreate onmatch="include">
+        <TargetFilename condition="contains">crlab</TargetFilename>
+      </FileCreate>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>

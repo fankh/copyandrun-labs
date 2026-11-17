@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: weak
+  namespace: lab
+  labels: {app: demo}
+spec:
+  containers:
+  - name: app
+    image: busybox:latest
+    command: ["sleep", "3600"]
+    securityContext:
+      privileged: true
+      runAsUser: 0
+      allowPrivilegeEscalation: true

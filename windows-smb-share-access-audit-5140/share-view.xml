@@ -1,0 +1,1 @@
+<ViewerConfig><QueryConfig><QueryParams><UserQuery /></QueryParams><QueryNode><Name>Share access 5140 5145</Name><QueryList><Query Id="0" Path="Security"><Select Path="Security">*[System[(EventID=5140 or EventID=5145)]] and *[EventData[Data[@Name='ShareName']='\\*\cr-share']]</Select></Query></QueryList></QueryNode></QueryConfig></ViewerConfig>

@@ -1,0 +1,70 @@
+{
+  "id": "wfguard0000000002",
+  "name": "guarded-webhook",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": { "httpMethod": "POST", "path": "guarded", "responseMode": "responseNode", "options": {} },
+      "id": "44444444-4444-4444-8444-444444444444",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "webhookId": "55555555-5555-4555-8555-555555555555"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict", "version": 2 },
+          "conditions": [
+            {
+              "id": "66666666-6666-4666-8666-666666666666",
+              "leftValue": "={{ $json.headers['x-token'] }}",
+              "rightValue": "lab-secret",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "77777777-7777-4777-8777-777777777777",
+      "name": "Check token",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [220, 0]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { ok: true, echo: $('Webhook').item.json.body.text || '' } }}",
+        "options": { "responseCode": 200 }
+      },
+      "id": "88888888-8888-4888-8888-888888888888",
+      "name": "Respond 200",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [460, -80]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { ok: false, error: 'bad token' } }}",
+        "options": { "responseCode": 401 }
+      },
+      "id": "99999999-9999-4999-8999-999999999999",
+      "name": "Respond 401",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [460, 100]
+    }
+  ],
+  "connections": {
+    "Webhook": { "main": [[{ "node": "Check token", "type": "main", "index": 0 }]] },
+    "Check token": { "main": [
+      [{ "node": "Respond 200", "type": "main", "index": 0 }],
+      [{ "node": "Respond 401", "type": "main", "index": 0 }]
+    ] }
+  },
+  "settings": {}
+}

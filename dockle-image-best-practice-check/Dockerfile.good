@@ -1,0 +1,6 @@
+FROM python:3.12-alpine
+RUN adduser -D -u 10001 appuser
+COPY --chown=appuser app.py /app/app.py
+USER appuser
+HEALTHCHECK --interval=30s CMD python -c "print('ok')"
+CMD ["python", "/app/app.py"]

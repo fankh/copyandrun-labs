@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feedback>
+  <report_metadata>
+    <org_name>reporter.example</org_name>
+    <report_id>2026110800001</report_id>
+    <date_range><begin>1762560000</begin><end>1762646399</end></date_range>
+  </report_metadata>
+  <policy_published>
+    <domain>example.com</domain>
+    <adkim>r</adkim>
+    <aspf>r</aspf>
+    <p>none</p>
+    <pct>100</pct>
+  </policy_published>
+  <record>
+    <row>
+      <source_ip>203.0.113.10</source_ip>
+      <count>120</count>
+      <policy_evaluated><disposition>none</disposition><dkim>pass</dkim><spf>pass</spf></policy_evaluated>
+    </row>
+    <identifiers><header_from>example.com</header_from></identifiers>
+  </record>
+  <record>
+    <row>
+      <source_ip>203.0.113.25</source_ip>
+      <count>40</count>
+      <policy_evaluated><disposition>none</disposition><dkim>pass</dkim><spf>fail</spf></policy_evaluated>
+    </row>
+    <identifiers><header_from>example.com</header_from></identifiers>
+  </record>
+  <record>
+    <row>
+      <source_ip>198.51.100.77</source_ip>
+      <count>8</count>
+      <policy_evaluated><disposition>none</disposition><dkim>fail</dkim><spf>fail</spf></policy_evaluated>
+    </row>
+    <identifiers><header_from>example.com</header_from></identifiers>
+  </record>
+  <record>
+    <row>
+      <source_ip>198.51.100.99</source_ip>
+      <count>3</count>
+      <policy_evaluated><disposition>none</disposition><dkim>fail</dkim><spf>fail</spf></policy_evaluated>
+    </row>
+    <identifiers><header_from>example.com</header_from></identifiers>
+  </record>
+</feedback>

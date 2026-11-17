@@ -1,0 +1,9 @@
+type,value,category,to_ids,comment,tags
+domain,c2.lab-ioc.example.com,Network activity,1,시험용 명령 서버 도메인,lab:role="c2"
+url,http://c2.lab-ioc.example.com/gate.php,Network activity,1,시험용 접속 주소,lab:role="c2"
+ip-dst,192.0.2.45,Network activity,1,문서용 대역의 시험용 IP,lab:role="c2"
+ip-dst,203.0.113.77,Network activity,1,문서용 대역의 시험용 IP,lab:role="staging"
+sha256,a01c3c2158fc074d263801a3f0e8ae6cd39686887e394cd84f778d3292e43b8f,Payload delivery,1,문자열 cr-c11 lab sample payload 1 의 해시,lab:role="payload"
+md5,84cd7f848578a75ff25650f87f1be911,Payload delivery,1,문자열 cr-c11 lab dropper 2 의 해시,lab:role="payload"
+filename,report_q4.docm,Payload delivery,0,시험용 첨부 파일 이름(정상 파일과 겹칠 수 있어 탐지에서 제외),lab:role="payload"
+email-subject,Invoice Q4 overdue,Payload delivery,0,시험용 메일 제목(탐지에서 제외),lab:role="delivery"

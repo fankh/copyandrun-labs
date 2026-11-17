@@ -1,6 +1,6 @@
 # Fixes the settings that Check-WindowsSecurity.ps1 reports as FAIL or WARN.
 # Without -Apply it only prints what it would change. With -Apply it changes the settings.
-# Run in an elevated PowerShell. Test on a VM first.
+# Run in an elevated PowerShell. Read the plan output before using -Apply.
 param([switch]$Apply)
 
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8

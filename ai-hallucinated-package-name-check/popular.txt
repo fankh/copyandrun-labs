@@ -1,0 +1,21 @@
+# 비교 기준이 되는 널리 쓰는 패키지 이름(예시 목록입니다. 팀이 쓰는 것으로 늘리십시오)
+requests
+urllib3
+numpy
+pandas
+flask
+django
+fastapi
+pyyaml
+cryptography
+boto3
+sqlalchemy
+pytest
+jinja2
+setuptools
+pillow
+scipy
+matplotlib
+beautifulsoup4
+pydantic
+click

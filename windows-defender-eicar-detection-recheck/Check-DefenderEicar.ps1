@@ -1,12 +1,12 @@
 # Harmless Microsoft Defender detection test with the standard EICAR test string.
-# Run it only in a disposable test VM or on a PC you own. The test file is removed at the end.
+# Run it only on a PC you own or administer. The test file is removed at the end.
 # Usage (elevated PowerShell):
 #   powershell -NoProfile -ExecutionPolicy Bypass -File .\Check-DefenderEicar.ps1 [-WaitSeconds 20]
 param([int]$WaitSeconds = 20)
 
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
-$dir  = "C:\lab\eicar"
+$dir  = "C:\audit-check\eicar"
 $file = Join-Path $dir "eicar-test.txt"
 # The test string is split in two so that this script file itself is not flagged.
 $part1 = 'X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS'

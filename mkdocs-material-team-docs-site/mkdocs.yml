@@ -1,0 +1,10 @@
+site_name: Team Notes
+theme:
+  name: material
+  language: ko
+nav:
+  - Home: index.md
+  - Runbook: runbook.md
+markdown_extensions:
+  - admonition
+  - tables
