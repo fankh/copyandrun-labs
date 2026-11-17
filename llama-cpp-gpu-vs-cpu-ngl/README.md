@@ -2,12 +2,19 @@
 
 llama-bench의 -ngl 값을 99와 0으로 바꿔 1B와 7B 모델을 재고, 7B는 28층 중 0, 7, 14, 21, 28층만 올린 중간 값도 잽니다. 생성 속도는 2.6배에서 3.2배, 입력 읽기는 2.2배에서 3.1배 차이가 났고, 처음 측정값이 반복 측정에서 재현되지 않은 부분도 정정합니다.
 
-글: https://copyandrun.com/blog/llama-cpp-gpu-vs-cpu-ngl/
+## 링크
+
+- 글: [https://copyandrun.com/blog/llama-cpp-gpu-vs-cpu-ngl/](https://copyandrun.com/blog/llama-cpp-gpu-vs-cpu-ngl/)
+- 한 번에 받기: [llama-cpp-gpu-vs-cpu-ngl.zip](https://copyandrun.com/code-zip/llama-cpp-gpu-vs-cpu-ngl.zip)
+- GitHub 폴더: [copyandrun-labs/llama-cpp-gpu-vs-cpu-ngl](https://github.com/fankh/copyandrun-labs/tree/main/llama-cpp-gpu-vs-cpu-ngl)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `ngl_bench.sh`
-- `ngl_more.sh`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `ngl_bench.sh` | <a href="https://fankh.github.io/copyandrun-labs/llama-cpp-gpu-vs-cpu-ngl/ngl_bench.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/llama-cpp-gpu-vs-cpu-ngl/ngl_bench.sh) |
+| `ngl_more.sh` | <a href="https://fankh.github.io/copyandrun-labs/llama-cpp-gpu-vs-cpu-ngl/ngl_more.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/llama-cpp-gpu-vs-cpu-ngl/ngl_more.sh) |
 
 ## 사용 방법
 

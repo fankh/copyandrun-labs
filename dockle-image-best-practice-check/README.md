@@ -2,14 +2,21 @@
 
 일부러 나쁘게 만든 이미지와 고친 이미지를 Dockle로 점검합니다. CIS-DI 지적을 하나씩 읽고, 베이스 이미지에서 나오는 오탐을 예외로 두고, 이미지 기록에서 ENV 비밀이 그대로 읽히는 것과 종료 코드 기준(--exit-level)을 실행해 확인합니다.
 
-글: https://copyandrun.com/blog/dockle-image-best-practice-check/
+## 링크
+
+- 글: [https://copyandrun.com/blog/dockle-image-best-practice-check/](https://copyandrun.com/blog/dockle-image-best-practice-check/)
+- 한 번에 받기: [dockle-image-best-practice-check.zip](https://copyandrun.com/code-zip/dockle-image-best-practice-check.zip)
+- GitHub 폴더: [copyandrun-labs/dockle-image-best-practice-check](https://github.com/fankh/copyandrun-labs/tree/main/dockle-image-best-practice-check)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `app.py`
-- `Dockerfile.bad`
-- `Dockerfile.good`
-- `dockle_demo.sh`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `app.py` | <a href="https://fankh.github.io/copyandrun-labs/dockle-image-best-practice-check/app.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/dockle-image-best-practice-check/app.py) |
+| `Dockerfile.bad` | <a href="https://fankh.github.io/copyandrun-labs/dockle-image-best-practice-check/Dockerfile.bad" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/dockle-image-best-practice-check/Dockerfile.bad) |
+| `Dockerfile.good` | <a href="https://fankh.github.io/copyandrun-labs/dockle-image-best-practice-check/Dockerfile.good" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/dockle-image-best-practice-check/Dockerfile.good) |
+| `dockle_demo.sh` | <a href="https://fankh.github.io/copyandrun-labs/dockle-image-best-practice-check/dockle_demo.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/dockle-image-best-practice-check/dockle_demo.sh) |
 
 ## 사용 방법
 

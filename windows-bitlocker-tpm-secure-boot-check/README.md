@@ -2,12 +2,19 @@
 
 Windows 11에서 디스크 암호화(BitLocker), TPM, Secure Boot가 켜져 있는지 PowerShell 스크립트 한 번으로 읽고, 이 PC에서 BitLocker와 Secure Boot가 꺼져 있다는 결과가 무엇을 뜻하는지 판단하는 방법을 정리합니다.
 
-글: https://copyandrun.com/blog/windows-bitlocker-tpm-secure-boot-check/
+## 링크
+
+- 글: [https://copyandrun.com/blog/windows-bitlocker-tpm-secure-boot-check/](https://copyandrun.com/blog/windows-bitlocker-tpm-secure-boot-check/)
+- 한 번에 받기: [windows-bitlocker-tpm-secure-boot-check.zip](https://copyandrun.com/code-zip/windows-bitlocker-tpm-secure-boot-check.zip)
+- GitHub 폴더: [copyandrun-labs/windows-bitlocker-tpm-secure-boot-check](https://github.com/fankh/copyandrun-labs/tree/main/windows-bitlocker-tpm-secure-boot-check)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `Get-BootProtection.ps1`
-- `Test-BitLockerProtectors.ps1`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `Get-BootProtection.ps1` | <a href="https://fankh.github.io/copyandrun-labs/windows-bitlocker-tpm-secure-boot-check/Get-BootProtection.ps1" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/windows-bitlocker-tpm-secure-boot-check/Get-BootProtection.ps1) |
+| `Test-BitLockerProtectors.ps1` | <a href="https://fankh.github.io/copyandrun-labs/windows-bitlocker-tpm-secure-boot-check/Test-BitLockerProtectors.ps1" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/windows-bitlocker-tpm-secure-boot-check/Test-BitLockerProtectors.ps1) |
 
 ## 사용 방법
 

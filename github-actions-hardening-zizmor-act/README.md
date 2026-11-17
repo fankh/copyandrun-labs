@@ -2,17 +2,24 @@
 
 일부러 취약하게 만든 워크플로를 zizmor로 점검해 여섯 건을 찾고, 커밋 SHA 고정과 권한 최소화 등으로 고쳐 0건이 되는지 확인합니다. act로 수정본이 로컬에서 도는지도 시험합니다.
 
-글: https://copyandrun.com/blog/github-actions-hardening-zizmor-act/
+## 링크
+
+- 글: [https://copyandrun.com/blog/github-actions-hardening-zizmor-act/](https://copyandrun.com/blog/github-actions-hardening-zizmor-act/)
+- 한 번에 받기: [github-actions-hardening-zizmor-act.zip](https://copyandrun.com/code-zip/github-actions-hardening-zizmor-act.zip)
+- GitHub 폴더: [copyandrun-labs/github-actions-hardening-zizmor-act](https://github.com/fankh/copyandrun-labs/tree/main/github-actions-hardening-zizmor-act)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `calc.py`
-- `event.json`
-- `fixed-ci.yml`
-- `inject-demo.yml`
-- `sample-ci.yml`
-- `test_calc.py`
-- `viewer.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `calc.py` | <a href="https://fankh.github.io/copyandrun-labs/github-actions-hardening-zizmor-act/calc.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/github-actions-hardening-zizmor-act/calc.py) |
+| `event.json` | <a href="https://fankh.github.io/copyandrun-labs/github-actions-hardening-zizmor-act/event.json" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/github-actions-hardening-zizmor-act/event.json) |
+| `fixed-ci.yml` | <a href="https://fankh.github.io/copyandrun-labs/github-actions-hardening-zizmor-act/fixed-ci.yml" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/github-actions-hardening-zizmor-act/fixed-ci.yml) |
+| `inject-demo.yml` | <a href="https://fankh.github.io/copyandrun-labs/github-actions-hardening-zizmor-act/inject-demo.yml" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/github-actions-hardening-zizmor-act/inject-demo.yml) |
+| `sample-ci.yml` | <a href="https://fankh.github.io/copyandrun-labs/github-actions-hardening-zizmor-act/sample-ci.yml" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/github-actions-hardening-zizmor-act/sample-ci.yml) |
+| `test_calc.py` | <a href="https://fankh.github.io/copyandrun-labs/github-actions-hardening-zizmor-act/test_calc.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/github-actions-hardening-zizmor-act/test_calc.py) |
+| `viewer.py` | <a href="https://fankh.github.io/copyandrun-labs/github-actions-hardening-zizmor-act/viewer.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/github-actions-hardening-zizmor-act/viewer.py) |
 
 ## 사용 방법
 

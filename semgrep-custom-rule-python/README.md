@@ -2,16 +2,23 @@
 
 Semgrep 규칙 여섯 개(SQL 문자열 조립, 인증서 검증 끄기, 약한 해시, 요청값이 셸로 흐르는 taint, shell=True, 팀 전용 함수 금지)를 직접 쓰고 semgrep --test로 시험한 뒤, 약한 코드와 고친 코드에 적용해 종료 코드 게이트를 만듭니다. bandit과 비교하고 규칙을 일부러 깨서 시험이 잡는지도 확인합니다.
 
-글: https://copyandrun.com/blog/semgrep-custom-rule-python/
+## 링크
+
+- 글: [https://copyandrun.com/blog/semgrep-custom-rule-python/](https://copyandrun.com/blog/semgrep-custom-rule-python/)
+- 한 번에 받기: [semgrep-custom-rule-python.zip](https://copyandrun.com/code-zip/semgrep-custom-rule-python.zip)
+- GitHub 폴더: [copyandrun-labs/semgrep-custom-rule-python](https://github.com/fankh/copyandrun-labs/tree/main/semgrep-custom-rule-python)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `bad_app.py`
-- `company.py`
-- `company.yml`
-- `good_app.py`
-- `semgrep_demo.sh`
-- `semgrep_summary.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `bad_app.py` | <a href="https://fankh.github.io/copyandrun-labs/semgrep-custom-rule-python/bad_app.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/semgrep-custom-rule-python/bad_app.py) |
+| `company.py` | <a href="https://fankh.github.io/copyandrun-labs/semgrep-custom-rule-python/company.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/semgrep-custom-rule-python/company.py) |
+| `company.yml` | <a href="https://fankh.github.io/copyandrun-labs/semgrep-custom-rule-python/company.yml" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/semgrep-custom-rule-python/company.yml) |
+| `good_app.py` | <a href="https://fankh.github.io/copyandrun-labs/semgrep-custom-rule-python/good_app.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/semgrep-custom-rule-python/good_app.py) |
+| `semgrep_demo.sh` | <a href="https://fankh.github.io/copyandrun-labs/semgrep-custom-rule-python/semgrep_demo.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/semgrep-custom-rule-python/semgrep_demo.sh) |
+| `semgrep_summary.py` | <a href="https://fankh.github.io/copyandrun-labs/semgrep-custom-rule-python/semgrep_summary.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/semgrep-custom-rule-python/semgrep_summary.py) |
 
 ## 사용 방법
 

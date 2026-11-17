@@ -2,11 +2,18 @@
 
 PrintNightmare(CVE-2021-34527)는 업데이트 외에 Point and Print 레지스트리 값 두 개가 0이거나 정의되지 않아야 안전합니다. Print Spooler 서비스 상태와 이 값을 읽기 전용으로 확인하는 PowerShell 스크립트를 만들고, 판정 함수를 시험 값으로 확인합니다.
 
-글: https://copyandrun.com/blog/printnightmare-spooler-point-and-print-check/
+## 링크
+
+- 글: [https://copyandrun.com/blog/printnightmare-spooler-point-and-print-check/](https://copyandrun.com/blog/printnightmare-spooler-point-and-print-check/)
+- 한 번에 받기: [printnightmare-spooler-point-and-print-check.zip](https://copyandrun.com/code-zip/printnightmare-spooler-point-and-print-check.zip)
+- GitHub 폴더: [copyandrun-labs/printnightmare-spooler-point-and-print-check](https://github.com/fankh/copyandrun-labs/tree/main/printnightmare-spooler-point-and-print-check)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `Check-PrintNightmare.ps1`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `Check-PrintNightmare.ps1` | <a href="https://fankh.github.io/copyandrun-labs/printnightmare-spooler-point-and-print-check/Check-PrintNightmare.ps1" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/printnightmare-spooler-point-and-print-check/Check-PrintNightmare.ps1) |
 
 ## 사용 방법
 

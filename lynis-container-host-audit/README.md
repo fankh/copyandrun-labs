@@ -2,13 +2,20 @@
 
 새 우분투 24.04 컨테이너를 Lynis 3.0.9로 점검해 하드닝 점수 57과 제안 39개를 확인하고, 패키지 설치와 설정 보완 스크립트를 적용해 점수 70과 제안 25개로 비교합니다. 사라진 제안과 새로 생긴 제안을 대조하고, 한글 배너가 통하지 않은 이유와 점수만 믿으면 안 되는 점까지 확인합니다.
 
-글: https://copyandrun.com/blog/lynis-container-host-audit/
+## 링크
+
+- 글: [https://copyandrun.com/blog/lynis-container-host-audit/](https://copyandrun.com/blog/lynis-container-host-audit/)
+- 한 번에 받기: [lynis-container-host-audit.zip](https://copyandrun.com/code-zip/lynis-container-host-audit.zip)
+- GitHub 폴더: [copyandrun-labs/lynis-container-host-audit](https://github.com/fankh/copyandrun-labs/tree/main/lynis-container-host-audit)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `lynis_demo.sh`
-- `lynis_fix.sh`
-- `lynis_summary.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `lynis_demo.sh` | <a href="https://fankh.github.io/copyandrun-labs/lynis-container-host-audit/lynis_demo.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/lynis-container-host-audit/lynis_demo.sh) |
+| `lynis_fix.sh` | <a href="https://fankh.github.io/copyandrun-labs/lynis-container-host-audit/lynis_fix.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/lynis-container-host-audit/lynis_fix.sh) |
+| `lynis_summary.py` | <a href="https://fankh.github.io/copyandrun-labs/lynis-container-host-audit/lynis_summary.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/lynis-container-host-audit/lynis_summary.py) |
 
 ## 사용 방법
 

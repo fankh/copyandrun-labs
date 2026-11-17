@@ -2,14 +2,21 @@
 
 원본 파일명을 그대로 저장하는 허술한 업로드가 폴더 밖에 파일을 남기는 것을 연습용 앱에서 확인합니다. 확장자 허용 목록, 크기 제한, 저장 이름 재생성, 경로 확인을 넣은 수정본에서 막히는 것까지 직접 확인합니다.
 
-글: https://copyandrun.com/blog/flask-file-upload-hardening/
+## 링크
+
+- 글: [https://copyandrun.com/blog/flask-file-upload-hardening/](https://copyandrun.com/blog/flask-file-upload-hardening/)
+- 한 번에 받기: [flask-file-upload-hardening.zip](https://copyandrun.com/code-zip/flask-file-upload-hardening.zip)
+- GitHub 폴더: [copyandrun-labs/flask-file-upload-hardening](https://github.com/fankh/copyandrun-labs/tree/main/flask-file-upload-hardening)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `app.py`
-- `index.html`
-- `requirements.txt`
-- `vuln_app.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `app.py` | <a href="https://fankh.github.io/copyandrun-labs/flask-file-upload-hardening/app.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/flask-file-upload-hardening/app.py) |
+| `index.html` | <a href="https://fankh.github.io/copyandrun-labs/flask-file-upload-hardening/index.html" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/flask-file-upload-hardening/index.html) |
+| `requirements.txt` | <a href="https://fankh.github.io/copyandrun-labs/flask-file-upload-hardening/requirements.txt" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/flask-file-upload-hardening/requirements.txt) |
+| `vuln_app.py` | <a href="https://fankh.github.io/copyandrun-labs/flask-file-upload-hardening/vuln_app.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/flask-file-upload-hardening/vuln_app.py) |
 
 ## 사용 방법
 

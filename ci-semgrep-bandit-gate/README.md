@@ -2,17 +2,24 @@
 
 Bandit과 Semgrep을 GitHub Actions에서 돌려 심각도 기준으로 빌드를 실패시키는 설정을 만듭니다. 같은 검사를 로컬에서 먼저 돌려 종료 코드로 통과와 실패를 확인합니다.
 
-글: https://copyandrun.com/blog/ci-semgrep-bandit-gate/
+## 링크
+
+- 글: [https://copyandrun.com/blog/ci-semgrep-bandit-gate/](https://copyandrun.com/blog/ci-semgrep-bandit-gate/)
+- 한 번에 받기: [ci-semgrep-bandit-gate.zip](https://copyandrun.com/code-zip/ci-semgrep-bandit-gate.zip)
+- GitHub 폴더: [copyandrun-labs/ci-semgrep-bandit-gate](https://github.com/fankh/copyandrun-labs/tree/main/ci-semgrep-bandit-gate)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `Jenkinsfile`
-- `main-fixed.py`
-- `main.py`
-- `no-shell-true.yml`
-- `report_view.py`
-- `sast.yml`
-- `semgrep.sh`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `Jenkinsfile` | <a href="https://fankh.github.io/copyandrun-labs/ci-semgrep-bandit-gate/Jenkinsfile" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/ci-semgrep-bandit-gate/Jenkinsfile) |
+| `main-fixed.py` | <a href="https://fankh.github.io/copyandrun-labs/ci-semgrep-bandit-gate/main-fixed.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/ci-semgrep-bandit-gate/main-fixed.py) |
+| `main.py` | <a href="https://fankh.github.io/copyandrun-labs/ci-semgrep-bandit-gate/main.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/ci-semgrep-bandit-gate/main.py) |
+| `no-shell-true.yml` | <a href="https://fankh.github.io/copyandrun-labs/ci-semgrep-bandit-gate/no-shell-true.yml" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/ci-semgrep-bandit-gate/no-shell-true.yml) |
+| `report_view.py` | <a href="https://fankh.github.io/copyandrun-labs/ci-semgrep-bandit-gate/report_view.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/ci-semgrep-bandit-gate/report_view.py) |
+| `sast.yml` | <a href="https://fankh.github.io/copyandrun-labs/ci-semgrep-bandit-gate/sast.yml" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/ci-semgrep-bandit-gate/sast.yml) |
+| `semgrep.sh` | <a href="https://fankh.github.io/copyandrun-labs/ci-semgrep-bandit-gate/semgrep.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/ci-semgrep-bandit-gate/semgrep.sh) |
 
 ## 사용 방법
 

@@ -2,11 +2,18 @@
 
 Windows 11에서 시스템 권한으로 도는 서비스와 WMI 이벤트 구독은 재부팅 뒤에도 남는 은밀한 자동 실행 방법입니다. 무해한 시험 서비스와 구독을 직접 등록하고, 이벤트 7045와 5861과 점검 스크립트로 찾은 뒤 지워 처음 상태로 돌아온 것까지 확인합니다.
 
-글: https://copyandrun.com/blog/windows-service-7045-wmi-subscription-persistence/
+## 링크
+
+- 글: [https://copyandrun.com/blog/windows-service-7045-wmi-subscription-persistence/](https://copyandrun.com/blog/windows-service-7045-wmi-subscription-persistence/)
+- 한 번에 받기: [windows-service-7045-wmi-subscription-persistence.zip](https://copyandrun.com/code-zip/windows-service-7045-wmi-subscription-persistence.zip)
+- GitHub 폴더: [copyandrun-labs/windows-service-7045-wmi-subscription-persistence](https://github.com/fankh/copyandrun-labs/tree/main/windows-service-7045-wmi-subscription-persistence)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `Get-ServiceAndWmiPersistence.ps1`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `Get-ServiceAndWmiPersistence.ps1` | <a href="https://fankh.github.io/copyandrun-labs/windows-service-7045-wmi-subscription-persistence/Get-ServiceAndWmiPersistence.ps1" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/windows-service-7045-wmi-subscription-persistence/Get-ServiceAndWmiPersistence.ps1) |
 
 ## 사용 방법
 

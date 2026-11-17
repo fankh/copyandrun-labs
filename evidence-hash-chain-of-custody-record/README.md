@@ -2,14 +2,21 @@
 
 파이썬 표준 라이브러리만으로 증거 등록, 인계 기록, 검증을 하는 작은 도구를 만듭니다. 각 기록이 앞 기록의 SHA-256 해시를 포함하는 JSONL 체인을 쌓고, 파일 1바이트 변조와 기록 한 줄 변조가 각각 어디서 검증 실패로 드러나는지 실행해 봅니다.
 
-글: https://copyandrun.com/blog/evidence-hash-chain-of-custody-record/
+## 링크
+
+- 글: [https://copyandrun.com/blog/evidence-hash-chain-of-custody-record/](https://copyandrun.com/blog/evidence-hash-chain-of-custody-record/)
+- 한 번에 받기: [evidence-hash-chain-of-custody-record.zip](https://copyandrun.com/code-zip/evidence-hash-chain-of-custody-record.zip)
+- GitHub 폴더: [copyandrun-labs/evidence-hash-chain-of-custody-record](https://github.com/fankh/copyandrun-labs/tree/main/evidence-hash-chain-of-custody-record)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `custody.py`
-- `Dockerfile`
-- `make_evidence.py`
-- `tamper.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `custody.py` | <a href="https://fankh.github.io/copyandrun-labs/evidence-hash-chain-of-custody-record/custody.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/evidence-hash-chain-of-custody-record/custody.py) |
+| `Dockerfile` | <a href="https://fankh.github.io/copyandrun-labs/evidence-hash-chain-of-custody-record/Dockerfile" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/evidence-hash-chain-of-custody-record/Dockerfile) |
+| `make_evidence.py` | <a href="https://fankh.github.io/copyandrun-labs/evidence-hash-chain-of-custody-record/make_evidence.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/evidence-hash-chain-of-custody-record/make_evidence.py) |
+| `tamper.py` | <a href="https://fankh.github.io/copyandrun-labs/evidence-hash-chain-of-custody-record/tamper.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/evidence-hash-chain-of-custody-record/tamper.py) |
 
 ## 사용 방법
 

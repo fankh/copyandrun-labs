@@ -2,11 +2,18 @@
 
 /etc/passwd와 /etc/shadow에서 root 말고 UID 0인 계정, 빈 암호 계정, 중복 UID, 로그인 셸을 가진 시스템 계정을 찾는 읽기 전용 스크립트를 만듭니다. 실제 Ubuntu에서 실행하면 sync 계정이 걸리는 이유와 시험 파일에서 5건이 0건이 되는 과정을 화면으로 확인합니다.
 
-글: https://copyandrun.com/blog/account-audit-uid0-empty-password/
+## 링크
+
+- 글: [https://copyandrun.com/blog/account-audit-uid0-empty-password/](https://copyandrun.com/blog/account-audit-uid0-empty-password/)
+- 한 번에 받기: [account-audit-uid0-empty-password.zip](https://copyandrun.com/code-zip/account-audit-uid0-empty-password.zip)
+- GitHub 폴더: [copyandrun-labs/account-audit-uid0-empty-password](https://github.com/fankh/copyandrun-labs/tree/main/account-audit-uid0-empty-password)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `account-audit.sh`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `account-audit.sh` | <a href="https://fankh.github.io/copyandrun-labs/account-audit-uid0-empty-password/account-audit.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/account-audit-uid0-empty-password/account-audit.sh) |
 
 ## 사용 방법
 

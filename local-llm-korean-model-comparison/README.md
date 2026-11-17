@@ -2,11 +2,18 @@
 
 같은 PC에서 exaone3.5 2.4B, qwen2.5 3B, qwen3.8 27B, gemma4 31B에 한국어 질문 다섯 개를 보내 속도와 답을 비교합니다. 작은 모델이 틀린 곳과 큰 모델이 느린 만큼 얻는 것을 실제 답으로 확인합니다.
 
-글: https://copyandrun.com/blog/local-llm-korean-model-comparison/
+## 링크
+
+- 글: [https://copyandrun.com/blog/local-llm-korean-model-comparison/](https://copyandrun.com/blog/local-llm-korean-model-comparison/)
+- 한 번에 받기: [local-llm-korean-model-comparison.zip](https://copyandrun.com/code-zip/local-llm-korean-model-comparison.zip)
+- GitHub 폴더: [copyandrun-labs/local-llm-korean-model-comparison](https://github.com/fankh/copyandrun-labs/tree/main/local-llm-korean-model-comparison)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `compare_models.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `compare_models.py` | <a href="https://fankh.github.io/copyandrun-labs/local-llm-korean-model-comparison/compare_models.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/local-llm-korean-model-comparison/compare_models.py) |
 
 ## 사용 방법
 

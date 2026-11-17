@@ -2,14 +2,21 @@
 
 호스트의 Ollama 모델을 hermes model의 사용자 지정 엔드포인트로 연결하고, 컨텍스트가 32K인 작은 모델이 왜 실패하는지 로그로 확인한 뒤, 64K 컨텍스트 Modelfile로 만든 27B 모델에서 도구 호출까지 되는 것을 확인합니다.
 
-글: https://copyandrun.com/blog/hermes-agent-local-ollama/
+## 링크
+
+- 글: [https://copyandrun.com/blog/hermes-agent-local-ollama/](https://copyandrun.com/blog/hermes-agent-local-ollama/)
+- 한 번에 받기: [hermes-agent-local-ollama.zip](https://copyandrun.com/code-zip/hermes-agent-local-ollama.zip)
+- GitHub 폴더: [copyandrun-labs/hermes-agent-local-ollama](https://github.com/fankh/copyandrun-labs/tree/main/hermes-agent-local-ollama)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `docker-compose.yml`
-- `Dockerfile`
-- `Modelfile.qwen25-3b-64k`
-- `Modelfile.qwen3-27b-64k`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `docker-compose.yml` | <a href="https://fankh.github.io/copyandrun-labs/hermes-agent-local-ollama/docker-compose.yml" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/hermes-agent-local-ollama/docker-compose.yml) |
+| `Dockerfile` | <a href="https://fankh.github.io/copyandrun-labs/hermes-agent-local-ollama/Dockerfile" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/hermes-agent-local-ollama/Dockerfile) |
+| `Modelfile.qwen25-3b-64k` | <a href="https://fankh.github.io/copyandrun-labs/hermes-agent-local-ollama/Modelfile.qwen25-3b-64k" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/hermes-agent-local-ollama/Modelfile.qwen25-3b-64k) |
+| `Modelfile.qwen3-27b-64k` | <a href="https://fankh.github.io/copyandrun-labs/hermes-agent-local-ollama/Modelfile.qwen3-27b-64k" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/hermes-agent-local-ollama/Modelfile.qwen3-27b-64k) |
 
 ## 사용 방법
 

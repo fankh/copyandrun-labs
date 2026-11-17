@@ -2,12 +2,19 @@
 
 Windows 11에서 계정 관리 감사를 끈 채 테스트 계정을 만들고 Administrators 그룹에 넣으면 기록이 하나도 남지 않는 것을 확인합니다. 로컬 그룹 정책 편집기로 사용자 계정 관리와 보안 그룹 관리 감사를 켠 뒤 같은 변경을 다시 해서 이벤트 4720과 4732를 이벤트 뷰어와 PowerShell 조회 스크립트로 확인하고, 테스트 계정을 지웁니다.
 
-글: https://copyandrun.com/blog/windows-event-4732-local-admin-group-change/
+## 링크
+
+- 글: [https://copyandrun.com/blog/windows-event-4732-local-admin-group-change/](https://copyandrun.com/blog/windows-event-4732-local-admin-group-change/)
+- 한 번에 받기: [windows-event-4732-local-admin-group-change.zip](https://copyandrun.com/code-zip/windows-event-4732-local-admin-group-change.zip)
+- GitHub 폴더: [copyandrun-labs/windows-event-4732-local-admin-group-change](https://github.com/fankh/copyandrun-labs/tree/main/windows-event-4732-local-admin-group-change)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `account-view.xml`
-- `Get-AccountChanges.ps1`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `account-view.xml` | <a href="https://fankh.github.io/copyandrun-labs/windows-event-4732-local-admin-group-change/account-view.xml" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/windows-event-4732-local-admin-group-change/account-view.xml) |
+| `Get-AccountChanges.ps1` | <a href="https://fankh.github.io/copyandrun-labs/windows-event-4732-local-admin-group-change/Get-AccountChanges.ps1" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/windows-event-4732-local-admin-group-change/Get-AccountChanges.ps1) |
 
 ## 사용 방법
 

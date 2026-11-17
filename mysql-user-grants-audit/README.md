@@ -2,11 +2,18 @@
 
 MySQL 8.0 컨테이너에 일부러 느슨한 계정을 만들고, mysql.user와 information_schema 질의로 빈 비밀번호, % 호스트, GRANT OPTION 전역 권한을 찾는 감사 스크립트를 돌립니다. HIGH 발견 4건을 최소 권한으로 고쳐 0건으로 만들고, 실제 접속 시험 8칸과 SHOW GRANTS로 교차 확인한 뒤 종료 코드로 판정합니다.
 
-글: https://copyandrun.com/blog/mysql-user-grants-audit/
+## 링크
+
+- 글: [https://copyandrun.com/blog/mysql-user-grants-audit/](https://copyandrun.com/blog/mysql-user-grants-audit/)
+- 한 번에 받기: [mysql-user-grants-audit.zip](https://copyandrun.com/code-zip/mysql-user-grants-audit.zip)
+- GitHub 폴더: [copyandrun-labs/mysql-user-grants-audit](https://github.com/fankh/copyandrun-labs/tree/main/mysql-user-grants-audit)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `mysql_audit_demo.sh`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `mysql_audit_demo.sh` | <a href="https://fankh.github.io/copyandrun-labs/mysql-user-grants-audit/mysql_audit_demo.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/mysql-user-grants-audit/mysql_audit_demo.sh) |
 
 ## 사용 방법
 

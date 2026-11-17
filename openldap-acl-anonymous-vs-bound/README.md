@@ -2,14 +2,21 @@
 
 OpenLDAP 2.6.15 컨테이너 두 개에 같은 사용자 항목을 넣고, 느슨한 ACL과 좁힌 ACL을 익명과 일반 사용자로 나누어 검색과 수정을 시도합니다. slapacl로 같은 질문을 설정 파일만으로 대조하고, 막혀야 하는 동작이 허용되는 건수를 종료 코드로 바꿉니다.
 
-글: https://copyandrun.com/blog/openldap-acl-anonymous-vs-bound/
+## 링크
+
+- 글: [https://copyandrun.com/blog/openldap-acl-anonymous-vs-bound/](https://copyandrun.com/blog/openldap-acl-anonymous-vs-bound/)
+- 한 번에 받기: [openldap-acl-anonymous-vs-bound.zip](https://copyandrun.com/code-zip/openldap-acl-anonymous-vs-bound.zip)
+- GitHub 폴더: [copyandrun-labs/openldap-acl-anonymous-vs-bound](https://github.com/fankh/copyandrun-labs/tree/main/openldap-acl-anonymous-vs-bound)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `ldap_demo.sh`
-- `slapd_bad.conf`
-- `slapd_good.conf`
-- `users.ldif`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `ldap_demo.sh` | <a href="https://fankh.github.io/copyandrun-labs/openldap-acl-anonymous-vs-bound/ldap_demo.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/openldap-acl-anonymous-vs-bound/ldap_demo.sh) |
+| `slapd_bad.conf` | <a href="https://fankh.github.io/copyandrun-labs/openldap-acl-anonymous-vs-bound/slapd_bad.conf" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/openldap-acl-anonymous-vs-bound/slapd_bad.conf) |
+| `slapd_good.conf` | <a href="https://fankh.github.io/copyandrun-labs/openldap-acl-anonymous-vs-bound/slapd_good.conf" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/openldap-acl-anonymous-vs-bound/slapd_good.conf) |
+| `users.ldif` | <a href="https://fankh.github.io/copyandrun-labs/openldap-acl-anonymous-vs-bound/users.ldif" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/openldap-acl-anonymous-vs-bound/users.ldif) |
 
 ## 사용 방법
 

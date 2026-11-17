@@ -2,11 +2,18 @@
 
 visudo가 문법 오류가 없다고 해도 sudoers 규칙이 안전하다는 뜻은 아닙니다. /etc/sudoers.d의 규칙에서 NOPASSWD, 모든 명령 허용, 와일드카드, 셸을 열 수 있는 편집기를 찾는 스크립트를 만들고, 시험 규칙 5건이 걸리는 것과 고친 뒤 0건이 되는 것을 확인합니다.
 
-글: https://copyandrun.com/blog/sudoers-audit-nopasswd-wildcard/
+## 링크
+
+- 글: [https://copyandrun.com/blog/sudoers-audit-nopasswd-wildcard/](https://copyandrun.com/blog/sudoers-audit-nopasswd-wildcard/)
+- 한 번에 받기: [sudoers-audit-nopasswd-wildcard.zip](https://copyandrun.com/code-zip/sudoers-audit-nopasswd-wildcard.zip)
+- GitHub 폴더: [copyandrun-labs/sudoers-audit-nopasswd-wildcard](https://github.com/fankh/copyandrun-labs/tree/main/sudoers-audit-nopasswd-wildcard)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `sudoers-audit.sh`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `sudoers-audit.sh` | <a href="https://fankh.github.io/copyandrun-labs/sudoers-audit-nopasswd-wildcard/sudoers-audit.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/sudoers-audit-nopasswd-wildcard/sudoers-audit.sh) |
 
 ## 사용 방법
 

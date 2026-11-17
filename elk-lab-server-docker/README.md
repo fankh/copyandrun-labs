@@ -2,13 +2,20 @@
 
 빈 리눅스 컨테이너를 띄우고, 그 안에 ELK를 직접 설치할 준비를 합니다. 메모리와 포트 요구사항, 매일 시작과 종료 방법, 자주 겪는 문제도 함께 다룹니다.
 
-글: https://copyandrun.com/blog/elk-lab-server-docker/
+## 링크
+
+- 글: [https://copyandrun.com/blog/elk-lab-server-docker/](https://copyandrun.com/blog/elk-lab-server-docker/)
+- 한 번에 받기: [elk-lab-server-docker.zip](https://copyandrun.com/code-zip/elk-lab-server-docker.zip)
+- GitHub 폴더: [copyandrun-labs/elk-lab-server-docker](https://github.com/fankh/copyandrun-labs/tree/main/elk-lab-server-docker)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `docker-compose.yml`
-- `Dockerfile`
-- `start-elk.sh`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `docker-compose.yml` | <a href="https://fankh.github.io/copyandrun-labs/elk-lab-server-docker/docker-compose.yml" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/elk-lab-server-docker/docker-compose.yml) |
+| `Dockerfile` | <a href="https://fankh.github.io/copyandrun-labs/elk-lab-server-docker/Dockerfile" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/elk-lab-server-docker/Dockerfile) |
+| `start-elk.sh` | <a href="https://fankh.github.io/copyandrun-labs/elk-lab-server-docker/start-elk.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/elk-lab-server-docker/start-elk.sh) |
 
 ## 사용 방법
 

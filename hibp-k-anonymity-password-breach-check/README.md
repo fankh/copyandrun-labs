@@ -2,11 +2,18 @@
 
 Have I Been Pwned의 range API는 비밀번호도 전체 해시도 보내지 않고 SHA-1 앞 5자리만 보냅니다. 파이썬 스크립트로 해시 계산, 앞 5자리 조회, 나머지 35자리 로컬 대조, 일치 횟수 출력까지 구현하고, Add-Padding 헤더와 이 방식의 한계를 실제 응답으로 확인합니다.
 
-글: https://copyandrun.com/blog/hibp-k-anonymity-password-breach-check/
+## 링크
+
+- 글: [https://copyandrun.com/blog/hibp-k-anonymity-password-breach-check/](https://copyandrun.com/blog/hibp-k-anonymity-password-breach-check/)
+- 한 번에 받기: [hibp-k-anonymity-password-breach-check.zip](https://copyandrun.com/code-zip/hibp-k-anonymity-password-breach-check.zip)
+- GitHub 폴더: [copyandrun-labs/hibp-k-anonymity-password-breach-check](https://github.com/fankh/copyandrun-labs/tree/main/hibp-k-anonymity-password-breach-check)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `hibp_check.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `hibp_check.py` | <a href="https://fankh.github.io/copyandrun-labs/hibp-k-anonymity-password-breach-check/hibp_check.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/hibp-k-anonymity-password-breach-check/hibp_check.py) |
 
 ## 사용 방법
 

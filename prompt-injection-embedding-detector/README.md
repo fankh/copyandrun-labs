@@ -2,14 +2,21 @@
 
 Ollama 컨테이너의 nomic-embed-text 로 알려진 인젝션 문구와 입력 문장의 코사인 유사도를 구하는 파이썬 스크립트를 만듭니다. 임계값별 오탐과 미탐을 표로 확인하고, 이 방식이 인젝션의 절반 이상을 놓친다는 점과 긴 입력의 뒷부분이 잘리는 한계, 접두어와 규칙 필터를 바꿔 본 결과를 실제 수치로 봅니다.
 
-글: https://copyandrun.com/blog/prompt-injection-embedding-detector/
+## 링크
+
+- 글: [https://copyandrun.com/blog/prompt-injection-embedding-detector/](https://copyandrun.com/blog/prompt-injection-embedding-detector/)
+- 한 번에 받기: [prompt-injection-embedding-detector.zip](https://copyandrun.com/code-zip/prompt-injection-embedding-detector.zip)
+- GitHub 폴더: [copyandrun-labs/prompt-injection-embedding-detector](https://github.com/fankh/copyandrun-labs/tree/main/prompt-injection-embedding-detector)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `embed_guard.py`
-- `embed_web.py`
-- `eval.py`
-- `truncate_check.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `embed_guard.py` | <a href="https://fankh.github.io/copyandrun-labs/prompt-injection-embedding-detector/embed_guard.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/prompt-injection-embedding-detector/embed_guard.py) |
+| `embed_web.py` | <a href="https://fankh.github.io/copyandrun-labs/prompt-injection-embedding-detector/embed_web.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/prompt-injection-embedding-detector/embed_web.py) |
+| `eval.py` | <a href="https://fankh.github.io/copyandrun-labs/prompt-injection-embedding-detector/eval.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/prompt-injection-embedding-detector/eval.py) |
+| `truncate_check.py` | <a href="https://fankh.github.io/copyandrun-labs/prompt-injection-embedding-detector/truncate_check.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/prompt-injection-embedding-detector/truncate_check.py) |
 
 ## 사용 방법
 

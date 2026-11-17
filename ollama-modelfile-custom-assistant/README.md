@@ -2,11 +2,18 @@
 
 Modelfile에 시스템 프롬프트와 파라미터를 적어 ollama create로 새 모델을 만들고, 같은 질문에 원본 모델과 얼마나 다르게 답하는지 토큰 수로 비교합니다. 파일 하나로 사내 도우미의 말투와 답변 길이를 고정하는 방법입니다.
 
-글: https://copyandrun.com/blog/ollama-modelfile-custom-assistant/
+## 링크
+
+- 글: [https://copyandrun.com/blog/ollama-modelfile-custom-assistant/](https://copyandrun.com/blog/ollama-modelfile-custom-assistant/)
+- 한 번에 받기: [ollama-modelfile-custom-assistant.zip](https://copyandrun.com/code-zip/ollama-modelfile-custom-assistant.zip)
+- GitHub 폴더: [copyandrun-labs/ollama-modelfile-custom-assistant](https://github.com/fankh/copyandrun-labs/tree/main/ollama-modelfile-custom-assistant)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `modelfile_demo.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `modelfile_demo.py` | <a href="https://fankh.github.io/copyandrun-labs/ollama-modelfile-custom-assistant/modelfile_demo.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/ollama-modelfile-custom-assistant/modelfile_demo.py) |
 
 ## 사용 방법
 

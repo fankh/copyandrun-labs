@@ -2,11 +2,18 @@
 
 SPF는 평가 중 DNS 조회가 10번을 넘으면 permerror로 실패합니다. include, a, mx 같은 항목이 중첩될 때 조회 횟수를 세는 규칙을 정리하고, 시험용 SPF 레코드 표에서 13회가 나오는 과정을 Python 스크립트로 확인합니다.
 
-글: https://copyandrun.com/blog/spf-lookup-limit-10-count/
+## 링크
+
+- 글: [https://copyandrun.com/blog/spf-lookup-limit-10-count/](https://copyandrun.com/blog/spf-lookup-limit-10-count/)
+- 한 번에 받기: [spf-lookup-limit-10-count.zip](https://copyandrun.com/code-zip/spf-lookup-limit-10-count.zip)
+- GitHub 폴더: [copyandrun-labs/spf-lookup-limit-10-count](https://github.com/fankh/copyandrun-labs/tree/main/spf-lookup-limit-10-count)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `spf_count.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `spf_count.py` | <a href="https://fankh.github.io/copyandrun-labs/spf-lookup-limit-10-count/spf_count.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/spf-lookup-limit-10-count/spf_count.py) |
 
 ## 사용 방법
 

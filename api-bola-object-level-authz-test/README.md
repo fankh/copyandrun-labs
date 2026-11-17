@@ -2,11 +2,18 @@
 
 BOLA는 로그인은 했지만 남의 객체 번호를 넣어도 조회되는 API 권한 검증 누락입니다. 127.0.0.1에 시험용 주문 API를 임시로 띄워 같은 요청이 취약한 판에서는 200, 고친 판에서는 404가 되는 것을 Python 스크립트로 확인합니다.
 
-글: https://copyandrun.com/blog/api-bola-object-level-authz-test/
+## 링크
+
+- 글: [https://copyandrun.com/blog/api-bola-object-level-authz-test/](https://copyandrun.com/blog/api-bola-object-level-authz-test/)
+- 한 번에 받기: [api-bola-object-level-authz-test.zip](https://copyandrun.com/code-zip/api-bola-object-level-authz-test.zip)
+- GitHub 폴더: [copyandrun-labs/api-bola-object-level-authz-test](https://github.com/fankh/copyandrun-labs/tree/main/api-bola-object-level-authz-test)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `bola_lab.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `bola_lab.py` | <a href="https://fankh.github.io/copyandrun-labs/api-bola-object-level-authz-test/bola_lab.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/api-bola-object-level-authz-test/bola_lab.py) |
 
 ## 사용 방법
 

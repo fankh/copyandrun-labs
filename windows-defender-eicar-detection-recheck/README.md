@@ -2,12 +2,19 @@
 
 Windows 11에서 실시간 보호를 끄고 EICAR 표준 시험 파일을 만들어 탐지되지 않는 것을 확인한 뒤, 실시간 보호를 켜고 같은 시험을 반복합니다. Windows 보안 앱의 보호 기록, 이벤트 뷰어의 이벤트 1116과 1117, PowerShell 점검 스크립트로 결과를 대조합니다.
 
-글: https://copyandrun.com/blog/windows-defender-eicar-detection-recheck/
+## 링크
+
+- 글: [https://copyandrun.com/blog/windows-defender-eicar-detection-recheck/](https://copyandrun.com/blog/windows-defender-eicar-detection-recheck/)
+- 한 번에 받기: [windows-defender-eicar-detection-recheck.zip](https://copyandrun.com/code-zip/windows-defender-eicar-detection-recheck.zip)
+- GitHub 폴더: [copyandrun-labs/windows-defender-eicar-detection-recheck](https://github.com/fankh/copyandrun-labs/tree/main/windows-defender-eicar-detection-recheck)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `Check-DefenderEicar.ps1`
-- `defender-view.xml`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `Check-DefenderEicar.ps1` | <a href="https://fankh.github.io/copyandrun-labs/windows-defender-eicar-detection-recheck/Check-DefenderEicar.ps1" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/windows-defender-eicar-detection-recheck/Check-DefenderEicar.ps1) |
+| `defender-view.xml` | <a href="https://fankh.github.io/copyandrun-labs/windows-defender-eicar-detection-recheck/defender-view.xml" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/windows-defender-eicar-detection-recheck/defender-view.xml) |
 
 ## 사용 방법
 

@@ -2,12 +2,19 @@
 
 컨테이너 두 개 사이에 WireGuard 터널을 만들고, 정상 설정과 공개키를 잘못 적은 설정, 허용 주소를 잘못 적은 설정을 같은 점검으로 비교합니다. 핸드셰이크가 되어도 ping이 실패하는 경우와 터널 안의 내용이 겉에서 보이지 않는 것을 tcpdump로 확인하고, 결과를 종료 코드로 바꿉니다.
 
-글: https://copyandrun.com/blog/wireguard-two-containers-handshake/
+## 링크
+
+- 글: [https://copyandrun.com/blog/wireguard-two-containers-handshake/](https://copyandrun.com/blog/wireguard-two-containers-handshake/)
+- 한 번에 받기: [wireguard-two-containers-handshake.zip](https://copyandrun.com/code-zip/wireguard-two-containers-handshake.zip)
+- GitHub 폴더: [copyandrun-labs/wireguard-two-containers-handshake](https://github.com/fankh/copyandrun-labs/tree/main/wireguard-two-containers-handshake)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `wg_demo.sh`
-- `wg_summary.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `wg_demo.sh` | <a href="https://fankh.github.io/copyandrun-labs/wireguard-two-containers-handshake/wg_demo.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/wireguard-two-containers-handshake/wg_demo.sh) |
+| `wg_summary.py` | <a href="https://fankh.github.io/copyandrun-labs/wireguard-two-containers-handshake/wg_summary.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/wireguard-two-containers-handshake/wg_summary.py) |
 
 ## 사용 방법
 

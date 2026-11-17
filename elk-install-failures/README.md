@@ -2,11 +2,18 @@
 
 일부러 설정을 깨뜨려 실패를 재현하고, 로그에서 원인을 찾아 고치는 순서를 익힙니다. 설치 단계마다 자주 겪는 오류를 미리 겪어 봅니다.
 
-글: https://copyandrun.com/blog/elk-install-failures/
+## 링크
+
+- 글: [https://copyandrun.com/blog/elk-install-failures/](https://copyandrun.com/blog/elk-install-failures/)
+- 한 번에 받기: [elk-install-failures.zip](https://copyandrun.com/code-zip/elk-install-failures.zip)
+- GitHub 폴더: [copyandrun-labs/elk-install-failures](https://github.com/fankh/copyandrun-labs/tree/main/elk-install-failures)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `restore-normal.sh`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `restore-normal.sh` | <a href="https://fankh.github.io/copyandrun-labs/elk-install-failures/restore-normal.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/elk-install-failures/restore-normal.sh) |
 
 ## 사용 방법
 

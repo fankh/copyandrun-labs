@@ -2,19 +2,26 @@
 
 공식 postgres 이미지에서 pgcrypto의 pgp_sym_encrypt로 전화번호 컬럼을 암호화해 저장하고, 상담원 역할은 마스킹 뷰만, 관리자 역할은 복호화 뷰까지 읽게 GRANT를 나눕니다. 키를 SQL 문에 직접 쓰면 log_statement 로그와 pg_stat_statements에 남는 것을 확인하고, 바인드 매개변수와 로그 설정으로 줄이는 방법, 암호문 검색과 인덱스의 한계를 함께 봅니다.
 
-글: https://copyandrun.com/blog/postgres-pgcrypto-column-encrypt-masking-view/
+## 링크
+
+- 글: [https://copyandrun.com/blog/postgres-pgcrypto-column-encrypt-masking-view/](https://copyandrun.com/blog/postgres-pgcrypto-column-encrypt-masking-view/)
+- 한 번에 받기: [postgres-pgcrypto-column-encrypt-masking-view.zip](https://copyandrun.com/code-zip/postgres-pgcrypto-column-encrypt-masking-view.zip)
+- GitHub 폴더: [copyandrun-labs/postgres-pgcrypto-column-encrypt-masking-view](https://github.com/fankh/copyandrun-labs/tree/main/postgres-pgcrypto-column-encrypt-masking-view)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `admin_naive.sql`
-- `admin_safe.sql`
-- `agent_check.sql`
-- `log_params_off.sql`
-- `roles.sql`
-- `search_check.sql`
-- `seed.sql`
-- `setup.sql`
-- `start.sh`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `admin_naive.sql` | <a href="https://fankh.github.io/copyandrun-labs/postgres-pgcrypto-column-encrypt-masking-view/admin_naive.sql" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/postgres-pgcrypto-column-encrypt-masking-view/admin_naive.sql) |
+| `admin_safe.sql` | <a href="https://fankh.github.io/copyandrun-labs/postgres-pgcrypto-column-encrypt-masking-view/admin_safe.sql" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/postgres-pgcrypto-column-encrypt-masking-view/admin_safe.sql) |
+| `agent_check.sql` | <a href="https://fankh.github.io/copyandrun-labs/postgres-pgcrypto-column-encrypt-masking-view/agent_check.sql" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/postgres-pgcrypto-column-encrypt-masking-view/agent_check.sql) |
+| `log_params_off.sql` | <a href="https://fankh.github.io/copyandrun-labs/postgres-pgcrypto-column-encrypt-masking-view/log_params_off.sql" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/postgres-pgcrypto-column-encrypt-masking-view/log_params_off.sql) |
+| `roles.sql` | <a href="https://fankh.github.io/copyandrun-labs/postgres-pgcrypto-column-encrypt-masking-view/roles.sql" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/postgres-pgcrypto-column-encrypt-masking-view/roles.sql) |
+| `search_check.sql` | <a href="https://fankh.github.io/copyandrun-labs/postgres-pgcrypto-column-encrypt-masking-view/search_check.sql" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/postgres-pgcrypto-column-encrypt-masking-view/search_check.sql) |
+| `seed.sql` | <a href="https://fankh.github.io/copyandrun-labs/postgres-pgcrypto-column-encrypt-masking-view/seed.sql" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/postgres-pgcrypto-column-encrypt-masking-view/seed.sql) |
+| `setup.sql` | <a href="https://fankh.github.io/copyandrun-labs/postgres-pgcrypto-column-encrypt-masking-view/setup.sql" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/postgres-pgcrypto-column-encrypt-masking-view/setup.sql) |
+| `start.sh` | <a href="https://fankh.github.io/copyandrun-labs/postgres-pgcrypto-column-encrypt-masking-view/start.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/postgres-pgcrypto-column-encrypt-masking-view/start.sh) |
 
 ## 사용 방법
 

@@ -4,6 +4,10 @@
 
 연습용 코드입니다. 취약한 예제와 실습용 비밀번호가 들어 있으므로 운영 환경에 쓰지 않습니다.
 
+- 사이트: [https://copyandrun.com](https://copyandrun.com)
+- GitHub 저장소: [https://github.com/fankh/copyandrun-labs](https://github.com/fankh/copyandrun-labs)
+- 전체 내려받기: [main.zip](https://github.com/fankh/copyandrun-labs/archive/refs/heads/main.zip)
+
 | 폴더 | 글 |
 | --- | --- |
 | [`account-audit-uid0-empty-password`](account-audit-uid0-empty-password/) | [Linux 계정 점검: UID 0 계정, 빈 암호, 로그인 셸이 있는 시스템 계정을 awk로 찾기](https://copyandrun.com/blog/account-audit-uid0-empty-password/) |

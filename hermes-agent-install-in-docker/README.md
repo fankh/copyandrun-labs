@@ -2,12 +2,19 @@
 
 명령을 직접 실행하는 오픈소스 에이전트 Hermes Agent를 Ubuntu 컨테이너 안에 설치 스크립트로 설치하고, 첫 실행 화면, hermes doctor 점검, ~/.hermes 데이터 폴더 구조, 웹 대시보드 로그인까지 직접 확인합니다.
 
-글: https://copyandrun.com/blog/hermes-agent-install-in-docker/
+## 링크
+
+- 글: [https://copyandrun.com/blog/hermes-agent-install-in-docker/](https://copyandrun.com/blog/hermes-agent-install-in-docker/)
+- 한 번에 받기: [hermes-agent-install-in-docker.zip](https://copyandrun.com/code-zip/hermes-agent-install-in-docker.zip)
+- GitHub 폴더: [copyandrun-labs/hermes-agent-install-in-docker](https://github.com/fankh/copyandrun-labs/tree/main/hermes-agent-install-in-docker)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `docker-compose.yml`
-- `Dockerfile`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `docker-compose.yml` | <a href="https://fankh.github.io/copyandrun-labs/hermes-agent-install-in-docker/docker-compose.yml" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/hermes-agent-install-in-docker/docker-compose.yml) |
+| `Dockerfile` | <a href="https://fankh.github.io/copyandrun-labs/hermes-agent-install-in-docker/Dockerfile" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/hermes-agent-install-in-docker/Dockerfile) |
 
 ## 사용 방법
 

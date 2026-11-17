@@ -2,17 +2,24 @@
 
 로그인만 확인하고 주문의 주인은 확인하지 않는 Flask API가 남의 주문을 돌려주는 것을 pytest 한 건으로 확인합니다. 쿼리에 소유자 조건을 넣고 번호를 받는 엔드포인트에 같은 데코레이터를 붙인 뒤, 사용자와 역할 조합 표로 회귀 테스트를 만듭니다.
 
-글: https://copyandrun.com/blog/idor-ownership-check-flask/
+## 링크
+
+- 글: [https://copyandrun.com/blog/idor-ownership-check-flask/](https://copyandrun.com/blog/idor-ownership-check-flask/)
+- 한 번에 받기: [idor-ownership-check-flask.zip](https://copyandrun.com/code-zip/idor-ownership-check-flask.zip)
+- GitHub 폴더: [copyandrun-labs/idor-ownership-check-flask](https://github.com/fankh/copyandrun-labs/tree/main/idor-ownership-check-flask)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `app.py`
-- `base.py`
-- `index.html`
-- `requirements.txt`
-- `test_orders.py`
-- `test_vuln.py`
-- `vuln_app.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `app.py` | <a href="https://fankh.github.io/copyandrun-labs/idor-ownership-check-flask/app.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/idor-ownership-check-flask/app.py) |
+| `base.py` | <a href="https://fankh.github.io/copyandrun-labs/idor-ownership-check-flask/base.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/idor-ownership-check-flask/base.py) |
+| `index.html` | <a href="https://fankh.github.io/copyandrun-labs/idor-ownership-check-flask/index.html" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/idor-ownership-check-flask/index.html) |
+| `requirements.txt` | <a href="https://fankh.github.io/copyandrun-labs/idor-ownership-check-flask/requirements.txt" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/idor-ownership-check-flask/requirements.txt) |
+| `test_orders.py` | <a href="https://fankh.github.io/copyandrun-labs/idor-ownership-check-flask/test_orders.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/idor-ownership-check-flask/test_orders.py) |
+| `test_vuln.py` | <a href="https://fankh.github.io/copyandrun-labs/idor-ownership-check-flask/test_vuln.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/idor-ownership-check-flask/test_vuln.py) |
+| `vuln_app.py` | <a href="https://fankh.github.io/copyandrun-labs/idor-ownership-check-flask/vuln_app.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/idor-ownership-check-flask/vuln_app.py) |
 
 ## 사용 방법
 

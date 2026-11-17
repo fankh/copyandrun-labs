@@ -2,11 +2,18 @@
 
 Windows 11 보안 로그의 이벤트 4624를 PowerShell로 읽어 로그온 유형별로 세고, 서비스 로그온이 대부분인 로그에서 사람이 한 로그온만 골라내는 방법을 직접 만든 임시 계정의 로그온으로 확인합니다.
 
-글: https://copyandrun.com/blog/windows-event-4624-logon-type-read/
+## 링크
+
+- 글: [https://copyandrun.com/blog/windows-event-4624-logon-type-read/](https://copyandrun.com/blog/windows-event-4624-logon-type-read/)
+- 한 번에 받기: [windows-event-4624-logon-type-read.zip](https://copyandrun.com/code-zip/windows-event-4624-logon-type-read.zip)
+- GitHub 폴더: [copyandrun-labs/windows-event-4624-logon-type-read](https://github.com/fankh/copyandrun-labs/tree/main/windows-event-4624-logon-type-read)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `Get-LogonSummary.ps1`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `Get-LogonSummary.ps1` | <a href="https://fankh.github.io/copyandrun-labs/windows-event-4624-logon-type-read/Get-LogonSummary.ps1" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/windows-event-4624-logon-type-read/Get-LogonSummary.ps1) |
 
 ## 사용 방법
 

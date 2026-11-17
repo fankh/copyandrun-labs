@@ -2,15 +2,22 @@
 
 빈 폴더에서 Flask 게시판을 직접 띄우고 로그인·다운로드·게시판 기능을 차례로 뚫어 봅니다. 뚫은 지점을 그대로 한 줄씩 고치면서 왜 그 한 줄이 공격을 막는지 눈으로 확인합니다.
 
-글: https://copyandrun.com/blog/flask-attack-and-fix-own-app/
+## 링크
+
+- 글: [https://copyandrun.com/blog/flask-attack-and-fix-own-app/](https://copyandrun.com/blog/flask-attack-and-fix-own-app/)
+- 한 번에 받기: [flask-attack-and-fix-own-app.zip](https://copyandrun.com/code-zip/flask-attack-and-fix-own-app.zip)
+- GitHub 폴더: [copyandrun-labs/flask-attack-and-fix-own-app](https://github.com/fankh/copyandrun-labs/tree/main/flask-attack-and-fix-own-app)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `app.py`
-- `app_fixed.py`
-- `check_stolen.py`
-- `init_db.py`
-- `requirements.txt`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `app.py` | <a href="https://fankh.github.io/copyandrun-labs/flask-attack-and-fix-own-app/app.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/flask-attack-and-fix-own-app/app.py) |
+| `app_fixed.py` | <a href="https://fankh.github.io/copyandrun-labs/flask-attack-and-fix-own-app/app_fixed.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/flask-attack-and-fix-own-app/app_fixed.py) |
+| `check_stolen.py` | <a href="https://fankh.github.io/copyandrun-labs/flask-attack-and-fix-own-app/check_stolen.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/flask-attack-and-fix-own-app/check_stolen.py) |
+| `init_db.py` | <a href="https://fankh.github.io/copyandrun-labs/flask-attack-and-fix-own-app/init_db.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/flask-attack-and-fix-own-app/init_db.py) |
+| `requirements.txt` | <a href="https://fankh.github.io/copyandrun-labs/flask-attack-and-fix-own-app/requirements.txt" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/flask-attack-and-fix-own-app/requirements.txt) |
 
 ## 사용 방법
 

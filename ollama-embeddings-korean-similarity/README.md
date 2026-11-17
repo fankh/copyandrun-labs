@@ -2,12 +2,19 @@
 
 nomic-embed-text로 한국어 문장 7개를 768차원 벡터로 바꾸고 코사인 유사도를 계산합니다. 같은 뜻의 문장은 잘 묶이지만 점수가 좁은 범위에 몰리고, 관련 없는 문장도 높게 나오는 약점까지 숫자로 확인합니다.
 
-글: https://copyandrun.com/blog/ollama-embeddings-korean-similarity/
+## 링크
+
+- 글: [https://copyandrun.com/blog/ollama-embeddings-korean-similarity/](https://copyandrun.com/blog/ollama-embeddings-korean-similarity/)
+- 한 번에 받기: [ollama-embeddings-korean-similarity.zip](https://copyandrun.com/code-zip/ollama-embeddings-korean-similarity.zip)
+- GitHub 폴더: [copyandrun-labs/ollama-embeddings-korean-similarity](https://github.com/fankh/copyandrun-labs/tree/main/ollama-embeddings-korean-similarity)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `emb_more.py`
-- `embed_similarity.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `emb_more.py` | <a href="https://fankh.github.io/copyandrun-labs/ollama-embeddings-korean-similarity/emb_more.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/ollama-embeddings-korean-similarity/emb_more.py) |
+| `embed_similarity.py` | <a href="https://fankh.github.io/copyandrun-labs/ollama-embeddings-korean-similarity/embed_similarity.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/ollama-embeddings-korean-similarity/embed_similarity.py) |
 
 ## 사용 방법
 

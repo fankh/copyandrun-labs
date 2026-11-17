@@ -2,11 +2,18 @@
 
 설정 파일에서 비밀번호와 토큰 값만 암호화해 파일 구조는 그대로 읽히게 하는 sops를 age 키와 함께 실행합니다. 복호화, 키가 없을 때와 틀릴 때, 파일 변조 감지, 값 수정 시 바뀌는 줄, 팀원 키 추가까지 확인합니다.
 
-글: https://copyandrun.com/blog/sops-age-encrypted-config/
+## 링크
+
+- 글: [https://copyandrun.com/blog/sops-age-encrypted-config/](https://copyandrun.com/blog/sops-age-encrypted-config/)
+- 한 번에 받기: [sops-age-encrypted-config.zip](https://copyandrun.com/code-zip/sops-age-encrypted-config.zip)
+- GitHub 폴더: [copyandrun-labs/sops-age-encrypted-config](https://github.com/fankh/copyandrun-labs/tree/main/sops-age-encrypted-config)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `sops_demo.sh`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `sops_demo.sh` | <a href="https://fankh.github.io/copyandrun-labs/sops-age-encrypted-config/sops_demo.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/sops-age-encrypted-config/sops_demo.sh) |
 
 ## 사용 방법
 

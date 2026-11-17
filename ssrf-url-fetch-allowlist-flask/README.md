@@ -2,14 +2,21 @@
 
 링크를 입력하면 제목을 보여 주는 Flask 미리보기 기능이 서버 안쪽에서만 열려야 하는 서비스를 대신 호출하는 문제를 연습용 앱에서 확인합니다. 스킴 제한, 주소 해석 뒤 내부 IP 차단, 리디렉션 재검증, 타임아웃과 크기 제한을 넣고 같은 요청이 막히는 것까지 확인합니다.
 
-글: https://copyandrun.com/blog/ssrf-url-fetch-allowlist-flask/
+## 링크
+
+- 글: [https://copyandrun.com/blog/ssrf-url-fetch-allowlist-flask/](https://copyandrun.com/blog/ssrf-url-fetch-allowlist-flask/)
+- 한 번에 받기: [ssrf-url-fetch-allowlist-flask.zip](https://copyandrun.com/code-zip/ssrf-url-fetch-allowlist-flask.zip)
+- GitHub 폴더: [copyandrun-labs/ssrf-url-fetch-allowlist-flask](https://github.com/fankh/copyandrun-labs/tree/main/ssrf-url-fetch-allowlist-flask)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `app.py`
-- `app_fixed.py`
-- `metadata_server.py`
-- `requirements.txt`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `app.py` | <a href="https://fankh.github.io/copyandrun-labs/ssrf-url-fetch-allowlist-flask/app.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/ssrf-url-fetch-allowlist-flask/app.py) |
+| `app_fixed.py` | <a href="https://fankh.github.io/copyandrun-labs/ssrf-url-fetch-allowlist-flask/app_fixed.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/ssrf-url-fetch-allowlist-flask/app_fixed.py) |
+| `metadata_server.py` | <a href="https://fankh.github.io/copyandrun-labs/ssrf-url-fetch-allowlist-flask/metadata_server.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/ssrf-url-fetch-allowlist-flask/metadata_server.py) |
+| `requirements.txt` | <a href="https://fankh.github.io/copyandrun-labs/ssrf-url-fetch-allowlist-flask/requirements.txt" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/ssrf-url-fetch-allowlist-flask/requirements.txt) |
 
 ## 사용 방법
 

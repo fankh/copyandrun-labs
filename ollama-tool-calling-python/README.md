@@ -2,11 +2,18 @@
 
 로컬 모델이 함수를 고르고 인자를 채우게 하는 도구 호출(tool calling)을 파이썬으로 구현하고, 모델 세 개를 질문 일곱 개로 비교합니다. 이름이 빠진 질문, 도구 결과 안의 프롬프트 주입, 허용 목록과 인자 검증, 값을 걸러 막는 방어까지 실행해 확인합니다.
 
-글: https://copyandrun.com/blog/ollama-tool-calling-python/
+## 링크
+
+- 글: [https://copyandrun.com/blog/ollama-tool-calling-python/](https://copyandrun.com/blog/ollama-tool-calling-python/)
+- 한 번에 받기: [ollama-tool-calling-python.zip](https://copyandrun.com/code-zip/ollama-tool-calling-python.zip)
+- GitHub 폴더: [copyandrun-labs/ollama-tool-calling-python](https://github.com/fankh/copyandrun-labs/tree/main/ollama-tool-calling-python)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `tools_demo.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `tools_demo.py` | <a href="https://fankh.github.io/copyandrun-labs/ollama-tool-calling-python/tools_demo.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/ollama-tool-calling-python/tools_demo.py) |
 
 ## 사용 방법
 

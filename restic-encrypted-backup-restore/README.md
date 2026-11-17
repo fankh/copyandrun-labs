@@ -2,11 +2,18 @@
 
 오픈소스 백업 도구 restic을 도커로 실행해 암호화 저장소를 만들고, 두 번째 백업에서 바뀐 부분만 저장되는지, 복원본이 원본과 같은지, 저장소 파일 일부를 일부러 망가뜨렸을 때 어떤 점검이 잡는지 확인합니다.
 
-글: https://copyandrun.com/blog/restic-encrypted-backup-restore/
+## 링크
+
+- 글: [https://copyandrun.com/blog/restic-encrypted-backup-restore/](https://copyandrun.com/blog/restic-encrypted-backup-restore/)
+- 한 번에 받기: [restic-encrypted-backup-restore.zip](https://copyandrun.com/code-zip/restic-encrypted-backup-restore.zip)
+- GitHub 폴더: [copyandrun-labs/restic-encrypted-backup-restore](https://github.com/fankh/copyandrun-labs/tree/main/restic-encrypted-backup-restore)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `restic_demo.sh`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `restic_demo.sh` | <a href="https://fankh.github.io/copyandrun-labs/restic-encrypted-backup-restore/restic_demo.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/restic-encrypted-backup-restore/restic_demo.sh) |
 
 ## 사용 방법
 

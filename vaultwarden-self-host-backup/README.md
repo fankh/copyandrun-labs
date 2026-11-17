@@ -2,11 +2,18 @@
 
 Bitwarden과 호환되는 오픈소스 서버 Vaultwarden을 도커로 localhost에만 열어 띄우고, 상태 확인 주소와 데이터 파일을 살펴봅니다. 컨테이너를 멈추고 데이터베이스를 복사해 백업한 뒤 다시 시작해도 서버가 살아나는지 확인합니다.
 
-글: https://copyandrun.com/blog/vaultwarden-self-host-backup/
+## 링크
+
+- 글: [https://copyandrun.com/blog/vaultwarden-self-host-backup/](https://copyandrun.com/blog/vaultwarden-self-host-backup/)
+- 한 번에 받기: [vaultwarden-self-host-backup.zip](https://copyandrun.com/code-zip/vaultwarden-self-host-backup.zip)
+- GitHub 폴더: [copyandrun-labs/vaultwarden-self-host-backup](https://github.com/fankh/copyandrun-labs/tree/main/vaultwarden-self-host-backup)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `vw_test.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `vw_test.py` | <a href="https://fankh.github.io/copyandrun-labs/vaultwarden-self-host-backup/vw_test.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/vaultwarden-self-host-backup/vw_test.py) |
 
 ## 사용 방법
 

@@ -2,12 +2,19 @@
 
 Windows 11에서 프로세스 만들기 감사가 꺼져 있어 실행 기록이 남지 않는 것을 확인하고, 로컬 그룹 정책 편집기로 감사와 명령줄 포함을 켠 뒤 whoami와 hostname 실행이 이벤트 4688로 남는 것을 이벤트 뷰어와 PowerShell로 대조합니다. 명령줄에 비밀번호가 그대로 남는 한계도 함께 확인합니다.
 
-글: https://copyandrun.com/blog/windows-event-4688-process-creation-audit/
+## 링크
+
+- 글: [https://copyandrun.com/blog/windows-event-4688-process-creation-audit/](https://copyandrun.com/blog/windows-event-4688-process-creation-audit/)
+- 한 번에 받기: [windows-event-4688-process-creation-audit.zip](https://copyandrun.com/code-zip/windows-event-4688-process-creation-audit.zip)
+- GitHub 폴더: [copyandrun-labs/windows-event-4688-process-creation-audit](https://github.com/fankh/copyandrun-labs/tree/main/windows-event-4688-process-creation-audit)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `Check-ProcessAudit.ps1`
-- `process-view.xml`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `Check-ProcessAudit.ps1` | <a href="https://fankh.github.io/copyandrun-labs/windows-event-4688-process-creation-audit/Check-ProcessAudit.ps1" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/windows-event-4688-process-creation-audit/Check-ProcessAudit.ps1) |
+| `process-view.xml` | <a href="https://fankh.github.io/copyandrun-labs/windows-event-4688-process-creation-audit/process-view.xml" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/windows-event-4688-process-creation-audit/process-view.xml) |
 
 ## 사용 방법
 

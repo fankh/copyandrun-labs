@@ -2,14 +2,21 @@
 
 호스트 이름을 출력할 뿐인 무해한 PowerShell 한 줄을 세 가지 방식으로 난독화하고, 풀기 단계에서는 실행하지 않고 파이썬과 컨테이너 안 PowerShell로 풉니다. 푼 결과를 로컬 생성형 AI의 설명과 비교해 맞은 곳과 틀린 곳을 기록하고, 의심스러운 PowerShell을 만났을 때의 점검 순서를 정리합니다.
 
-글: https://copyandrun.com/blog/powershell-obfuscation-decode-ai-explain/
+## 링크
+
+- 글: [https://copyandrun.com/blog/powershell-obfuscation-decode-ai-explain/](https://copyandrun.com/blog/powershell-obfuscation-decode-ai-explain/)
+- 한 번에 받기: [powershell-obfuscation-decode-ai-explain.zip](https://copyandrun.com/code-zip/powershell-obfuscation-decode-ai-explain.zip)
+- GitHub 폴더: [copyandrun-labs/powershell-obfuscation-decode-ai-explain](https://github.com/fankh/copyandrun-labs/tree/main/powershell-obfuscation-decode-ai-explain)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `ask_ai.py`
-- `decode.py`
-- `decode_only.ps1`
-- `make_samples.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `ask_ai.py` | <a href="https://fankh.github.io/copyandrun-labs/powershell-obfuscation-decode-ai-explain/ask_ai.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/powershell-obfuscation-decode-ai-explain/ask_ai.py) |
+| `decode.py` | <a href="https://fankh.github.io/copyandrun-labs/powershell-obfuscation-decode-ai-explain/decode.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/powershell-obfuscation-decode-ai-explain/decode.py) |
+| `decode_only.ps1` | <a href="https://fankh.github.io/copyandrun-labs/powershell-obfuscation-decode-ai-explain/decode_only.ps1" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/powershell-obfuscation-decode-ai-explain/decode_only.ps1) |
+| `make_samples.py` | <a href="https://fankh.github.io/copyandrun-labs/powershell-obfuscation-decode-ai-explain/make_samples.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/powershell-obfuscation-decode-ai-explain/make_samples.py) |
 
 ## 사용 방법
 

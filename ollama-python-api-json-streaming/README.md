@@ -2,11 +2,18 @@
 
 requests만으로 내 PC의 Ollama를 호출합니다. 한 번에 받기, 옵션 넘기기, JSON 스키마로 출력 형식 고정하기, 글자가 나오는 대로 받는 스트리밍을 실행해 결과를 확인합니다. 한글이 깨지는 Windows 함정도 함께 정리합니다.
 
-글: https://copyandrun.com/blog/ollama-python-api-json-streaming/
+## 링크
+
+- 글: [https://copyandrun.com/blog/ollama-python-api-json-streaming/](https://copyandrun.com/blog/ollama-python-api-json-streaming/)
+- 한 번에 받기: [ollama-python-api-json-streaming.zip](https://copyandrun.com/code-zip/ollama-python-api-json-streaming.zip)
+- GitHub 폴더: [copyandrun-labs/ollama-python-api-json-streaming](https://github.com/fankh/copyandrun-labs/tree/main/ollama-python-api-json-streaming)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `api_demo.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `api_demo.py` | <a href="https://fankh.github.io/copyandrun-labs/ollama-python-api-json-streaming/api_demo.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/ollama-python-api-json-streaming/api_demo.py) |
 
 ## 사용 방법
 

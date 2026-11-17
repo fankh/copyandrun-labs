@@ -2,14 +2,21 @@
 
 Elasticsearch 스냅샷으로 데이터를, 컨테이너 이미지로 설치 상태를 따로 보관합니다. 인덱스를 지운 뒤 복원해 보며 백업이 동작하는지 확인합니다.
 
-글: https://copyandrun.com/blog/elk-snapshot-backup/
+## 링크
+
+- 글: [https://copyandrun.com/blog/elk-snapshot-backup/](https://copyandrun.com/blog/elk-snapshot-backup/)
+- 한 번에 받기: [elk-snapshot-backup.zip](https://copyandrun.com/code-zip/elk-snapshot-backup.zip)
+- GitHub 폴더: [copyandrun-labs/elk-snapshot-backup](https://github.com/fankh/copyandrun-labs/tree/main/elk-snapshot-backup)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `fix-file-changed.sh`
-- `recover-from-image.sh`
-- `restore-check.sh`
-- `snapshot-backup.sh`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `fix-file-changed.sh` | <a href="https://fankh.github.io/copyandrun-labs/elk-snapshot-backup/fix-file-changed.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/elk-snapshot-backup/fix-file-changed.sh) |
+| `recover-from-image.sh` | <a href="https://fankh.github.io/copyandrun-labs/elk-snapshot-backup/recover-from-image.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/elk-snapshot-backup/recover-from-image.sh) |
+| `restore-check.sh` | <a href="https://fankh.github.io/copyandrun-labs/elk-snapshot-backup/restore-check.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/elk-snapshot-backup/restore-check.sh) |
+| `snapshot-backup.sh` | <a href="https://fankh.github.io/copyandrun-labs/elk-snapshot-backup/snapshot-backup.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/elk-snapshot-backup/snapshot-backup.sh) |
 
 ## 사용 방법
 

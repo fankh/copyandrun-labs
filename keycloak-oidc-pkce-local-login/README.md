@@ -2,15 +2,22 @@
 
 Docker로 Keycloak을 띄워 realm, client, 테스트 사용자를 구성하고, Flask 클라이언트가 Authorization Code와 PKCE로 로그인해 ID 토큰의 iss, aud, exp, nonce를 검증합니다. PKCE를 요구하지 않는 client에서는 가로챈 인가 코드가 토큰으로 교환되는 것을 재현하고, PKCE S256을 필수로 켜서 code_verifier 없는 교환이 거부되는 것을 확인합니다.
 
-글: https://copyandrun.com/blog/keycloak-oidc-pkce-local-login/
+## 링크
+
+- 글: [https://copyandrun.com/blog/keycloak-oidc-pkce-local-login/](https://copyandrun.com/blog/keycloak-oidc-pkce-local-login/)
+- 한 번에 받기: [keycloak-oidc-pkce-local-login.zip](https://copyandrun.com/code-zip/keycloak-oidc-pkce-local-login.zip)
+- GitHub 폴더: [copyandrun-labs/keycloak-oidc-pkce-local-login](https://github.com/fankh/copyandrun-labs/tree/main/keycloak-oidc-pkce-local-login)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `app.py`
-- `attack.py`
-- `docker-compose.yml`
-- `realm-lab.json`
-- `requirements.txt`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `app.py` | <a href="https://fankh.github.io/copyandrun-labs/keycloak-oidc-pkce-local-login/app.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/keycloak-oidc-pkce-local-login/app.py) |
+| `attack.py` | <a href="https://fankh.github.io/copyandrun-labs/keycloak-oidc-pkce-local-login/attack.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/keycloak-oidc-pkce-local-login/attack.py) |
+| `docker-compose.yml` | <a href="https://fankh.github.io/copyandrun-labs/keycloak-oidc-pkce-local-login/docker-compose.yml" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/keycloak-oidc-pkce-local-login/docker-compose.yml) |
+| `realm-lab.json` | <a href="https://fankh.github.io/copyandrun-labs/keycloak-oidc-pkce-local-login/realm-lab.json" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/keycloak-oidc-pkce-local-login/realm-lab.json) |
+| `requirements.txt` | <a href="https://fankh.github.io/copyandrun-labs/keycloak-oidc-pkce-local-login/requirements.txt" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/keycloak-oidc-pkce-local-login/requirements.txt) |
 
 ## 사용 방법
 

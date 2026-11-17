@@ -2,11 +2,18 @@
 
 Kibana를 설치하고 서버 밖 브라우저에서 접속하기까지의 설정, 기동이 느릴 때 확인할 점, 접속 주소 주의점을 다룹니다.
 
-글: https://copyandrun.com/blog/kibana-install-connect/
+## 링크
+
+- 글: [https://copyandrun.com/blog/kibana-install-connect/](https://copyandrun.com/blog/kibana-install-connect/)
+- 한 번에 받기: [kibana-install-connect.zip](https://copyandrun.com/code-zip/kibana-install-connect.zip)
+- GitHub 폴더: [copyandrun-labs/kibana-install-connect](https://github.com/fankh/copyandrun-labs/tree/main/kibana-install-connect)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `install-kibana.sh`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `install-kibana.sh` | <a href="https://fankh.github.io/copyandrun-labs/kibana-install-connect/install-kibana.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/kibana-install-connect/install-kibana.sh) |
 
 ## 사용 방법
 

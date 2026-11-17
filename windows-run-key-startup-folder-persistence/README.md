@@ -2,11 +2,18 @@
 
 Windows 11에서 로그온할 때 저절로 실행되는 Run 키와 시작 프로그램 폴더를 읽는 스크립트를 만들고, 무해한 시험 항목 두 개를 직접 등록해 찾아낸 뒤 지워서 처음 상태로 돌아온 것까지 확인합니다.
 
-글: https://copyandrun.com/blog/windows-run-key-startup-folder-persistence/
+## 링크
+
+- 글: [https://copyandrun.com/blog/windows-run-key-startup-folder-persistence/](https://copyandrun.com/blog/windows-run-key-startup-folder-persistence/)
+- 한 번에 받기: [windows-run-key-startup-folder-persistence.zip](https://copyandrun.com/code-zip/windows-run-key-startup-folder-persistence.zip)
+- GitHub 폴더: [copyandrun-labs/windows-run-key-startup-folder-persistence](https://github.com/fankh/copyandrun-labs/tree/main/windows-run-key-startup-folder-persistence)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `Get-AutoStartEntries.ps1`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `Get-AutoStartEntries.ps1` | <a href="https://fankh.github.io/copyandrun-labs/windows-run-key-startup-folder-persistence/Get-AutoStartEntries.ps1" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/windows-run-key-startup-folder-persistence/Get-AutoStartEntries.ps1) |
 
 ## 사용 방법
 

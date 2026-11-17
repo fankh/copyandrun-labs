@@ -2,12 +2,19 @@
 
 OpenSSL 3.5.9로 루트 CA와 서버 인증서를 만들고, 정상 인증서와 이름 불일치, 만료, 용도 불일치, 신뢰하지 않는 CA 서명, SAN 없는 인증서를 openssl verify로 판정합니다. SAN이 없어도 통과하는 점은 자체 규칙으로 막고, nginx에 올려 s_client로 실제 연결 결과까지 대조합니다.
 
-글: https://copyandrun.com/blog/local-ca-openssl-leaf-cert-verify/
+## 링크
+
+- 글: [https://copyandrun.com/blog/local-ca-openssl-leaf-cert-verify/](https://copyandrun.com/blog/local-ca-openssl-leaf-cert-verify/)
+- 한 번에 받기: [local-ca-openssl-leaf-cert-verify.zip](https://copyandrun.com/code-zip/local-ca-openssl-leaf-cert-verify.zip)
+- GitHub 폴더: [copyandrun-labs/local-ca-openssl-leaf-cert-verify](https://github.com/fankh/copyandrun-labs/tree/main/local-ca-openssl-leaf-cert-verify)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `ca_demo.sh`
-- `ca_lab.sh`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `ca_demo.sh` | <a href="https://fankh.github.io/copyandrun-labs/local-ca-openssl-leaf-cert-verify/ca_demo.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/local-ca-openssl-leaf-cert-verify/ca_demo.sh) |
+| `ca_lab.sh` | <a href="https://fankh.github.io/copyandrun-labs/local-ca-openssl-leaf-cert-verify/ca_lab.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/local-ca-openssl-leaf-cert-verify/ca_lab.sh) |
 
 ## 사용 방법
 

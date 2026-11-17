@@ -2,14 +2,21 @@
 
 privileged에 root로 도는 파드와 비루트, 읽기 전용 파일시스템, 권한 전부 제거를 건 파드를 kubescape로 점검해 실패한 통제를 비교하고, 같은 두 파드를 kind의 Pod Security restricted 네임스페이스에 배포해 거절과 승인, 파드 안의 권한 차이를 직접 확인합니다.
 
-글: https://copyandrun.com/blog/kubescape-pod-hardening-kind/
+## 링크
+
+- 글: [https://copyandrun.com/blog/kubescape-pod-hardening-kind/](https://copyandrun.com/blog/kubescape-pod-hardening-kind/)
+- 한 번에 받기: [kubescape-pod-hardening-kind.zip](https://copyandrun.com/code-zip/kubescape-pod-hardening-kind.zip)
+- GitHub 폴더: [copyandrun-labs/kubescape-pod-hardening-kind](https://github.com/fankh/copyandrun-labs/tree/main/kubescape-pod-hardening-kind)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `hardened.yaml`
-- `ks_summary.py`
-- `kubescape_demo.sh`
-- `weak.yaml`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `hardened.yaml` | <a href="https://fankh.github.io/copyandrun-labs/kubescape-pod-hardening-kind/hardened.yaml" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/kubescape-pod-hardening-kind/hardened.yaml) |
+| `ks_summary.py` | <a href="https://fankh.github.io/copyandrun-labs/kubescape-pod-hardening-kind/ks_summary.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/kubescape-pod-hardening-kind/ks_summary.py) |
+| `kubescape_demo.sh` | <a href="https://fankh.github.io/copyandrun-labs/kubescape-pod-hardening-kind/kubescape_demo.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/kubescape-pod-hardening-kind/kubescape_demo.sh) |
+| `weak.yaml` | <a href="https://fankh.github.io/copyandrun-labs/kubescape-pod-hardening-kind/weak.yaml" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/kubescape-pod-hardening-kind/weak.yaml) |
 
 ## 사용 방법
 

@@ -2,12 +2,19 @@
 
 도커 전용 네트워크에 만든 시험용 nginx 컨테이너를 Nmap으로 점검합니다. 1~1024번 포트 중 열린 포트 찾기, 서비스 버전 확인, http-title과 http-headers 스크립트 결과를 읽고, 허락받은 대상만 스캔해야 하는 이유를 정리합니다.
 
-글: https://copyandrun.com/blog/nmap-scan-own-containers/
+## 링크
+
+- 글: [https://copyandrun.com/blog/nmap-scan-own-containers/](https://copyandrun.com/blog/nmap-scan-own-containers/)
+- 한 번에 받기: [nmap-scan-own-containers.zip](https://copyandrun.com/code-zip/nmap-scan-own-containers.zip)
+- GitHub 폴더: [copyandrun-labs/nmap-scan-own-containers](https://github.com/fankh/copyandrun-labs/tree/main/nmap-scan-own-containers)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `scan_lab.sh`
-- `scan_more.sh`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `scan_lab.sh` | <a href="https://fankh.github.io/copyandrun-labs/nmap-scan-own-containers/scan_lab.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/nmap-scan-own-containers/scan_lab.sh) |
+| `scan_more.sh` | <a href="https://fankh.github.io/copyandrun-labs/nmap-scan-own-containers/scan_more.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/nmap-scan-own-containers/scan_more.sh) |
 
 ## 사용 방법
 

@@ -2,12 +2,19 @@
 
 마크다운 파일 몇 개를 MkDocs Material로 정적 사이트로 빌드하고, 깨진 링크를 --strict 옵션으로 잡고, mkdocs serve로 미리 봅니다. 문서를 코드처럼 저장소에서 관리하는 방식의 최소 구성을 실행 결과로 확인합니다.
 
-글: https://copyandrun.com/blog/mkdocs-material-team-docs-site/
+## 링크
+
+- 글: [https://copyandrun.com/blog/mkdocs-material-team-docs-site/](https://copyandrun.com/blog/mkdocs-material-team-docs-site/)
+- 한 번에 받기: [mkdocs-material-team-docs-site.zip](https://copyandrun.com/code-zip/mkdocs-material-team-docs-site.zip)
+- GitHub 폴더: [copyandrun-labs/mkdocs-material-team-docs-site](https://github.com/fankh/copyandrun-labs/tree/main/mkdocs-material-team-docs-site)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `mkdocs.yml`
-- `mkdocs_more.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `mkdocs.yml` | <a href="https://fankh.github.io/copyandrun-labs/mkdocs-material-team-docs-site/mkdocs.yml" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/mkdocs-material-team-docs-site/mkdocs.yml) |
+| `mkdocs_more.py` | <a href="https://fankh.github.io/copyandrun-labs/mkdocs-material-team-docs-site/mkdocs_more.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/mkdocs-material-team-docs-site/mkdocs_more.py) |
 
 ## 사용 방법
 

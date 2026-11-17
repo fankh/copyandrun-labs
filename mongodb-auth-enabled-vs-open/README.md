@@ -2,16 +2,23 @@
 
 인증 없이 뜬 MongoDB 8은 같은 네트워크의 다른 컨테이너가 DB 목록을 보고 급여 문서를 읽고 컬렉션을 지울 수 있습니다. 인증을 켠 서버에서 앱이 루트 계정을 그대로 쓰는 경우와 앱용, 보고용 사용자를 나눈 경우를 5가지 동작 20칸 표로 비교하고, connectionStatus와 서버 로그로 교차 확인합니다.
 
-글: https://copyandrun.com/blog/mongodb-auth-enabled-vs-open/
+## 링크
+
+- 글: [https://copyandrun.com/blog/mongodb-auth-enabled-vs-open/](https://copyandrun.com/blog/mongodb-auth-enabled-vs-open/)
+- 한 번에 받기: [mongodb-auth-enabled-vs-open.zip](https://copyandrun.com/code-zip/mongodb-auth-enabled-vs-open.zip)
+- GitHub 폴더: [copyandrun-labs/mongodb-auth-enabled-vs-open](https://github.com/fankh/copyandrun-labs/tree/main/mongodb-auth-enabled-vs-open)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `mongo_demo.sh`
-- `mongo_peek.sh`
-- `peek.js`
-- `plant.js`
-- `probe.js`
-- `users.js`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `mongo_demo.sh` | <a href="https://fankh.github.io/copyandrun-labs/mongodb-auth-enabled-vs-open/mongo_demo.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/mongodb-auth-enabled-vs-open/mongo_demo.sh) |
+| `mongo_peek.sh` | <a href="https://fankh.github.io/copyandrun-labs/mongodb-auth-enabled-vs-open/mongo_peek.sh" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/mongodb-auth-enabled-vs-open/mongo_peek.sh) |
+| `peek.js` | <a href="https://fankh.github.io/copyandrun-labs/mongodb-auth-enabled-vs-open/peek.js" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/mongodb-auth-enabled-vs-open/peek.js) |
+| `plant.js` | <a href="https://fankh.github.io/copyandrun-labs/mongodb-auth-enabled-vs-open/plant.js" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/mongodb-auth-enabled-vs-open/plant.js) |
+| `probe.js` | <a href="https://fankh.github.io/copyandrun-labs/mongodb-auth-enabled-vs-open/probe.js" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/mongodb-auth-enabled-vs-open/probe.js) |
+| `users.js` | <a href="https://fankh.github.io/copyandrun-labs/mongodb-auth-enabled-vs-open/users.js" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/mongodb-auth-enabled-vs-open/users.js) |
 
 ## 사용 방법
 

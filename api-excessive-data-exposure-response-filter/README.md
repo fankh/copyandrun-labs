@@ -2,15 +2,22 @@
 
 저장된 사용자 기록을 그대로 반환하는 연습용 FastAPI 앱에서 해시된 비밀번호, 내부 메모, 다른 사용자의 이메일과 전화번호까지 응답에 나가는 것을 curl로 확인합니다. 응답 모델로 고친 수정판과 비교하고, 허용 필드 목록 대조와 민감 키 이름 탐지를 하는 점검 스크립트를 CI 게이트로 붙입니다.
 
-글: https://copyandrun.com/blog/api-excessive-data-exposure-response-filter/
+## 링크
+
+- 글: [https://copyandrun.com/blog/api-excessive-data-exposure-response-filter/](https://copyandrun.com/blog/api-excessive-data-exposure-response-filter/)
+- 한 번에 받기: [api-excessive-data-exposure-response-filter.zip](https://copyandrun.com/code-zip/api-excessive-data-exposure-response-filter.zip)
+- GitHub 폴더: [copyandrun-labs/api-excessive-data-exposure-response-filter](https://github.com/fankh/copyandrun-labs/tree/main/api-excessive-data-exposure-response-filter)
+- 전체 목록: [https://fankh.github.io/copyandrun-labs/](https://fankh.github.io/copyandrun-labs/)
 
 ## 파일
 
-- `check_fields.py`
-- `Dockerfile`
-- `fixed_app.py`
-- `requirements.txt`
-- `vulnerable_app.py`
+| 파일 | 내려받기 | GitHub에서 보기 |
+| --- | --- | --- |
+| `check_fields.py` | <a href="https://fankh.github.io/copyandrun-labs/api-excessive-data-exposure-response-filter/check_fields.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/api-excessive-data-exposure-response-filter/check_fields.py) |
+| `Dockerfile` | <a href="https://fankh.github.io/copyandrun-labs/api-excessive-data-exposure-response-filter/Dockerfile" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/api-excessive-data-exposure-response-filter/Dockerfile) |
+| `fixed_app.py` | <a href="https://fankh.github.io/copyandrun-labs/api-excessive-data-exposure-response-filter/fixed_app.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/api-excessive-data-exposure-response-filter/fixed_app.py) |
+| `requirements.txt` | <a href="https://fankh.github.io/copyandrun-labs/api-excessive-data-exposure-response-filter/requirements.txt" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/api-excessive-data-exposure-response-filter/requirements.txt) |
+| `vulnerable_app.py` | <a href="https://fankh.github.io/copyandrun-labs/api-excessive-data-exposure-response-filter/vulnerable_app.py" download>내려받기</a> | [보기](https://github.com/fankh/copyandrun-labs/blob/main/api-excessive-data-exposure-response-filter/vulnerable_app.py) |
 
 ## 사용 방법
 
