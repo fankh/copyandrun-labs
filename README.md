@@ -62,6 +62,7 @@
 | [`java-emudhra-ca-cve-2026-91403-check`](java-emudhra-ca-cve-2026-91403-check/) | [CVE-2026-91403 점검: Java cacerts의 eMudhra 루트 인증서 확인과 삭제](https://copyandrun.com/blog/java-emudhra-ca-cve-2026-91403-check/) |
 | [`java-jdbc-preparedstatement-sqli`](java-jdbc-preparedstatement-sqli/) | [Java JDBC SQL 인젝션 막기: PreparedStatement 비교](https://copyandrun.com/blog/java-jdbc-preparedstatement-sqli/) |
 | [`java-spotbugs-findsecbugs-gate`](java-spotbugs-findsecbugs-gate/) | [SpotBugs와 Find Security Bugs로 Java 보안 점검 게이트 만들기](https://copyandrun.com/blog/java-spotbugs-findsecbugs-gate/) |
+| [`java4shell-cve-2026-114938-jdk-check`](java4shell-cve-2026-114938-jdk-check/) | [Java4Shell CVE-2026-114938 점검: JDK 버전과 임시 조치 확인하기](https://copyandrun.com/blog/java4shell-cve-2026-114938-jdk-check/) |
 | [`jwt-validation-pitfalls`](jwt-validation-pitfalls/) | [JWT 검증 실수: 서명 확인 끄기, alg none, 알고리즘 혼동, 만료와 aud](https://copyandrun.com/blog/jwt-validation-pitfalls/) |
 | [`k8s-networkpolicy-default-deny-kind`](k8s-networkpolicy-default-deny-kind/) | [Kubernetes NetworkPolicy 기본 거부: kind로 허용과 차단 확인](https://copyandrun.com/blog/k8s-networkpolicy-default-deny-kind/) |
 | [`keycloak-oidc-pkce-local-login`](keycloak-oidc-pkce-local-login/) | [Keycloak 로컬 구성과 OIDC PKCE 로그인: 코드 가로채기 방어 확인](https://copyandrun.com/blog/keycloak-oidc-pkce-local-login/) |
