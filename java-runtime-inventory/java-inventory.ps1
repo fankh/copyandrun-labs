@@ -12,7 +12,8 @@
 #   4) bin/java inside running Docker containers
 # Checks per runtime:
 #   latest_build, status  the vendor's latest build for the same Java version, from https://endoflife.date
-#                         (compares the quarterly security level: feature.interim.update)
+#                         (compares feature.interim.update, then the patch level after it; the date is when
+#                          that source last saw a release, so newer vendor notices may exist)
 #   emudhra_roots         eMudhra root certificates still in cacerts (CVE-2026-91403, CVE-2026-114820)
 # Each java found is started once with -version, and keytool once with -list. Nothing else is changed.
 # Run from an elevated prompt to see every process and folder.
@@ -102,25 +103,41 @@ $eolCache = @{}
 $today = (Get-Date).Date
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
-# Version key: Java 8 -> (8, update); Java 9+ -> (feature, interim, update). Works for runtime and vendor strings.
+# Version key: Java 8 -> (8, update); Java 9+ -> every number before "+" or "-" (feature, interim, update, patch...).
+# Works for runtime and vendor strings.
 function Get-VersionKey([string]$s) {
-  $nums = [regex]::Matches(($s -split "\+")[0], "\d+") | ForEach-Object { [int]$_.Value }
-  if (-not $nums) { return $null }
   if ($s -match "^(1\.8|8u|8\.|8$)") {
-    $u = $nums | Where-Object { $_ -ge 100 } | Select-Object -First 1
+    $u = [regex]::Matches($s, "\d+") | ForEach-Object { [int]$_.Value } | Where-Object { $_ -ge 100 } | Select-Object -First 1
     if ($null -eq $u) { $u = 0 }
     return @(8, $u)
   }
-  $k = @($nums | Select-Object -First 3)
+  $k = @([regex]::Matches(($s -split "[+-]")[0], "\d+") | ForEach-Object { [int]$_.Value })
+  if ($k.Count -eq 0) { return $null }
   while ($k.Count -lt 3) { $k += 0 }
   return $k
 }
-function Compare-Key($a, $b) {
-  for ($i = 0; $i -lt [Math]::Min($a.Count, $b.Count); $i++) {
-    if ($a[$i] -lt $b[$i]) { return -1 }
-    if ($a[$i] -gt $b[$i]) { return 1 }
+function Compare-Key($a, $b, [int]$from, [int]$to) {
+  for ($i = $from; $i -lt $to; $i++) {
+    $x = if ($i -lt $a.Count) { $a[$i] } else { 0 }
+    $y = if ($i -lt $b.Count) { $b[$i] } else { 0 }
+    if ($x -lt $y) { return -1 }
+    if ($x -gt $y) { return 1 }
   }
   0
+}
+# older | newer | equal | patch (same update, but the vendor has a later patch build such as 21.0.13.0.3)
+function Compare-Build($key, $lkey) {
+  $m = if ($key[0] -eq 8 -and $key.Count -eq 2) { 2 } else { 3 }
+  $c = Compare-Key $key $lkey 0 $m
+  if ($c -lt 0) { return "older" }
+  if ($c -gt 0) { return "newer" }
+  if ($m -eq 2) { return "equal" }
+  if ($key.Count -gt 3) {
+    $c = Compare-Key $key $lkey 3 ([Math]::Max($key.Count, $lkey.Count))
+    if ($c -lt 0) { return "older" } elseif ($c -gt 0) { return "newer" } else { return "equal" }
+  }
+  if (@($lkey | Select-Object -Skip 3 | Where-Object { $_ -gt 0 }).Count -gt 0) { return "patch" }
+  "equal"
 }
 function Test-DatePast($v) {
   if ($v -is [bool]) { return $v }
@@ -141,7 +158,7 @@ function Get-LatestStatus([string]$vendor, [string]$build) {
   if (-not $key) { return @("", "check manually (version not read)") }
   $entry = $data | Where-Object { "$($_.cycle)" -eq "$($key[0])" } | Select-Object -First 1
   if (-not $entry) { return @("", "check manually (no data for Java $($key[0]))") }
-  $latest = "$($entry.latest)"
+  $latest = "$($entry.latest) ($($entry.latestReleaseDate))"
   if ((Test-DatePast $entry.eol) -and -not ("$($entry.extendedSupport)" -match "^\d{4}" -and -not (Test-DatePast $entry.extendedSupport))) {
     return @($latest, "end of support ($($entry.eol))")
   }
@@ -150,9 +167,11 @@ function Get-LatestStatus([string]$vendor, [string]$build) {
   if ("$($entry.latestReleaseDate)" -match "^\d{4}-\d{2}-\d{2}$" -and ([datetime]$entry.latestReleaseDate) -lt $today.AddDays(-120)) {
     return @($latest, "check manually (vendor data last updated $($entry.latestReleaseDate))")
   }
-  $lkey = Get-VersionKey $latest
-  if ((Compare-Key $key $lkey) -lt 0) { return @($latest, "update needed$note") }
-  @($latest, "up to date$note")
+  switch (Compare-Build $key (Get-VersionKey "$($entry.latest)")) {
+    "older" { return @($latest, "update needed$note") }
+    "patch" { return @($latest, "check manually (vendor has a later patch build of the same update)$note") }
+  }
+  @($latest, "up to date as of $($entry.latestReleaseDate)$note")
 }
 
 function New-Row([string]$where, [string]$path, $info, [string]$pids, [string]$emudhra) {

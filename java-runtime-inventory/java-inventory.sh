@@ -12,7 +12,8 @@
 #   3) 실행 중인 도커 컨테이너 안의 bin/java
 # 런타임마다 확인하는 것:
 #   latest_build, status  같은 Java 버전의 공급업체 최신 빌드(https://endoflife.date)와 비교
-#                         (분기 보안 업데이트 수준인 feature.interim.update 를 비교)
+#                         (feature.interim.update 를 비교하고, 같으면 그 뒤 패치 번호까지 비교한다.
+#                          괄호 안 날짜는 그 자료가 마지막으로 본 배포일이라, 그 뒤 공급업체 공지가 더 있을 수 있다)
 #   emudhra_roots         cacerts 에 남은 eMudhra 루트 인증서 (CVE-2026-91403, CVE-2026-114820)
 # 찾은 java 를 -version 으로, keytool 을 -list 로 한 번씩 실행한다. 그 밖에는 읽기만 한다.
 # 모든 프로세스와 폴더를 보려면 root 로 실행한다.
@@ -73,15 +74,36 @@ product_of() {
   esac
 }
 
-# 버전 키: Java 8 은 "8 업데이트", 9 이상은 "feature interim update". 런타임 빌드와 공급업체 표기 모두에 쓴다.
+# 버전 키: Java 8 은 "8 업데이트", 9 이상은 "+" 나 "-" 앞의 숫자 전부(feature interim update 패치...).
+# 런타임 빌드와 공급업체 표기 모두에 쓴다.
 vkey() {
   echo "$1" | awk '{
-    s = $0; sub(/\+.*/, "", s); is8 = (s ~ /^(1\.8|8u|8\.|8$)/)
+    s = $0; is8 = (s ~ /^(1\.8|8u|8\.|8$)/)
+    if (!is8) sub(/[+-].*/, "", s)
     n = 0; t = s
     while (match(t, /[0-9]+/)) { a[++n] = substr(t, RSTART, RLENGTH) + 0; t = substr(t, RSTART + RLENGTH) }
     if (n == 0) exit
     if (is8) { u = 0; for (i = 1; i <= n; i++) if (a[i] >= 100) { u = a[i]; break }; print 8, u; exit }
-    print a[1], (n >= 2 ? a[2] : 0), (n >= 3 ? a[3] : 0)
+    out = a[1] " " (n >= 2 ? a[2] : 0) " " (n >= 3 ? a[3] : 0)
+    for (i = 4; i <= n; i++) out = out " " a[i]
+    print out
+  }'
+}
+
+# cmpbuild <런타임 키> <최신 키> -> older | newer | equal | patch(같은 업데이트에 공급업체의 뒤 패치 빌드가 있음)
+cmpbuild() {
+  echo "$1|$2" | awk -F'|' '{
+    nk = split($1, k, " "); nl = split($2, l, " ")
+    m = (k[1] == 8 && nk == 2) ? 2 : 3
+    for (i = 1; i <= m; i++) { if (k[i] + 0 < l[i] + 0) { print "older"; exit } if (k[i] + 0 > l[i] + 0) { print "newer"; exit } }
+    if (m == 2) { print "equal"; exit }
+    if (nk > 3) {
+      n = (nk > nl) ? nk : nl
+      for (i = 4; i <= n; i++) { if (k[i] + 0 < l[i] + 0) { print "older"; exit } if (k[i] + 0 > l[i] + 0) { print "newer"; exit } }
+      print "equal"; exit
+    }
+    for (i = 4; i <= nl; i++) if (l[i] + 0 > 0) { print "patch"; exit }
+    print "equal"
   }'
 }
 
@@ -115,9 +137,12 @@ latest_status() {
   if [ -n "$STALE" ] && [ -n "$rel" ] && [ "$rel" \< "$STALE" ]; then
     echo "$latest|확인 필요 (공급업체 자료가 $rel 기준)"; return
   fi
-  lkey="$(vkey "$latest")"
-  older="$(echo "$key $lkey" | awk '{ m = NF / 2; for (i = 1; i <= m; i++) { if ($i < $(i + m)) { print 1; exit } if ($i > $(i + m)) { print 0; exit } } print 0 }')"
-  if [ "$older" = 1 ]; then echo "$latest|업데이트 필요$note"; else echo "$latest|최신$note"; fi
+  show="$latest ($rel)"
+  case "$(cmpbuild "$key" "$(vkey "$latest")")" in
+    older) echo "$show|업데이트 필요$note" ;;
+    patch) echo "$show|확인 필요 (같은 업데이트에 공급업체의 뒤 패치 빌드가 있음)$note" ;;
+    *) echo "$show|최신 ($rel 자료 기준)$note" ;;
+  esac
 }
 
 emudhra_ko() {

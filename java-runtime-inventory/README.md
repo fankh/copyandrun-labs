@@ -36,11 +36,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File java-inventory.ps1
 
 | 열 | 내용 |
 | --- | --- |
-| `latest_build` | 같은 공급업체, 같은 Java 버전의 최신 빌드 ([endoflife.date](https://endoflife.date) 자료) |
-| `status` | 분기 보안 업데이트 수준(feature.interim.update) 비교 결과. 최신 / 업데이트 필요 / 지원 종료 / 확인 필요 (PowerShell 판은 영문) |
+| `latest_build` | 같은 공급업체, 같은 Java 버전의 최신 빌드와 그 배포일 ([endoflife.date](https://endoflife.date) 자료) |
+| `status` | feature.interim.update 를 비교하고, 같으면 그 뒤 패치 번호(예: 21.0.13.0.3)까지 비교한 결과. 최신 / 업데이트 필요 / 지원 종료 / 확인 필요 (PowerShell 판은 영문) |
 | `emudhra_roots` | cacerts 에 남은 eMudhra 루트 인증서. CVE-2026-91403, CVE-2026-114820 경보에서 지우라고 한 네 개를 CN 으로 찾습니다 |
 
 - `확인 필요` 는 공급업체 자료가 없거나(Azul, OS 패키지 등) 자료가 120일 넘게 갱신되지 않은 경우입니다. 해당 공급업체 공지로 직접 확인합니다.
-- `status` 는 분기 업데이트만 비교합니다. 분기 사이의 긴급 경보(eMudhra 등)는 `emudhra_roots` 열로 확인합니다.
+- `최신` 은 괄호 안 날짜의 자료 기준입니다. Oracle 은 매달 셋째 화요일에 보안 패치를 내므로, 그 날짜 뒤 공급업체 공지가 있으면 직접 확인합니다. 런타임이 패치 번호 없이 같은 업데이트(예: 21.0.13)이고 공급업체에 뒤 패치 빌드가 있으면 `확인 필요` 로 표시합니다.
+- eMudhra 처럼 인증서로 판단하는 경보는 `emudhra_roots` 열로 확인합니다.
 - 인터넷이 막힌 서버에서는 `-x`(sh) 또는 `-Offline`(PowerShell)을 붙이면 조회 없이 목록과 eMudhra 확인만 합니다.
 - 라이브러리(jar) 취약점은 이 도구가 보지 않습니다. SCA 도구로 따로 점검합니다.
