@@ -15,6 +15,9 @@
 #                         (feature.interim.update 를 비교하고, 같으면 그 뒤 패치 번호까지 비교한다.
 #                          괄호 안 날짜는 그 자료가 마지막으로 본 배포일이라, 그 뒤 공급업체 공지가 더 있을 수 있다)
 #   emudhra_roots         cacerts 에 남은 eMudhra 루트 인증서 (CVE-2026-91403, CVE-2026-114820)
+#   java4shell            Java4Shell(CVE-2026-114938): JDK 17/21/25/27 의 마지막 영향 빌드 이하이고 CPU 가
+#                         AVX-512 VBMI 를 지원하는 x86-64 인지. 실행 중인 JVM 은 -XX:UseAVX=0/1/2 또는
+#                         -XX:-UseBASE64Intrinsics 를 쓰는지 본다 (JAVA_TOOL_OPTIONS 와 옵션 파일은 보지 않음)
 # 찾은 java 를 -version 으로, keytool 을 -list 로 한 번씩 실행한다. 그 밖에는 읽기만 한다.
 # 모든 프로세스와 폴더를 보려면 root 로 실행한다.
 OUT=""; NOCT=0; CTF=""; OFFLINE=0
@@ -57,7 +60,24 @@ PROBE='while IFS= read -r j; do
       e="${e:-none}"
     fi
   fi
-  echo "$j|$(g java.vendor)|$v|$(g java.runtime.version)|$(g os.arch)|$e"
+  # CPU 기능은 JVM 이 본 그대로 읽고(-Xlog 는 Java 9 이상), 안 되면 /proc/cpuinfo 를 본다.
+  cpu=unknown
+  cl="$("$j" -Xlog:os+cpu -version 2>&1 | grep "os,cpu.*CPU:" | head -1)"
+  if [ -n "$cl" ]; then
+    case "$cl" in *avx512_vbmi*) cpu=yes ;; *) cpu=no ;; esac
+  elif grep -q avx512vbmi /proc/cpuinfo 2>/dev/null; then cpu=yes
+  elif [ -r /proc/cpuinfo ]; then cpu=no
+  fi
+  mit=""; run=""
+  for d in /proc/[0-9]*; do
+    [ "$(readlink -f "$d/exe" 2>/dev/null)" = "$j" ] || continue
+    c="$(tr "\000" " " < "$d/cmdline" 2>/dev/null)"
+    case "$c" in
+      *-XX:UseAVX=[012]*|*-XX:-UseBASE64Intrinsics*) mit="$mit${mit:+ }${d#/proc/}" ;;
+      *) run="$run${run:+ }${d#/proc/}" ;;
+    esac
+  done
+  echo "$j|$(g java.vendor)|$v|$(g java.runtime.version)|$(g os.arch)|$e|$cpu|$mit|$run"
 done'
 
 # 공급업체 이름(java.vendor) -> endoflife.date 제품 이름
@@ -145,6 +165,33 @@ latest_status() {
   esac
 }
 
+# Java4Shell (CVE-2026-114938): OpenJDK Base64 디코더, AVX-512 VBMI 를 지원하는 x86-64 CPU 에서만.
+# 2026-11-17 OpenJDK 공지의 마지막 영향 빌드. 이보다 뒤 빌드는 수정됨.
+# java4shell <런타임 빌드> <아키텍처> <cpu: yes|no|unknown> <완화 옵션 PID> <완화 없는 PID>
+java4shell() {
+  key="$(vkey "$1")"
+  [ -n "$key" ] || { echo "확인 필요 (버전을 읽지 못함)"; return; }
+  maj="${key%% *}"
+  if [ "$maj" = 8 ]; then
+    case "$1" in *perf*) echo "확인 필요 (Oracle 8 perf 빌드: 8u513-perf 이상이 수정 빌드)" ;; *) echo "영향 없음 (Java 8)" ;; esac
+    return
+  fi
+  [ "$maj" -ge 17 ] 2>/dev/null || { echo "영향 없음 (Java $maj)"; return; }
+  case "$maj" in
+    17) last="17 0 21 0 3" ;; 21) last="21 0 13 0 3" ;; 25) last="25 0 5 0 3" ;; 27) last="27 0 1 0 3" ;;
+    *) echo "확인 필요 (Java $maj 은 지원 종료 계열: 지원 계열로 이전)"; return ;;
+  esac
+  after="$(echo "$key|$last" | awk -F'|' '{ nk = split($1, k, " "); nl = split($2, l, " "); n = (nk > nl) ? nk : nl
+    for (i = 1; i <= n; i++) { if (k[i] + 0 > l[i] + 0) { print 1; exit } if (k[i] + 0 < l[i] + 0) { print 0; exit } } print 0 }')"
+  [ "$after" = 1 ] && { echo "수정됨 (영향 범위 뒤 빌드)"; return; }
+  case "$2" in amd64|x86_64|"") ;; *) echo "영향 없음 (x86-64 아님: $2)"; return ;; esac
+  [ "$3" = no ] && { echo "영향 없음 (CPU 에 AVX-512 VBMI 없음)"; return; }
+  if [ "$3" = yes ]; then what="영향 있음"; else what="영향 가능 (CPU 확인 못 함)"; fi
+  if [ -n "$5" ]; then echo "$what (완화 옵션 없이 실행 중: PID $5)"
+  elif [ -n "$4" ]; then echo "$what (실행 중인 JVM 은 임시 완화 적용: PID $4, 업데이트는 필요)"
+  else echo "$what (업데이트 필요)"; fi
+}
+
 emudhra_ko() {
   case "$1" in
     none) echo "없음" ;;
@@ -167,15 +214,16 @@ done
 cut -d'|' -f2 "$TMP/procs" | while IFS= read -r j; do [ -x "$j" ] && readlink -f "$j"; done | sort -u > "$TMP/procbin"
 sort -u "$TMP/disk" "$TMP/procbin" > "$TMP/all"
 
-echo "host,os,where,java_path,vendor,version,runtime_build,arch,running_pids,latest_build,status,emudhra_roots" > "$OUT"
+echo "host,os,where,java_path,vendor,version,runtime_build,arch,running_pids,latest_build,status,emudhra_roots,java4shell" > "$OUT"
 csvq() { printf '"%s"' "$(echo "$1" | sed 's/"/""/g')"; }
-row() { # row <위치> <probe 결과 한 줄> <pid 목록>
-  IFS='|' read -r jp ven ver bld arc emu <<EOF_ROW
+row() { # row <위치> <probe 결과 한 줄> <pid 목록. 비어 있으면 probe 가 본 PID>
+  IFS='|' read -r jp ven ver bld arc emu cpu mit run <<EOF_ROW
 $2
 EOF_ROW
   ls="$(latest_status "$ven" "$bld")"
-  for v in "$HOST" "$OSNAME" "$1" "$jp" "$ven" "$ver" "$bld" "$arc" "$3" "${ls%%|*}" "${ls#*|}"; do csvq "$v"; printf ','; done >> "$OUT"
-  csvq "$(emudhra_ko "$emu")" >> "$OUT"; echo >> "$OUT"
+  pids="${3:-$mit${mit:+${run:+ }}$run}"
+  for v in "$HOST" "$OSNAME" "$1" "$jp" "$ven" "$ver" "$bld" "$arc" "$pids" "${ls%%|*}" "${ls#*|}" "$(emudhra_ko "$emu")"; do csvq "$v"; printf ','; done >> "$OUT"
+  { csvq "$(java4shell "$bld" "$arc" "$cpu" "$mit" "$run")"; echo; } >> "$OUT"
 }
 sh -c "$PROBE" < "$TMP/all" > "$TMP/probed"
 while IFS= read -r line; do
@@ -197,4 +245,4 @@ fi
 
 N=$(($(wc -l < "$OUT") - 1))
 echo "Java 런타임 ${N}개를 찾았습니다. 결과 파일: $OUT"
-awk -F'","' 'NR > 1 {gsub(/"/, "", $9); gsub(/"$/, "", $12); printf "  %-36s %-18s %-16s %-14s %s | eMudhra: %s%s\n", substr($3, 1, 36), substr($5, 1, 18), $7, $10, $11, $12, ($9 == "" ? "" : "  [실행 중 PID " $9 "]")}' "$OUT"
+awk -F'","' 'NR > 1 {gsub(/"/, "", $9); gsub(/"$/, "", $13); printf "  %-36s %-18s %-16s %-14s %s | eMudhra: %s | Java4Shell: %s%s\n", substr($3, 1, 36), substr($5, 1, 18), $7, $10, $11, $12, $13, ($9 == "" ? "" : "  [실행 중 PID " $9 "]")}' "$OUT"

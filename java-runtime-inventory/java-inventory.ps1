@@ -15,6 +15,9 @@
 #                         (compares feature.interim.update, then the patch level after it; the date is when
 #                          that source last saw a release, so newer vendor notices may exist)
 #   emudhra_roots         eMudhra root certificates still in cacerts (CVE-2026-91403, CVE-2026-114820)
+#   java4shell            Java4Shell (CVE-2026-114938): JDK 17/21/25/27 up to the last affected build, on an x86-64
+#                         CPU with AVX-512 VBMI; running JVMs are checked for -XX:UseAVX=0/1/2 or
+#                         -XX:-UseBASE64Intrinsics (JAVA_TOOL_OPTIONS and other option files are not read)
 # Each java found is started once with -version, and keytool once with -list. Nothing else is changed.
 # Run from an elevated prompt to see every process and folder.
 param(
@@ -174,12 +177,43 @@ function Get-LatestStatus([string]$vendor, [string]$build) {
   @($latest, "up to date as of $($entry.latestReleaseDate)$note")
 }
 
-function New-Row([string]$where, [string]$path, $info, [string]$pids, [string]$emudhra) {
+# Java4Shell (CVE-2026-114938): OpenJDK Base64 decoder, x86-64 CPUs with AVX-512 VBMI only.
+# Last affected builds per the OpenJDK advisory of 2026-11-17; later builds are fixed.
+$j4sLastAffected = @{ 17 = @(17, 0, 21, 0, 3); 21 = @(21, 0, 13, 0, 3); 25 = @(25, 0, 5, 0, 3); 27 = @(27, 0, 1, 0, 3) }
+# $cpu: yes | no | unknown (AVX-512 VBMI). $mit / $run: running PIDs with / without a mitigation option.
+function Get-Java4Shell([string]$build, [string]$arch, [string]$cpu, [string]$mit, [string]$run) {
+  $key = Get-VersionKey $build
+  if (-not $key) { return "check manually (version not read)" }
+  $major = $key[0]
+  if ($major -eq 8) {
+    if ($build -match "perf") { return "check manually (Oracle 8 -perf build: 8u513-perf or later is fixed)" }
+    return "not affected (Java 8)"
+  }
+  if ($major -lt 17) { return "not affected (Java $major)" }
+  if (-not $j4sLastAffected.ContainsKey($major)) { return "check manually (Java $major is out of support; move to a supported version)" }
+  if ((Compare-Key $key $j4sLastAffected[$major] 0 ([Math]::Max($key.Count, 5))) -gt 0) { return "fixed (build is after the affected range)" }
+  if ($arch -and $arch -notmatch "^(amd64|x86_64)$") { return "not affected (not x86-64: $arch)" }
+  if ($cpu -eq "no") { return "not affected (CPU has no AVX-512 VBMI)" }
+  $what = if ($cpu -eq "yes") { "AFFECTED" } else { "AFFECTED if CPU has AVX-512 VBMI (CPU not checked)" }
+  if ($run) { return "$what (running without mitigation: PID $run)" }
+  if ($mit) { return "$what (running JVMs use a temporary mitigation: PID $mit; still update)" }
+  "$what (update needed)"
+}
+# Splits running PIDs into "with mitigation option" and "without", from their command lines.
+function Split-Mitigation($procList) {
+  $mit = @(); $run = @()
+  foreach ($p in $procList) {
+    if ("$($p.CommandLine)" -match "-XX:UseAVX=[012]\b|-XX:-UseBASE64Intrinsics") { $mit += $p.ProcessId } else { $run += $p.ProcessId }
+  }
+  @(($mit -join " "), ($run -join " "))
+}
+
+function New-Row([string]$where, [string]$path, $info, [string]$pids, [string]$emudhra, [string]$j4s) {
   $ls = Get-LatestStatus $info.Vendor $info.Build
   [pscustomobject]@{
     host = $hostName; os = $osName; where = $where; java_path = $path
     vendor = $info.Vendor; version = $info.Version; runtime_build = $info.Build; arch = $info.Arch; running_pids = $pids
-    latest_build = $ls[0]; status = $ls[1]; emudhra_roots = $emudhra
+    latest_build = $ls[0]; status = $ls[1]; emudhra_roots = $emudhra; java4shell = $j4s
   }
 }
 
@@ -212,18 +246,31 @@ Get-Command java.exe -All -CommandType Application | ForEach-Object {
   if ($_.Source -notmatch "\\javapath\\") { [void]$found.Add($_.Source) }
 }
 
-$rows = @()
+$hostRuntimes = @()
 foreach ($exe in ($found | Sort-Object)) {
-  $info = Read-JavaProps (Invoke-Capture $exe "-XshowSettings:properties -version")
-  $binDir = Split-Path $exe
-  $pids = ($procs | Where-Object { (Split-Path $_.ExecutablePath) -eq $binDir } | ForEach-Object { $_.ProcessId }) -join " "
-  $rows += New-Row "host" $exe $info $pids (Get-EmudhraResult (Get-HostOwnerLines $exe))
+  $hostRuntimes += [pscustomobject]@{ Exe = $exe; Info = (Read-JavaProps (Invoke-Capture $exe "-XshowSettings:properties -version")) }
+}
+# CPU features as the JVM sees them (-Xlog exists from Java 9). One runtime is enough for this host.
+$hostCpu = "unknown"
+foreach ($r in $hostRuntimes) {
+  $k = Get-VersionKey $r.Info.Build
+  if (-not $k -or $k[0] -lt 9) { continue }
+  $cpuLine = Invoke-Capture $r.Exe "-Xlog:os+cpu -version" | Where-Object { $_ -match "os,cpu.*CPU:" } | Select-Object -First 1
+  if ($cpuLine) { $hostCpu = if ($cpuLine -match "avx512_vbmi") { "yes" } else { "no" }; break }
+}
+$rows = @()
+foreach ($r in $hostRuntimes) {
+  $binDir = Split-Path $r.Exe
+  $mine = @($procs | Where-Object { (Split-Path $_.ExecutablePath) -eq $binDir })
+  $pids = ($mine | ForEach-Object { $_.ProcessId }) -join " "
+  $mr = Split-Mitigation $mine
+  $rows += New-Row "host" $r.Exe $r.Info $pids (Get-EmudhraResult (Get-HostOwnerLines $r.Exe)) (Get-Java4Shell $r.Info.Build $r.Info.Arch $hostCpu $mr[0] $mr[1])
 }
 
 # 4) running Docker containers (Linux containers)
 if (-not $NoContainers -and (Get-Command docker -CommandType Application)) {
   # no double quotes inside: Windows PowerShell does not pass them to native programs reliably
-  $probe = "find / -xdev \( -path /proc -o -path /sys \) -prune -o \( -type f -o -type l \) -name java -path '*/bin/java' -print 2>/dev/null | while IFS= read -r j; do readlink -f `$j; done | sort -u | while IFS= read -r j; do echo @@ `$j; `$j -XshowSettings:properties -version 2>&1; h=`${j%/bin/java}; k=`$h/lib/security/cacerts; [ -f `$k ] || k=`$h/jre/lib/security/cacerts; [ -x `$h/bin/keytool ] && `$h/bin/keytool -J-Duser.language=en -J-Duser.country=US -list -v -keystore `$k -storepass changeit 2>/dev/null | grep '^Owner: '; done"
+  $probe = "find / -xdev \( -path /proc -o -path /sys \) -prune -o \( -type f -o -type l \) -name java -path '*/bin/java' -print 2>/dev/null | while IFS= read -r j; do readlink -f `$j; done | sort -u | while IFS= read -r j; do echo @@ `$j; `$j -XshowSettings:properties -version 2>&1; h=`${j%/bin/java}; k=`$h/lib/security/cacerts; [ -f `$k ] || k=`$h/jre/lib/security/cacerts; [ -x `$h/bin/keytool ] && `$h/bin/keytool -J-Duser.language=en -J-Duser.country=US -list -v -keystore `$k -storepass changeit 2>/dev/null | grep '^Owner: '; cl=`$(`$j -Xlog:os+cpu -version 2>&1 | grep 'os,cpu.*CPU:' | head -1); if [ `${#cl} -gt 0 ]; then case `$cl in *avx512_vbmi*) echo @CPU yes ;; *) echo @CPU no ;; esac; elif grep -q avx512vbmi /proc/cpuinfo 2>/dev/null; then echo @CPU yes; elif [ -r /proc/cpuinfo ]; then echo @CPU no; fi; for d in /proc/[0-9]*; do [ `$(readlink -f `$d/exe 2>/dev/null)x = `${j}x ] || continue; c=`$(tr '\000' ' ' < `$d/cmdline 2>/dev/null); case `$c in *-XX:UseAVX=[012]*|*-XX:-UseBASE64Intrinsics*) echo @MIT `${d#/proc/} ;; *) echo @RUN `${d#/proc/} ;; esac; done; done"
   $psArgs = "ps --format {{.Names}}|{{.Image}}"
   if ($ContainerFilter) { $psArgs += " --filter name=$ContainerFilter" }
   $containers = Invoke-Capture "docker" $psArgs | Where-Object { $_ -match "\|" }
@@ -234,7 +281,14 @@ if (-not $NoContainers -and (Get-Command docker -CommandType Application)) {
     foreach ($line in @($outLines) + "@@ ") {
       if ($line.StartsWith("@@ ")) {
         if ($path) {
-          $rows += New-Row "container:$name ($image)" $path (Read-JavaProps $buf) "" (Get-EmudhraResult $buf)
+          $info = Read-JavaProps $buf
+          $cCpu = "unknown"
+          $cl = $buf | Where-Object { $_ -like "@CPU *" } | Select-Object -First 1
+          if ($cl) { $cCpu = $cl.Substring(5).Trim() }
+          $cMit = ($buf | Where-Object { $_ -like "@MIT *" } | ForEach-Object { $_.Substring(5).Trim() }) -join " "
+          $cRun = ($buf | Where-Object { $_ -like "@RUN *" } | ForEach-Object { $_.Substring(5).Trim() }) -join " "
+          $cPids = (@($cMit, $cRun) | Where-Object { $_ }) -join " "
+          $rows += New-Row "container:$name ($image)" $path $info $cPids (Get-EmudhraResult $buf) (Get-Java4Shell $info.Build $info.Arch $cCpu $cMit $cRun)
         }
         $path = $line.Substring(3); $buf = @()
       } else { $buf += $line }
@@ -244,5 +298,5 @@ if (-not $NoContainers -and (Get-Command docker -CommandType Application)) {
 
 $rows | Export-Csv -LiteralPath $Out -NoTypeInformation -Encoding UTF8
 "Found $($rows.Count) Java runtime(s). Result file: $Out"
-$rows | Format-Table where, vendor, runtime_build, latest_build, status, emudhra_roots, running_pids, java_path -AutoSize | Out-String -Width 260
+$rows | Format-Table where, vendor, runtime_build, latest_build, status, emudhra_roots, java4shell, running_pids, java_path -AutoSize | Out-String -Width 320
 exit 0
